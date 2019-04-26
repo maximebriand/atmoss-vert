@@ -1,0 +1,18 @@
+header#masthead {
+  display: none;
+  background: $primary-color;
+  padding:15px;
+  .container {
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+
+    nav {
+      box-shadow: none;
+      .nav-menu {
+        float: right;
+      }
+    }
+  }
+
+}

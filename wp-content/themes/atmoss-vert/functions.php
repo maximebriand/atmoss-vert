@@ -6,6 +6,13 @@
  *
  * @package Atmoss\'_Vert
  */
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+//to manage uplaod video
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 
 if ( ! function_exists( 'atmoss_vert_setup' ) ) :
 	/**
@@ -164,4 +171,36 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+/*
+  Carbon Fields
+*/
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+    require_once( 'vendor/autoload.php' );
+    \Carbon_Fields\Carbon_Fields::boot();
+}
+
+//to add credit in the footer
+// use carbon_get_theme_option( 'crb_footer_copyright' ); to display
+add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
+function crb_attach_theme_options() {
+    Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
+        ->add_fields( array(
+            Field::make( 'rich_text', 'crb_footer_copyright', 'Copyright' ),
+        ) );
+}
+
+//add video on the hompepage template
+add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
+function crb_attach_post_meta() {
+    Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
+        ->show_on_template('template-homepage.php')
+        ->add_fields( array(
+            Field::make( 'file', 'video_presentation', 'Vidéo de Présentation MP4', 'test description' )->set_value_type( 'url' ),
+            Field::make( 'checkbox', 'is_muted', 'Son désactivé' )
+                ->set_option_value( 'yes' )
+        ) )
+    ;
 }

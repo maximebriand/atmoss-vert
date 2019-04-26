@@ -13,8 +13,25 @@ $color__link-visited: purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
+$color__link-menu: #f9f9f9;
+
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+
+
+/*
+MATERIALIZE OVERIDE
+===================
+*/
+
+$primary-color: #a98f56;
+
+/*
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;*/
