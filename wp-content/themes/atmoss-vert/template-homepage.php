@@ -42,7 +42,7 @@ get_header();
                         <div class="content_slider">
                             <div class="gallery_content">
                                 <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
-                                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                                <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
                                     <div class="gallery_item">
                                         <img src="<?= the_post_thumbnail_url();?>">
                                         <a href="<?= get_permalink(); ?>">
