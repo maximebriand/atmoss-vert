@@ -129,7 +129,8 @@ add_action( 'widgets_init', 'atmoss_vert_widgets_init' );
 function atmoss_vert_scripts() {
 	wp_enqueue_style( 'atmoss-vert-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'atmoss-vert-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/DiagonalSlider.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'atmoss-vert-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'atmoss-vert-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -173,28 +174,22 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-/*
-  Carbon Fields
-*/
+add_image_size( 'HP_slider', 1800, 900 );
+
+/*******************************
+ *
+ CARBON FIELDS
+ *
+ ********************************/
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
     require_once( 'vendor/autoload.php' );
     \Carbon_Fields\Carbon_Fields::boot();
 }
 
-//to add credit in the footer
-// use carbon_get_theme_option( 'crb_footer_copyright' ); to display
-add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
-function crb_attach_theme_options() {
-    Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
-        ->add_fields( array(
-            Field::make( 'rich_text', 'crb_footer_copyright', 'Copyright' ),
-        ) );
-}
-
 //add video on the hompepage template
-add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
-function crb_attach_post_meta() {
+add_action( 'carbon_fields_register_fields', 'template_hp_cf' );
+function template_hp_cf() {
     Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
         ->show_on_template('template-homepage.php')
         ->add_fields( array(
@@ -204,3 +199,61 @@ function crb_attach_post_meta() {
         ) )
     ;
 }
+
+//add fields cpt chantiers
+//add_action( 'carbon_fields_register_fields', 'cpt_chantiers_cf' );
+
+function cpt_chantiers_cf() {
+    Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
+        ->show_on_post_type('chantiers')
+        ->add_fields( array(
+            Field::make( 'image', 'photo', 'Taille de l\'image 1800px x 900px' )->set_value_type( 'url' ),
+        ) )
+    ;
+}
+
+
+
+/*******************************
+ *
+   CUSTOM POST TYPE
+ *
+********************************/
+
+function wpm_custom_post_type() {
+
+    $labels = array(
+        'name'                => _x( 'Chantiers', 'Post Type General Name'),
+        'singular_name'       => _x( 'Chantier', 'Post Type Singular Name'),
+        'menu_name'           => __( 'Mes Chantiers'),
+        'all_items'           => __( 'Tous les chantiers'),
+        'view_item'           => __( 'Voir les chantiers'),
+        'add_new_item'        => __( 'Ajouter un nouveau chantier'),
+        'add_new'             => __( 'Ajouter'),
+        'edit_item'           => __( 'Editer le chantier'),
+        'update_item'         => __( 'Modifier le chantier'),
+        'search_items'        => __( 'Rechercher un chantier'),
+        'not_found'           => __( 'Non trouvé'),
+        'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+    );
+
+    $args = array(
+        'label'               => __( 'Chantiers'),
+        'description'         => __( 'Tous sur chantier'),
+        'labels'              => $labels,
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'has_archive'         => true,
+        'rewrite'			  => array( 'slug' => 'chantiers'),
+        'menu_icon'           => 'dashicons-palmtree',
+        'show_in_rest' => true,
+
+    );
+
+    register_post_type( 'chantiers', $args );
+
+}
+
+add_action( 'init', 'wpm_custom_post_type', 0 );
+

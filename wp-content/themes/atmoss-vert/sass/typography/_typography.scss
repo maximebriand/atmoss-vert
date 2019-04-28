@@ -13,3 +13,27 @@ textarea {
 @import "headings";
 
 @import "copy";
+
+/*--------------------------------------------------------------
+# font face
+--------------------------------------------------------------*/
+@font-face {
+	font-family: 'kionaitallic';
+	src: url('fonts/kiona-itallic-webfont.woff2') format('woff2'),
+	url('fonts/kiona-itallic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+
+
+@font-face {
+	font-family: 'kionaregular';
+	src: url('fonts/kiona-regular-webfont.woff2') format('woff2'),
+	url('fonts/kiona-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}

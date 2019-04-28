@@ -19,25 +19,43 @@ get_header();
                         $isMuted = 'muted';
                     } else
                     {
-                        $isMuted = '';
+                        $isMuted = NULL;
                     }
                     ?>
 
 
-                    <div id="hpVideo">
+                    <section id="hpVideo">
                         <header>
+                            <?= get_custom_logo(); ?>
                             <hgroup>
                                 <h1 class="page-title"><?php single_post_title(); ?></h1>
-                                <h2><?php echo get_bloginfo('description');?> </h2>
+                                <h2><?= get_bloginfo('description');?> </h2>
                             </hgroup>
                         </header>
                         <div class="video">
-                            <video preload="preload" autoplay loop poster="<?php echo $posterImg;?>" id="bgvid" <?php echo $isMuted;?>>
-                                <source src="<?php echo $video; ?>" type="video/mp4">
+                            <video preload="preload" autoplay loop poster="<?= $posterImg;?>" id="bgvid" <?= $isMuted;?>>
+                                <source src="<?= $video; ?>" type="video/mp4">
                             </video>
                         </div>
-                    </div>
-                    <?php
+                    </section>
+                    <section id="portfolio">
+                        <div class="content_slider">
+                            <div class="gallery_content">
+                                <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
+                                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                                    <div class="gallery_item">
+                                        <img src="<?= the_post_thumbnail_url();?>">
+                                        <a href="<?= get_permalink(); ?>">
+                                            <h3>
+                                                <?= get_the_title();?>
+                                            </h3>
+                                        </a>
+                                    </div>
+                                <?php endwhile ; ?>
+                            </div>
+                        </div>
+                    </section>
+                <?php
 
                 /* Start the Loop */
                 while ( have_posts() ) :
@@ -67,5 +85,5 @@ get_header();
     </div><!-- #primary -->
 
 <?php
-/*get_sidebar();
-get_footer();*/
+/*get_sidebar();*/
+get_footer();
