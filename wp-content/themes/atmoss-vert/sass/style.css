@@ -51,6 +51,10 @@ $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
+.container {
+  width: 1400px;
+  margin: auto; }
+
 /*--------------------------------------------------------------
  # Materialize
 --------------------------------------------------------------*/
@@ -475,23 +479,16 @@ nav {
     	transition: transform 0.1s ease-out,
     	opacity 0.1s ease-out;
     }*/ }
-    #primary-menu ul li:hover a {
+    #primary-menu ul li:hover a, #primary-menu ul li:hover a:focus {
       color: #a98f56;
       background: #FFF;
       padding: 10px 50px;
       transition: background-color 1s;
       transition: color 1s; }
-    #primary-menu ul li:hover:before {
-      left: 0;
-      right: auto;
-      width: 100%; }
-    #primary-menu ul li:hover:after {
-      opacity: 1;
-      padding: 0 20px;
-      transform: translate(0px, 6px);
-      transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out; }
     #primary-menu ul li a {
       text-decoration: none; }
+    #primary-menu ul li a:focus {
+      color: #fff; }
     .open #primary-menu ul li {
       opacity: 1;
       transform: translate3d(0, 0, 0);
@@ -514,15 +511,6 @@ nav {
         transition-delay: 1.45s; }
       .open #primary-menu ul li:nth-child(9) {
         transition-delay: 1.55s; }
-
-article {
-  padding: 24px;
-  max-width: 600px;
-  margin: 60px auto;
-  transition: 0.2s ease-out; }
-  .open article {
-    transform: scale(0.92);
-    transition: transform 0.2s 0.41s ease-out; }
 
 @keyframes menu-animation {
   0% {
@@ -717,7 +705,7 @@ body.page-template-template-homepage #hpVideo {
     position: absolute;
     padding: 50px 40px 50px 80px;
     background-color: #FFF;
-    z-index: 100;
+    z-index: 10;
     font-size: 22px;
     margin-left: -60px;
     -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
@@ -735,7 +723,19 @@ body.page-template-template-homepage #hpVideo {
     height: 100vh; }
   #portfolio .gallery_content {
     overflow: hidden;
-    margin-left: -270px; }
+    margin-left: -160px;
+    cursor: pointer; }
+    #portfolio .gallery_content a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 30vh;
+      text-decoration: none; }
   #portfolio .gallery_item {
     float: left;
     overflow: hidden;
@@ -759,9 +759,6 @@ body.page-template-template-homepage #hpVideo {
       height: 100vh;
       z-index: -1; }
     #portfolio .gallery_item h3 {
-      position: absolute;
-      top: 50%;
-      left: 45%;
       opacity: 0;
       color: #000;
       font-size: 14px;
@@ -778,8 +775,25 @@ body.page-template-template-homepage #hpVideo {
       font-size: 50px;
       opacity: 1; }
 
-footer {
-  display: none; }
+body.single-chantiers header {
+  width: 100vw;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 15vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-attachment: fixed; }
+  body.single-chantiers header h1 {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 50px;
+    color: #a98f56;
+    font-size: 50px;
+    display: inline-block; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -797,7 +811,7 @@ footer {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0; }
+  margin: 1.5em auto; }
 
 .page-links {
   clear: both;

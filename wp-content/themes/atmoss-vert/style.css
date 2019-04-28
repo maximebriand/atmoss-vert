@@ -51,6 +51,12 @@ $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
+/* line 4, sass/variables-site/_structure.scss */
+.container {
+  width: 1400px;
+  margin: auto;
+}
+
 /*--------------------------------------------------------------
  # Materialize
 --------------------------------------------------------------*/
@@ -610,7 +616,7 @@ nav:before {
   }*/
 }
 /* line 226, sass/navigation/_menus.scss */
-#primary-menu ul li:hover a {
+#primary-menu ul li:hover a, #primary-menu ul li:hover a:focus {
   color: #a98f56;
   background: #FFF;
   padding: 10px 50px;
@@ -618,76 +624,54 @@ nav:before {
   transition: color 1s;
 }
 /* line 234, sass/navigation/_menus.scss */
-#primary-menu ul li:hover:before {
-  left: 0;
-  right: auto;
-  width: 100%;
-}
-/* line 239, sass/navigation/_menus.scss */
-#primary-menu ul li:hover:after {
-  opacity: 1;
-  padding: 0 20px;
-  transform: translate(0px, 6px);
-  transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out;
-}
-/* line 247, sass/navigation/_menus.scss */
 #primary-menu ul li a {
   text-decoration: none;
 }
-/* line 250, sass/navigation/_menus.scss */
+/* line 237, sass/navigation/_menus.scss */
+#primary-menu ul li a:focus {
+  color: #fff;
+}
+/* line 240, sass/navigation/_menus.scss */
 .open #primary-menu ul li {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(1) {
   transition-delay: 0.75s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(2) {
   transition-delay: 0.85s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(3) {
   transition-delay: 0.95s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(4) {
   transition-delay: 1.05s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(5) {
   transition-delay: 1.15s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(6) {
   transition-delay: 1.25s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(7) {
   transition-delay: 1.35s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(8) {
   transition-delay: 1.45s;
 }
-/* line 256, sass/navigation/_menus.scss */
+/* line 246, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(9) {
   transition-delay: 1.55s;
-}
-
-/* line 262, sass/navigation/_menus.scss */
-article {
-  padding: 24px;
-  max-width: 600px;
-  margin: 60px auto;
-  transition: 0.2s ease-out;
-}
-/* line 267, sass/navigation/_menus.scss */
-.open article {
-  transform: scale(0.92);
-  transition: transform 0.2s 0.41s ease-out;
 }
 
 @keyframes menu-animation {
@@ -925,22 +909,22 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translateY(-50%);
 }
 
-/* line 60, sass/site/homepage/_homepage-video.scss */
+/* line 1, sass/site/homepage/_portfolio.scss */
 #portfolio {
   height: 100vh;
 }
-/* line 62, sass/site/homepage/_homepage-video.scss */
+/* line 3, sass/site/homepage/_portfolio.scss */
 #portfolio img {
   display: block;
   margin: 0px;
   max-width: none;
 }
-/* line 69, sass/site/homepage/_homepage-video.scss */
+/* line 10, sass/site/homepage/_portfolio.scss */
 #portfolio .content_title {
   position: absolute;
   padding: 50px 40px 50px 80px;
   background-color: #FFF;
-  z-index: 100;
+  z-index: 10;
   font-size: 22px;
   margin-left: -60px;
   -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
@@ -948,25 +932,39 @@ body.page-template-template-homepage #hpVideo .video video {
   -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
 }
-/* line 83, sass/site/homepage/_homepage-video.scss */
+/* line 24, sass/site/homepage/_portfolio.scss */
 #portfolio .content_title .text {
   -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
 }
-/* line 91, sass/site/homepage/_homepage-video.scss */
+/* line 32, sass/site/homepage/_portfolio.scss */
 #portfolio .content_slider {
   width: 100%;
   overflow: hidden;
   height: 100vh;
 }
-/* line 98, sass/site/homepage/_homepage-video.scss */
+/* line 39, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_content {
   overflow: hidden;
-  margin-left: -270px;
+  margin-left: -160px;
+  cursor: pointer;
 }
-/* line 105, sass/site/homepage/_homepage-video.scss */
+/* line 44, sass/site/homepage/_portfolio.scss */
+#portfolio .gallery_content a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 30vh;
+  text-decoration: none;
+}
+/* line 58, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item {
   float: left;
   overflow: hidden;
@@ -982,7 +980,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   position: relative;
 }
-/* line 121, sass/site/homepage/_homepage-video.scss */
+/* line 74, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item img {
   position: relative;
   -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
@@ -992,11 +990,8 @@ body.page-template-template-homepage #hpVideo .video video {
   height: 100vh;
   z-index: -1;
 }
-/* line 132, sass/site/homepage/_homepage-video.scss */
+/* line 85, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item h3 {
-  position: absolute;
-  top: 50%;
-  left: 45%;
   opacity: 0;
   color: #000;
   font-size: 14px;
@@ -1008,7 +1003,7 @@ body.page-template-template-homepage #hpVideo .video video {
   -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
 }
-/* line 148, sass/site/homepage/_homepage-video.scss */
+/* line 98, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item:hover h3 {
   transition: all 0.9s;
   color: #a98f56;
@@ -1016,9 +1011,28 @@ body.page-template-template-homepage #hpVideo .video video {
   opacity: 1;
 }
 
-/* line 158, sass/site/homepage/_homepage-video.scss */
-footer {
-  display: none;
+/* line 2, sass/site/_chantiers.scss */
+body.single-chantiers header {
+  width: 100vw;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 15vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-attachment: fixed;
+}
+/* line 15, sass/site/_chantiers.scss */
+body.single-chantiers header h1 {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 50px;
+  color: #a98f56;
+  font-size: 50px;
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -1044,7 +1058,7 @@ footer {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: 1.5em auto;
 }
 
 /* line 20, sass/site/primary/_posts-and-pages.scss */

@@ -223,29 +223,19 @@ nav {
 			opacity 0.1s ease-out;
 		}*/
 		&:hover {
-			a {
+			a, a:focus {
 				color: $primary-color;
 				background: #FFF;
 				padding:10px 50px;
 				transition: background-color 1s;
 				transition: color 1s;
-
-			}
-			&:before {
-				left: 0;
-				right: auto;
-				width: 100%;
-			}
-			&:after {
-				opacity: 1;
-				padding: 0 20px;
-				transform: translate(0px, 6px);
-				transition: transform 0.2s 0.14s ease-out,
-				opacity 0.2s 0.14s ease-out;
 			}
 		}
 		a {
 			text-decoration: none;
+		}
+		a:focus{
+			color: #fff;
 		}
 		.open & {
 			opacity: 1;
@@ -259,16 +249,6 @@ nav {
 	}
 }
 
-article {
-	padding: 24px;
-	max-width: 600px;
-	margin: 60px auto;
-	transition: 0.2s ease-out;
-	.open & {
-		transform: scale(0.92);
-		transition: transform 0.2s 0.41s ease-out;
-	}
-}
 
 @keyframes menu-animation {
 	0% {

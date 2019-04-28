@@ -18,6 +18,10 @@ $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
+.container {
+  width: 1400px;
+  margin: auto; }
+
 /**
  * Shop tables
  */
