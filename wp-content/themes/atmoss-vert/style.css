@@ -71,7 +71,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -80,15 +80,17 @@ textarea {
 /* line 1, sass/typography/_headings.scss */
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  color: #a98f56;
+  font-family: 'kionaregular', sans-serif;
 }
 
-/* line 5, sass/typography/_headings.scss */
+/* line 7, sass/typography/_headings.scss */
 .main-navigation a,
 .main-navigation a:visited {
   color: #f9f9f9;
 }
 
-/* line 12, sass/typography/_headings.scss */
+/* line 14, sass/typography/_headings.scss */
 #hpVideo hgroup {
   color: white;
 }
@@ -374,103 +376,19 @@ html, body {
 }
 
 /* line 22, sass/navigation/_menus.scss */
-body {
-  background-color: #fcfcf4;
-  font-family: "arial", sans-serif;
-}
-
-/* line 27, sass/navigation/_menus.scss */
-p {
-  font-size: 20px;
-  line-height: 28px;
-  margin: 0 0 18px;
-}
-/* line 31, sass/navigation/_menus.scss */
-p span {
-  position: relative;
-  display: block;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 12px 20px;
-  margin-bottom: 24px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px;
-}
-/* line 40, sass/navigation/_menus.scss */
-p span:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -12px;
-  margin: auto;
-  background-color: #98B296;
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3px;
-}
-/* line 51, sass/navigation/_menus.scss */
-p span:after {
-  content: '↖';
-  color: #fcfcf4;
-  font-size: 17px;
-  font-style: normal;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -8px;
-  margin: auto;
-  height: 18px;
-  transform: rotate(45deg);
-}
-@media (min-width: 700px) {
-  /* line 51, sass/navigation/_menus.scss */
-  p span:after {
-    transform: rotate(0deg);
-  }
-}
-
-/* line 68, sass/navigation/_menus.scss */
-h1 {
-  font-size: 40px;
-  font-weight: normal;
-    /*
-	line-height: 44px;
-    */
-  text-align: center;
-  margin-bottom: 18px;
-}
-@media (min-width: 500px) {
-  /* line 68, sass/navigation/_menus.scss */
-  h1 {
-    font-size: 60px;
-    line-height: 64px;
-  }
-}
-
-/* line 82, sass/navigation/_menus.scss */
-h3 {
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-/* line 89, sass/navigation/_menus.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 93, sass/navigation/_menus.scss */
+/* line 26, sass/navigation/_menus.scss */
 ul li {
   cursor: pointer;
   padding: 6px 20px;
   font-size: 48px;
 }
 
-/* line 100, sass/navigation/_menus.scss */
+/* line 33, sass/navigation/_menus.scss */
 button {
   opacity: 0.6;
   background-color: transparent;
@@ -484,7 +402,7 @@ button {
   outline: none;
   transition: opacity 0.2s ease-out;
 }
-/* line 112, sass/navigation/_menus.scss */
+/* line 45, sass/navigation/_menus.scss */
 button:before {
   content: "";
   position: absolute;
@@ -498,7 +416,7 @@ button:before {
   background: linear-gradient(to bottom, #a98f56, #a98f56 20%, transparent 20%, transparent 40%, #a98f56 40%, #a98f56 60%, transparent 60%, transparent 80%, #a98f56 80%, #a98f56 100%);
   transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
 }
-/* line 128, sass/navigation/_menus.scss */
+/* line 61, sass/navigation/_menus.scss */
 button:after {
   opacity: 0;
   content: '×';
@@ -511,35 +429,35 @@ button:after {
   line-height: 0;
   transition: opacity 0.4s ease-out;
 }
-/* line 140, sass/navigation/_menus.scss */
+/* line 73, sass/navigation/_menus.scss */
 button:active {
   transform: translateY(2px);
 }
-/* line 143, sass/navigation/_menus.scss */
+/* line 76, sass/navigation/_menus.scss */
 button:focus {
   background-color: transparent;
 }
-/* line 146, sass/navigation/_menus.scss */
+/* line 79, sass/navigation/_menus.scss */
 button:hover {
   opacity: 1;
 }
-/* line 149, sass/navigation/_menus.scss */
+/* line 82, sass/navigation/_menus.scss */
 .open button {
   opacity: 1;
 }
-/* line 151, sass/navigation/_menus.scss */
+/* line 84, sass/navigation/_menus.scss */
 .open button:before {
   opacity: 0;
   width: 0;
 }
-/* line 155, sass/navigation/_menus.scss */
+/* line 88, sass/navigation/_menus.scss */
 .open button:after {
   opacity: 1;
   transform: translate3d(0, 0, 0) rotate(360deg);
   transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
 }
 
-/* line 165, sass/navigation/_menus.scss */
+/* line 98, sass/navigation/_menus.scss */
 nav {
   z-index: 11;
   position: fixed;
@@ -553,7 +471,7 @@ nav {
   backface-visibility: hidden;
   overflow: hidden;
 }
-/* line 174, sass/navigation/_menus.scss */
+/* line 107, sass/navigation/_menus.scss */
 nav:before {
   content: '';
   position: absolute;
@@ -570,16 +488,16 @@ nav:before {
   transform: scale(0.04), translateY(9999px);
   overflow: hidden;
 }
-/* line 185, sass/navigation/_menus.scss */
+/* line 118, sass/navigation/_menus.scss */
 .open nav {
   top: 0;
 }
-/* line 187, sass/navigation/_menus.scss */
+/* line 120, sass/navigation/_menus.scss */
 .open nav:before {
   animation: menu-animation 0.8s ease-out forwards;
 }
 
-/* line 193, sass/navigation/_menus.scss */
+/* line 126, sass/navigation/_menus.scss */
 #primary-menu ul {
   position: absolute;
   top: 50%;
@@ -589,7 +507,7 @@ nav:before {
   transform: translate3d(-50%, -50%, 0);
   color: white;
 }
-/* line 201, sass/navigation/_menus.scss */
+/* line 134, sass/navigation/_menus.scss */
 #primary-menu ul li {
   opacity: 0;
   text-align: center;
@@ -615,7 +533,7 @@ nav:before {
   	opacity 0.1s ease-out;
   }*/
 }
-/* line 226, sass/navigation/_menus.scss */
+/* line 159, sass/navigation/_menus.scss */
 #primary-menu ul li:hover a, #primary-menu ul li:hover a:focus {
   color: #a98f56;
   background: #FFF;
@@ -623,53 +541,53 @@ nav:before {
   transition: background-color 1s;
   transition: color 1s;
 }
-/* line 234, sass/navigation/_menus.scss */
+/* line 167, sass/navigation/_menus.scss */
 #primary-menu ul li a {
   text-decoration: none;
 }
-/* line 237, sass/navigation/_menus.scss */
+/* line 170, sass/navigation/_menus.scss */
 #primary-menu ul li a:focus {
   color: #fff;
 }
-/* line 240, sass/navigation/_menus.scss */
+/* line 173, sass/navigation/_menus.scss */
 .open #primary-menu ul li {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(1) {
   transition-delay: 0.75s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(2) {
   transition-delay: 0.85s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(3) {
   transition-delay: 0.95s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(4) {
   transition-delay: 1.05s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(5) {
   transition-delay: 1.15s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(6) {
   transition-delay: 1.25s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(7) {
   transition-delay: 1.35s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(8) {
   transition-delay: 1.45s;
 }
-/* line 246, sass/navigation/_menus.scss */
+/* line 179, sass/navigation/_menus.scss */
 .open #primary-menu ul li:nth-child(9) {
   transition-delay: 1.55s;
 }
@@ -730,7 +648,7 @@ nav:before {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #21759b;
+  color: #f9f9f9;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -874,7 +792,6 @@ body.page-template-template-homepage #hpVideo header {
 }
 /* line 20, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup {
-  font-family: 'kionaregular';
   font-weight: 900;
   position: absolute;
   top: 10%;
@@ -882,24 +799,28 @@ body.page-template-template-homepage #hpVideo header hgroup {
   bottom: 0;
   z-index: 10;
 }
-/* line 29, sass/site/homepage/_homepage-video.scss */
+/* line 28, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
+  color: #f9f9f9;
+}
+/* line 31, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h1 {
   font-size: 10rem;
   text-align: left;
   line-height: 10rem;
 }
-/* line 35, sass/site/homepage/_homepage-video.scss */
+/* line 37, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h2 {
   font-size: 2.5rem;
   text-align: left;
 }
-/* line 42, sass/site/homepage/_homepage-video.scss */
+/* line 44, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo .video {
   min-width: 65%;
   width: 100%;
   overflow: hidden;
 }
-/* line 47, sass/site/homepage/_homepage-video.scss */
+/* line 49, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo .video video {
   width: 100%;
   min-height: 100vh;
@@ -966,6 +887,7 @@ body.page-template-template-homepage #hpVideo .video video {
 }
 /* line 58, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item {
+  cursor: pointer;
   float: left;
   overflow: hidden;
   vertical-align: top;
@@ -980,7 +902,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   position: relative;
 }
-/* line 74, sass/site/homepage/_portfolio.scss */
+/* line 75, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item img {
   position: relative;
   -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
@@ -990,7 +912,7 @@ body.page-template-template-homepage #hpVideo .video video {
   height: 100vh;
   z-index: -1;
 }
-/* line 85, sass/site/homepage/_portfolio.scss */
+/* line 86, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item h3 {
   opacity: 0;
   color: #000;
@@ -1003,7 +925,7 @@ body.page-template-template-homepage #hpVideo .video video {
   -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
 }
-/* line 98, sass/site/homepage/_portfolio.scss */
+/* line 99, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item:hover h3 {
   transition: all 0.9s;
   color: #a98f56;
@@ -1011,7 +933,11 @@ body.page-template-template-homepage #hpVideo .video video {
   opacity: 1;
 }
 
-/* line 2, sass/site/_chantiers.scss */
+/* line 1, sass/site/_chantiers.scss */
+body.single-chantiers {
+  background: #11100e;
+}
+/* line 3, sass/site/_chantiers.scss */
 body.single-chantiers header {
   width: 100vw;
   height: 65vh;
@@ -1025,7 +951,7 @@ body.single-chantiers header {
   align-items: flex-end;
   background-attachment: fixed;
 }
-/* line 15, sass/site/_chantiers.scss */
+/* line 16, sass/site/_chantiers.scss */
 body.single-chantiers header h1 {
   margin: 0;
   background: rgba(0, 0, 0, 0.9);
@@ -1033,6 +959,16 @@ body.single-chantiers header h1 {
   color: #a98f56;
   font-size: 50px;
   display: inline-block;
+}
+/* line 26, sass/site/_chantiers.scss */
+body.single-chantiers .content {
+  column-count: 2;
+  column-gap: 40px;
+  color: #f9f9f9;
+}
+/* line 31, sass/site/_chantiers.scss */
+body.single-chantiers .content p:first-child {
+  margin-top: 0;
 }
 
 /*--------------------------------------------------------------

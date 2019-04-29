@@ -1,4 +1,5 @@
 body.single-chantiers {
+  background: $color__background-body;
   header{
     width: 100vw;
     height:65vh;
@@ -20,6 +21,15 @@ body.single-chantiers {
       font-size: 50px;
       display: inline-block;
 
+    }
+  }
+  .content {
+    column-count: 2;
+    column-gap: 40px;
+    color: $color__text-screen;
+
+    p:first-child{
+      margin-top: 0;
     }
   }
 }

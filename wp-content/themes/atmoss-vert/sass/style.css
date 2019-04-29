@@ -68,13 +68,15 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  color: #a98f56;
+  font-family: 'kionaregular', sans-serif; }
 
 .main-navigation a,
 .main-navigation a:visited {
@@ -291,70 +293,6 @@ html, body {
   height: 100%;
   width: 100%; }
 
-body {
-  background-color: #fcfcf4;
-  font-family: "arial", sans-serif; }
-
-p {
-  font-size: 20px;
-  line-height: 28px;
-  margin: 0 0 18px; }
-  p span {
-    position: relative;
-    display: block;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 12px 20px;
-    margin-bottom: 24px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px; }
-    p span:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -12px;
-      margin: auto;
-      background-color: #98B296;
-      width: 24px;
-      height: 24px;
-      border-radius: 100%;
-      box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3px; }
-    p span:after {
-      content: '↖';
-      color: #fcfcf4;
-      font-size: 17px;
-      font-style: normal;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -8px;
-      margin: auto;
-      height: 18px;
-      transform: rotate(45deg); }
-      @media (min-width: 700px) {
-        p span:after {
-          transform: rotate(0deg); } }
-
-h1 {
-  font-size: 40px;
-  font-weight: normal;
-    /*
-	line-height: 44px;
-    */
-  text-align: center;
-  margin-bottom: 18px; }
-  @media (min-width: 500px) {
-    h1 {
-      font-size: 60px;
-      line-height: 64px; } }
-
-h3 {
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 60px; }
-
 ul {
   list-style: none;
   margin: 0;
@@ -557,7 +495,7 @@ nav {
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     clip-path: none;
-    color: #21759b;
+    color: #f9f9f9;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
@@ -669,13 +607,14 @@ body.page-template-template-homepage #hpVideo {
     text-align: center;
     padding-top: 20px; }
     body.page-template-template-homepage #hpVideo header hgroup {
-      font-family: 'kionaregular';
       font-weight: 900;
       position: absolute;
       top: 10%;
       left: 5%;
       bottom: 0;
       z-index: 10; }
+      body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
+        color: #f9f9f9; }
       body.page-template-template-homepage #hpVideo header hgroup h1 {
         font-size: 10rem;
         text-align: left;
@@ -737,6 +676,7 @@ body.page-template-template-homepage #hpVideo {
       padding-bottom: 30vh;
       text-decoration: none; }
   #portfolio .gallery_item {
+    cursor: pointer;
     float: left;
     overflow: hidden;
     vertical-align: top;
@@ -775,25 +715,33 @@ body.page-template-template-homepage #hpVideo {
       font-size: 50px;
       opacity: 1; }
 
-body.single-chantiers header {
-  width: 100vw;
-  height: 65vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-bottom: 15vh;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-attachment: fixed; }
-  body.single-chantiers header h1 {
-    margin: 0;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 10px 50px;
-    color: #a98f56;
-    font-size: 50px;
-    display: inline-block; }
+body.single-chantiers {
+  background: #11100e; }
+  body.single-chantiers header {
+    width: 100vw;
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 15vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-attachment: fixed; }
+    body.single-chantiers header h1 {
+      margin: 0;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px 50px;
+      color: #a98f56;
+      font-size: 50px;
+      display: inline-block; }
+  body.single-chantiers .content {
+    column-count: 2;
+    column-gap: 40px;
+    color: #f9f9f9; }
+    body.single-chantiers .content p:first-child {
+      margin-top: 0; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

@@ -13,40 +13,29 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <?php
-            while ( have_posts() ) :
-                the_post();?>
+            while ( have_posts() ) : the_post();?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <header class="entry-header" style="background-image: url(<?= get_the_post_thumbnail_url();?>)">
-                    <?php
-                    the_title( '<h1 class="entry-title">', '</h1>' );
-                    ?>
-                </header><!-- .entry-header -->
+                    <header class="entry-header" style="background-image: url(<?= get_the_post_thumbnail_url();?>)">
+                        <?php
+                        the_title( '<h1 class="entry-title">', '</h1>' );
+                        ?>
+                    </header><!-- .entry-header -->
 
-                <div class="entry-content container">
-                    <?php
-                    the_content( sprintf(
-                        wp_kses(
-                        /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'atmoss-vert' ),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        get_the_title()
-                    ) );
+                    <div class="entry-content container">
+                        <h2>Ce que les clients recherchaient:</h2>
+                        <div class="content">
+                            <?php
+                            the_content();
 
-                    wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'atmoss-vert' ),
-                        'after'  => '</div>',
-                    ) );
-                    ?>
-                </div><!-- .entry-content -->
+                            wp_link_pages( array(
+                                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'atmoss-vert' ),
+                                'after'  => '</div>',
+                            ) );
+                            ?>
 
-                <footer class="entry-footer">
-                    <?php atmoss_vert_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
+                        </div>
+                    </div><!-- .entry-content -->
+
                 </article><!-- #post-<?php the_ID(); ?> -->
                 <?php
 
