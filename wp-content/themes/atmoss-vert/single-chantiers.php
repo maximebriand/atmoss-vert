@@ -26,15 +26,34 @@ get_header();
                         <div class="content">
                             <?php
                             the_content();
+                            ?>
+                        </div>
+                        <section class="beforeAfter">
+                            <figure class="cd-image-container">
+                                <div class="imgAfter" style="background-image: url("")"></div>
+                                <img src="<?= carbon_get_the_post_meta( 'img_after' );?>" alt="Original Image">
+                                <span class="cd-image-label" data-type="original">Après</span>
 
+                                <div class="cd-resize-img"> <!-- the resizable image on top -->
+                                    <img src="<?= carbon_get_the_post_meta( 'img_before' );?>" alt="Modified Image">
+                                    <span class="cd-image-label" data-type="modified">Avant</span>
+                                </div>
+
+                                <span class="cd-handle"></span>
+                            </figure> <!-- cd-image-container -->
+
+                        </section>
+                </div><!-- .entry-content -->
+
+                <?php
                             wp_link_pages( array(
                                 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'atmoss-vert' ),
                                 'after'  => '</div>',
                             ) );
                             ?>
 
-                        </div>
-                    </div><!-- .entry-content -->
+
+
 
                 </article><!-- #post-<?php the_ID(); ?> -->
                 <?php

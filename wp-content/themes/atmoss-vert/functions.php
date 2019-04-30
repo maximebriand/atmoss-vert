@@ -130,6 +130,7 @@ function atmoss_vert_scripts() {
 	wp_enqueue_style( 'atmoss-vert-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/DiagonalSlider.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'atmoss-vert-before-after', get_template_directory_uri() . '/js/before-after.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'atmoss-vert-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'atmoss-vert-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -201,13 +202,13 @@ function template_hp_cf() {
 }
 
 //add fields cpt chantiers
-//add_action( 'carbon_fields_register_fields', 'cpt_chantiers_cf' );
-
+add_action( 'carbon_fields_register_fields', 'cpt_chantiers_cf' );
 function cpt_chantiers_cf() {
     Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
         ->show_on_post_type('chantiers')
         ->add_fields( array(
-            Field::make( 'image', 'photo', 'Taille de l\'image 1800px x 900px' )->set_value_type( 'url' ),
+            Field::make( 'image', 'img_before', 'Image avant' )->set_value_type( 'url' ),
+            Field::make( 'image', 'img_after', 'Image avant' )->set_value_type( 'url' ),
         ) )
     ;
 }

@@ -13,7 +13,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
+asss
 Atmoss\' Vert is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
@@ -483,8 +483,8 @@ nav:before {
   background: rgba(169, 143, 86, 0.98);
   width: 100%;
   height: 0;
-  padding-bottom: 100%;
-  border-radius: 100%;
+  /*		 padding-bottom: 100%;
+  		 border-radius: 100%;*/
   transform: scale(0.04), translateY(9999px);
   overflow: hidden;
 }
@@ -933,11 +933,190 @@ body.page-template-template-homepage #hpVideo .video video {
   opacity: 1;
 }
 
-/* line 1, sass/site/_chantiers.scss */
+/* line 1, sass/site/_before-after.scss */
+.cd-image-container {
+  background: rebeccapurple;
+  position: relative;
+  margin: 0;
+}
+
+/* line 6, sass/site/_before-after.scss */
+.cd-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: none;
+}
+
+/* line 13, sass/site/_before-after.scss */
+.cd-resize-img img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 18, sass/site/_before-after.scss */
+.cd-image-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #ffffff;
+  padding: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+  -moz-transition: -moz-transform 0.3s 0.7s, opacity 0.3s 0.7s;
+  transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+}
+
+/* line 36, sass/site/_before-after.scss */
+.cd-image-label.is-hidden {
+  visibility: hidden;
+}
+
+/* line 39, sass/site/_before-after.scss */
+.is-visible .cd-image-label {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  color: #a98f56;
+  font-family: 'kionaregular', sans-serif;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* line 52, sass/site/_before-after.scss */
+.cd-resize-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 68, sass/site/_before-after.scss */
+.cd-resize-img .imgBeforeAfterSlider {
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+/* line 78, sass/site/_before-after.scss */
+.cd-resize-img .cd-image-label {
+  right: auto;
+  left: 0;
+}
+
+/* line 82, sass/site/_before-after.scss */
+.is-visible .cd-resize-img {
+  width: 50%;
+  /* bounce in animation of the modified image */
+  -webkit-animation: cd-bounce-in 0.7s;
+  -moz-animation: cd-bounce-in 0.7s;
+  animation: cd-bounce-in 0.7s;
+}
+
+@-webkit-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@-moz-keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes cd-bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+/* line 123, sass/site/_before-after.scss */
+.cd-handle {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  /* center the element */
+  left: 50%;
+  top: 50%;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-radius: 50%;
+  background: #2d662d url("https://codyhouse.co/demo/image-comparison-slider/img/cd-arrows.svg") no-repeat center center;
+  cursor: move;
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) scale(0);
+  -moz-transform: translate3d(0, 0, 0) scale(0);
+  -ms-transform: translate3d(0, 0, 0) scale(0);
+  -o-transform: translate3d(0, 0, 0) scale(0);
+  transform: translate3d(0, 0, 0) scale(0);
+}
+
+/* line 143, sass/site/_before-after.scss */
+.cd-handle.draggable {
+  /* change background color when element is active */
+  background-color: #a98f56;
+}
+
+/* line 147, sass/site/_before-after.scss */
+.is-visible .cd-handle {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  -moz-transform: translate3d(0, 0, 0) scale(1);
+  -ms-transform: translate3d(0, 0, 0) scale(1);
+  -o-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+  -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0s 0.7s;
+  -moz-transition: -moz-transform 0.3s 0.7s, opacity 0s 0.7s;
+  transition: transform 0.3s 0.7s, opacity 0s 0.7s;
+}
+
+/* line 3, sass/site/_chantiers.scss */
 body.single-chantiers {
   background: #11100e;
 }
-/* line 3, sass/site/_chantiers.scss */
+/* line 5, sass/site/_chantiers.scss */
 body.single-chantiers header {
   width: 100vw;
   height: 65vh;
@@ -951,7 +1130,7 @@ body.single-chantiers header {
   align-items: flex-end;
   background-attachment: fixed;
 }
-/* line 16, sass/site/_chantiers.scss */
+/* line 18, sass/site/_chantiers.scss */
 body.single-chantiers header h1 {
   margin: 0;
   background: rgba(0, 0, 0, 0.9);
@@ -960,13 +1139,13 @@ body.single-chantiers header h1 {
   font-size: 50px;
   display: inline-block;
 }
-/* line 26, sass/site/_chantiers.scss */
+/* line 28, sass/site/_chantiers.scss */
 body.single-chantiers .content {
   column-count: 2;
   column-gap: 40px;
   color: #f9f9f9;
 }
-/* line 31, sass/site/_chantiers.scss */
+/* line 33, sass/site/_chantiers.scss */
 body.single-chantiers .content p:first-child {
   margin-top: 0;
 }
