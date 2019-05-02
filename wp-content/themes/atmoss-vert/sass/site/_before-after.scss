@@ -1,5 +1,9 @@
+//source: https://codyhouse.co/gem/css-jquery-image-comparison-slider
+.beforeAfter {
+  margin: 50px auto;
+}
 .cd-image-container {
-  background: rebeccapurple;
+  background: $secondary-color;
   position: relative;
   margin: 0;
 }
@@ -17,7 +21,7 @@
 
 .cd-image-label {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   color: #ffffff;
   padding: 1em;
@@ -130,7 +134,8 @@
   margin-left: -22px;
   margin-top: -22px;
   border-radius: 50%;
-  background: #2d662d url("https://codyhouse.co/demo/image-comparison-slider/img/cd-arrows.svg") no-repeat center center;
+  //todo: make the arrow local
+  background: $secondary-color url("https://codyhouse.co/demo/image-comparison-slider/img/cd-arrows.svg") no-repeat center center;
   cursor: move;
   box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   opacity: 0;

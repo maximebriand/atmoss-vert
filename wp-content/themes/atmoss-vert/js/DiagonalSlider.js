@@ -1,12 +1,17 @@
-/*
-DiagonalSlider.js
-jQuery plugin to create diagonal slider
-(c) Innvenio 2015 (@innvenio)
-*/
 jQuery(document).ready(function( $ ) {
+
+    /*
+    source:
+     DiagonalSlider.js
+     jQuery plugin to create diagonal slider
+     (c) Innvenio 2015 (@innvenio)
+
+     modified to make a slider with define width and an extendable div
+     */
 
     function loadSlider(slider,default_text){
         var w;
+        var x;
         var width = 0;
         var image_width = slider.find('.gallery_item img').width();
         var image_height = slider.find('.gallery_item img').height();
@@ -20,11 +25,20 @@ jQuery(document).ready(function( $ ) {
             valor = length_gallery_item * 40;
         }
         w = $(window).width() + ($(window).width() / length_gallery_item) + valor;
-        width = w / 3;
-        slider.width(w);
+        if(length_gallery_item > 4) {
+            width = w / 2;
+            slider.width(length_gallery_item * 400 - 300);
+            slider.find('.gallery_item').width((400));
+            slider.find('.gallery_item img').css('margin-left', -400);
+            x = 300;
+        } else {
+            width = w / 3;
+            slider.width(w);
+            slider.find('.gallery_item').width((w / length_gallery_item));
+            slider.find('.gallery_item img').css('margin-left', ((image_width / 2) * -1) + (w / length_gallery_item));
+            x = (w / length_gallery_item) - (width / length_gallery_item - 1);
+        }
         slider.height($(window).height());
-        slider.find('.gallery_item').width((w / length_gallery_item));
-        slider.find('.gallery_item img').css('margin-left', ((image_width / 2) * -1) + (w / length_gallery_item));
         if($(window).height()<image_height){
             slider.find('.gallery_item img').css('top', ((image_height-$(window).height())/2)*-1);
         }
@@ -65,7 +79,7 @@ jQuery(document).ready(function( $ ) {
         function zoomOut(callback){
             slider.find('.gallery_item').each(function(){
                 var x = w / length_gallery_item;
-                $(this).css('width', x);
+                $(this).css('width', 400);
             });
 
             setTimeout(function(){
@@ -79,7 +93,6 @@ jQuery(document).ready(function( $ ) {
 
         function zoomIn(item, callback){
             slider.find('.gallery_item').each(function(){
-                var x = (w / length_gallery_item) - (width / length_gallery_item - 1);
                 if ($(this).attr('data-position') != item.attr('data-position')){
                     $(this).css('width', x);
                 }
@@ -150,12 +163,41 @@ function redimensionnement(){
     }
 }
 
-    // Au chargement initial
-    redimensionnement();
+// Au chargement initial
+redimensionnement();
 
-    // En cas de redimensionnement de la fenêtre
-    $(window).resize(function(){
-        redimensionnement();
-    });
+// En cas de redimensionnement de la fenêtre
+$(window).resize(function(){
+    redimensionnement();
+});
+
+    //mouse hover scroll
+/*    var b = null;
+    $( '.gallery_content' ).on( 'mousemove', function(e) {
+        const speed = 200;
+        var container = $(this).parent();
+        if ((e.pageX - container.offset().left) < container.width() / 2) {
+            var direction = function() {
+                container.animate( {scrollLeft: '-='}, 1000, 'linear', direction );
+            }
+            if ((b == false) || (b == null)) {
+                b = true;
+                container.stop( true ).animate( {scrollLeft: '-='  + speed}, 1000, 'linear', direction );
+            }
+        } else {
+            var direction = function() {
+
+                container.animate( {scrollLeft: '+='  + speed}, 1000, 'linear', direction );
+            }
+            if ((b == true) || (b == null)) {
+                b = false;
+                container.stop( true ).animate( {scrollLeft: '+=' + speed}, 1000, 'linear', direction );
+            }
+        }
+    }).on ( 'mouseleave', function() {
+        var container = $(this).parent();
+        container.stop( true );
+        b = null;
+    });*/
 
 });

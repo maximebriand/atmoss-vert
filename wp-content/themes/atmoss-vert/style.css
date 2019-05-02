@@ -57,6 +57,20 @@ $link-color: color("light-blue", "darken-1") !default;*/
   margin: auto;
 }
 
+@media screen and (max-width: 1400px) {
+  /* line 10, sass/variables-site/_structure.scss */
+  .container {
+    width: 960px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* line 17, sass/variables-site/_structure.scss */
+  .container {
+    width: 720px;
+    margin: auto;
+  }
+}
 /*--------------------------------------------------------------
  # Materialize
 --------------------------------------------------------------*/
@@ -498,7 +512,7 @@ nav:before {
 }
 
 /* line 126, sass/navigation/_menus.scss */
-#primary-menu ul {
+ul#primary-menu {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -508,7 +522,7 @@ nav:before {
   color: white;
 }
 /* line 134, sass/navigation/_menus.scss */
-#primary-menu ul li {
+ul#primary-menu li {
   opacity: 0;
   text-align: center;
   transform: translate3d(0, 36px, 0);
@@ -534,7 +548,7 @@ nav:before {
   }*/
 }
 /* line 159, sass/navigation/_menus.scss */
-#primary-menu ul li:hover a, #primary-menu ul li:hover a:focus {
+ul#primary-menu li:hover a, ul#primary-menu li:hover a:focus {
   color: #a98f56;
   background: #FFF;
   padding: 10px 50px;
@@ -542,53 +556,53 @@ nav:before {
   transition: color 1s;
 }
 /* line 167, sass/navigation/_menus.scss */
-#primary-menu ul li a {
+ul#primary-menu li a {
   text-decoration: none;
 }
 /* line 170, sass/navigation/_menus.scss */
-#primary-menu ul li a:focus {
+ul#primary-menu li a:focus {
   color: #fff;
 }
 /* line 173, sass/navigation/_menus.scss */
-.open #primary-menu ul li {
+.open ul#primary-menu li {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(1) {
+.open ul#primary-menu li:nth-child(1) {
   transition-delay: 0.75s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(2) {
+.open ul#primary-menu li:nth-child(2) {
   transition-delay: 0.85s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(3) {
+.open ul#primary-menu li:nth-child(3) {
   transition-delay: 0.95s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(4) {
+.open ul#primary-menu li:nth-child(4) {
   transition-delay: 1.05s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(5) {
+.open ul#primary-menu li:nth-child(5) {
   transition-delay: 1.15s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(6) {
+.open ul#primary-menu li:nth-child(6) {
   transition-delay: 1.25s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(7) {
+.open ul#primary-menu li:nth-child(7) {
   transition-delay: 1.35s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(8) {
+.open ul#primary-menu li:nth-child(8) {
   transition-delay: 1.45s;
 }
 /* line 179, sass/navigation/_menus.scss */
-.open #primary-menu ul li:nth-child(9) {
+.open ul#primary-menu li:nth-child(9) {
   transition-delay: 1.55s;
 }
 
@@ -741,29 +755,52 @@ nav:before {
 
 /*--------------------------------------------------------------
 # Content
---------------------------------------------------------------*/
+--------------------------------------------------------------  */
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-/* line 1, sass/site/primary/_header.scss */
+/*
 header#masthead {
   display: none;
-  background: #a98f56;
-  padding: 15px;
+  background: $primary-color;
+  padding:15px;
+  .container {
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+
+    nav {
+      box-shadow: none;
+      .nav-menu {
+        float: right;
+      }
+    }
+  }
+
 }
-/* line 5, sass/site/primary/_header.scss */
-header#masthead .container {
-  background: #a98f56;
+*/
+/* line 22, sass/site/primary/_header.scss */
+header {
+  width: 100vw;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 15vh;
+  text-align: center;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  background-attachment: fixed;
 }
-/* line 10, sass/site/primary/_header.scss */
-header#masthead .container nav {
-  box-shadow: none;
-}
-/* line 12, sass/site/primary/_header.scss */
-header#masthead .container nav .nav-menu {
-  float: right;
+/* line 35, sass/site/primary/_header.scss */
+header h1 {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 50px;
+  color: #a98f56;
+  font-size: 50px;
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -789,38 +826,40 @@ body.page-template-template-homepage #hpVideo header {
   max-width: 420px;
   text-align: center;
   padding-top: 20px;
+  align-items: flex-start;
 }
-/* line 20, sass/site/homepage/_homepage-video.scss */
+/* line 21, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup {
   font-weight: 900;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 5%;
   bottom: 0;
   z-index: 10;
 }
-/* line 28, sass/site/homepage/_homepage-video.scss */
+/* line 29, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
   color: #f9f9f9;
 }
-/* line 31, sass/site/homepage/_homepage-video.scss */
+/* line 32, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h1 {
   font-size: 10rem;
   text-align: left;
   line-height: 10rem;
+  background: none;
 }
-/* line 37, sass/site/homepage/_homepage-video.scss */
+/* line 39, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h2 {
   font-size: 2.5rem;
   text-align: left;
 }
-/* line 44, sass/site/homepage/_homepage-video.scss */
+/* line 46, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo .video {
   min-width: 65%;
   width: 100%;
   overflow: hidden;
 }
-/* line 49, sass/site/homepage/_homepage-video.scss */
+/* line 51, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo .video video {
   width: 100%;
   min-height: 100vh;
@@ -863,16 +902,17 @@ body.page-template-template-homepage #hpVideo .video video {
 /* line 32, sass/site/homepage/_portfolio.scss */
 #portfolio .content_slider {
   width: 100%;
-  overflow: hidden;
   height: 100vh;
 }
 /* line 39, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_content {
   overflow: hidden;
-  margin-left: -160px;
+  margin-left: -170px;
   cursor: pointer;
+  background-position: right;
+  background-size: contain;
 }
-/* line 44, sass/site/homepage/_portfolio.scss */
+/* line 46, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_content a {
   position: absolute;
   top: 0;
@@ -880,39 +920,43 @@ body.page-template-template-homepage #hpVideo .video video {
   right: 0;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
-  padding-bottom: 30vh;
+  padding-top: 50vh;
   text-decoration: none;
 }
-/* line 58, sass/site/homepage/_portfolio.scss */
+/* line 60, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item {
   cursor: pointer;
   float: left;
   overflow: hidden;
   vertical-align: top;
   margin-left: -2px;
-  -webkit-transition: width 500ms;
-  -moz-transition: width 500ms;
-  -o-transition: width 500ms;
-  transition: width 500ms;
+  -webkit-transition: width 1000ms;
+  -moz-transition: width 1000ms;
+  -o-transition: width 1000ms;
+  transition: width 1000ms;
   -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   position: relative;
 }
-/* line 75, sass/site/homepage/_portfolio.scss */
+/* line 77, sass/site/homepage/_portfolio.scss */
+#portfolio .gallery_item:last-child img {
+  opacity: 0;
+}
+/* line 80, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item img {
   position: relative;
   -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  height: 100vh;
+  height: 100%;
   z-index: -1;
 }
-/* line 86, sass/site/homepage/_portfolio.scss */
+/* line 91, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item h3 {
   opacity: 0;
   color: #000;
@@ -925,7 +969,7 @@ body.page-template-template-homepage #hpVideo .video video {
   -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
 }
-/* line 99, sass/site/homepage/_portfolio.scss */
+/* line 104, sass/site/homepage/_portfolio.scss */
 #portfolio .gallery_item:hover h3 {
   transition: all 0.9s;
   color: #a98f56;
@@ -933,14 +977,22 @@ body.page-template-template-homepage #hpVideo .video video {
   opacity: 1;
 }
 
-/* line 1, sass/site/_before-after.scss */
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+/* line 2, sass/site/_before-after.scss */
+.beforeAfter {
+  margin: 50px auto;
+}
+
+/* line 5, sass/site/_before-after.scss */
 .cd-image-container {
-  background: rebeccapurple;
+  background: #2d662d;
   position: relative;
   margin: 0;
 }
 
-/* line 6, sass/site/_before-after.scss */
+/* line 10, sass/site/_before-after.scss */
 .cd-image-container img {
   width: 100%;
   height: auto;
@@ -948,16 +1000,16 @@ body.page-template-template-homepage #hpVideo .video video {
   max-width: none;
 }
 
-/* line 13, sass/site/_before-after.scss */
+/* line 17, sass/site/_before-after.scss */
 .cd-resize-img img {
   height: 100%;
   width: auto;
 }
 
-/* line 18, sass/site/_before-after.scss */
+/* line 22, sass/site/_before-after.scss */
 .cd-image-label {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   color: #ffffff;
   padding: 1em;
@@ -974,12 +1026,12 @@ body.page-template-template-homepage #hpVideo .video video {
   transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
 }
 
-/* line 36, sass/site/_before-after.scss */
+/* line 40, sass/site/_before-after.scss */
 .cd-image-label.is-hidden {
   visibility: hidden;
 }
 
-/* line 39, sass/site/_before-after.scss */
+/* line 43, sass/site/_before-after.scss */
 .is-visible .cd-image-label {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -993,7 +1045,7 @@ body.page-template-template-homepage #hpVideo .video video {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* line 52, sass/site/_before-after.scss */
+/* line 56, sass/site/_before-after.scss */
 .cd-resize-img {
   position: absolute;
   top: 0;
@@ -1011,7 +1063,7 @@ body.page-template-template-homepage #hpVideo .video video {
   backface-visibility: hidden;
 }
 
-/* line 68, sass/site/_before-after.scss */
+/* line 72, sass/site/_before-after.scss */
 .cd-resize-img .imgBeforeAfterSlider {
   background-size: cover;
   position: absolute;
@@ -1023,13 +1075,13 @@ body.page-template-template-homepage #hpVideo .video video {
   max-width: none;
 }
 
-/* line 78, sass/site/_before-after.scss */
+/* line 82, sass/site/_before-after.scss */
 .cd-resize-img .cd-image-label {
   right: auto;
   left: 0;
 }
 
-/* line 82, sass/site/_before-after.scss */
+/* line 86, sass/site/_before-after.scss */
 .is-visible .cd-resize-img {
   width: 50%;
   /* bounce in animation of the modified image */
@@ -1071,7 +1123,7 @@ body.page-template-template-homepage #hpVideo .video video {
     width: 50%;
   }
 }
-/* line 123, sass/site/_before-after.scss */
+/* line 127, sass/site/_before-after.scss */
 .cd-handle {
   position: absolute;
   height: 44px;
@@ -1093,13 +1145,13 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translate3d(0, 0, 0) scale(0);
 }
 
-/* line 143, sass/site/_before-after.scss */
+/* line 148, sass/site/_before-after.scss */
 .cd-handle.draggable {
   /* change background color when element is active */
   background-color: #a98f56;
 }
 
-/* line 147, sass/site/_before-after.scss */
+/* line 152, sass/site/_before-after.scss */
 .is-visible .cd-handle {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
@@ -1117,37 +1169,21 @@ body.single-chantiers {
   background: #11100e;
 }
 /* line 5, sass/site/_chantiers.scss */
-body.single-chantiers header {
-  width: 100vw;
-  height: 65vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-bottom: 15vh;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-attachment: fixed;
-}
-/* line 18, sass/site/_chantiers.scss */
-body.single-chantiers header h1 {
-  margin: 0;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 10px 50px;
-  color: #a98f56;
-  font-size: 50px;
-  display: inline-block;
-}
-/* line 28, sass/site/_chantiers.scss */
 body.single-chantiers .content {
   column-count: 2;
   column-gap: 40px;
   color: #f9f9f9;
 }
-/* line 33, sass/site/_chantiers.scss */
+/* line 10, sass/site/_chantiers.scss */
 body.single-chantiers .content p:first-child {
   margin-top: 0;
+}
+
+/* line 3, sass/site/page/_page.scss */
+body.page .entry-content {
+  width: 1200px;
+  margin: auto;
+  color: whitesmoke;
 }
 
 /*--------------------------------------------------------------
@@ -1314,4 +1350,9 @@ object {
 /* line 19, sass/media/_galleries.scss */
 .gallery-caption {
   display: block;
+}
+
+/* line 108, sass/style.scss */
+footer {
+  display: none;
 }

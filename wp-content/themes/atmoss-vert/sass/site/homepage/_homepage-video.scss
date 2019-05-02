@@ -16,11 +16,12 @@ body.page-template-template-homepage {
       max-width: 420px;
       text-align: center;
       padding-top: 20px;
+      align-items: flex-start;
 
       hgroup{
         font-weight:900;
         position: absolute;
-        top:10%;
+        top:20%;
         left:5%;
         bottom:0;
         z-index: 10;
@@ -32,6 +33,7 @@ body.page-template-template-homepage {
           font-size: 10rem;
           text-align: left;
           line-height: 10rem ;
+          background: none;
 
         }
         h2 {

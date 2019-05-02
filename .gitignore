@@ -11,6 +11,8 @@ wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 wp-content/themes/atmoss-vert/.sass-cache/
+wp-content/themes/atmoss-vert/ressources
+
 
 /.htaccess
 /license.txt

@@ -104,13 +104,4 @@
 		}
 	}( container ) );
 } )();
-jQuery(document).ready(function( $ ) {
 
-	//menu navigation
-    $('button').on('click', function () {
-        $('body').toggleClass('open');
-    });
-
-    //slider
-	$('.gallery_content').createDiagonalSlider();
-});

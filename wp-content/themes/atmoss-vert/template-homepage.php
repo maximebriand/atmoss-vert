@@ -40,8 +40,26 @@ get_header();
                     </section>
                     <section id="portfolio">
                         <div class="content_slider">
-                            <div class="gallery_content">
+                            <?php $loop2 = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 1, 'order'=>'ASC', 'orderby'=>'ID') );?>
+
+                            <?php while ( $loop2->have_posts() ) :   $loop2->the_post(); ?>
+                            <div class="gallery_content" style="background-image: url(<?= the_post_thumbnail_url();?>);">
+                            <?php endwhile ; ?>
                                 <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
+                                <!--TODO: get the last thumbnail and put it as background URL of gallery_content and remove it from CSS-->
+
+
+                                <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
+                                    <div class="gallery_item">
+                                        <img src="<?= the_post_thumbnail_url();?>">
+                                        <a href="<?= get_permalink(); ?>">
+                                            <h3>
+                                                <?= get_the_title();?>
+                                            </h3>
+                                        </a>
+                                    </div>
+                                <?php endwhile ; ?>
+                              <!--TODO: remove this degub simulation-->
                                 <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
                                     <div class="gallery_item">
                                         <img src="<?= the_post_thumbnail_url();?>">

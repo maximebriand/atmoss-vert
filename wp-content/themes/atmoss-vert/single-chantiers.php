@@ -30,7 +30,6 @@ get_header();
                         </div>
                         <section class="beforeAfter">
                             <figure class="cd-image-container">
-                                <div class="imgAfter" style="background-image: url("")"></div>
                                 <img src="<?= carbon_get_the_post_meta( 'img_after' );?>" alt="Original Image">
                                 <span class="cd-image-label" data-type="original">Après</span>
 
@@ -55,7 +54,8 @@ get_header();
 
 
 
-                </article><!-- #post-<?php the_ID(); ?> -->
+                </article>
+                <!-- #post-<?php the_ID(); ?> -->
                 <?php
 
                 // If comments are open or we have at least one comment, load up the comment template.
