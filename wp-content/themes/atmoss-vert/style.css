@@ -902,6 +902,7 @@ body.page-template-template-homepage #hpVideo .video video {
 /* line 32, sass/site/homepage/_portfolio.scss */
 #portfolio .content_slider {
   width: 100%;
+  overflow-x: scroll;
   height: 100vh;
 }
 /* line 39, sass/site/homepage/_portfolio.scss */

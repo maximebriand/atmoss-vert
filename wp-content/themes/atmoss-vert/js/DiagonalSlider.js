@@ -29,7 +29,7 @@ jQuery(document).ready(function( $ ) {
             width = w / 2;
             slider.width(length_gallery_item * 400 - 300);
             slider.find('.gallery_item').width((400));
-            slider.find('.gallery_item img').css('margin-left', -400);
+            slider.find('.gallery_item img').css('margin-left', -300);
             x = 300;
         } else {
             width = w / 3;
@@ -171,33 +171,5 @@ $(window).resize(function(){
     redimensionnement();
 });
 
-    //mouse hover scroll
-/*    var b = null;
-    $( '.gallery_content' ).on( 'mousemove', function(e) {
-        const speed = 200;
-        var container = $(this).parent();
-        if ((e.pageX - container.offset().left) < container.width() / 2) {
-            var direction = function() {
-                container.animate( {scrollLeft: '-='}, 1000, 'linear', direction );
-            }
-            if ((b == false) || (b == null)) {
-                b = true;
-                container.stop( true ).animate( {scrollLeft: '-='  + speed}, 1000, 'linear', direction );
-            }
-        } else {
-            var direction = function() {
-
-                container.animate( {scrollLeft: '+='  + speed}, 1000, 'linear', direction );
-            }
-            if ((b == true) || (b == null)) {
-                b = false;
-                container.stop( true ).animate( {scrollLeft: '+=' + speed}, 1000, 'linear', direction );
-            }
-        }
-    }).on ( 'mouseleave', function() {
-        var container = $(this).parent();
-        container.stop( true );
-        b = null;
-    });*/
 
 });

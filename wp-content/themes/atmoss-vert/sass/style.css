@@ -695,6 +695,7 @@ body.page-template-template-homepage #hpVideo {
     transform: translate3d(0, 0, 0) skew(20deg, 0deg); }
   #portfolio .content_slider {
     width: 100%;
+    overflow-x: scroll;
     height: 100vh; }
   #portfolio .gallery_content {
     overflow: hidden;
