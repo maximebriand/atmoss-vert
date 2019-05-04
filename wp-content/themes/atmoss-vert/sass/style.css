@@ -648,9 +648,6 @@ body.page-template-template-homepage #hpVideo {
       top: 50%;
       transform: translateY(-50%); }
 
-#portfolio body {
-  background: #aaa;
-  font-family: "Open Sans", sans-serif; }
 #portfolio .slider {
   position: relative;
   height: 100vh;

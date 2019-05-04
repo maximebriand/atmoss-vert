@@ -48,13 +48,15 @@ get_header();
                                 <div class="slider__wrap">
                                     <div class="slider__back"style="background-image:url(<?= get_the_post_thumbnail_url();?>)"></div>
                                 </div>
-                                <div class="slider__inner" style="background-image:url(<?= get_the_post_thumbnail_url();?>)">
-                                    <div class="slider__content">
-                                        <h3>
-                                            <?= get_the_title();?>
-                                        </h3>
+                                <a href="<?= get_post_permalink(); ?>">
+                                    <div class="slider__inner" style="background-image:url(<?= get_the_post_thumbnail_url();?>)">
+                                        <div class="slider__content">
+                                            <h3>
+                                                <?= get_the_title();?>
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <?php endwhile ; ?>
 
