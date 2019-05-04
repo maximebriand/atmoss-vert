@@ -20,11 +20,11 @@ $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
 /* line 4, sass/variables-site/_structure.scss */
 .container {
-  width: 1400px;
+  width: 1300px !important;
   margin: auto;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1401px) {
   /* line 10, sass/variables-site/_structure.scss */
   .container {
     width: 960px;

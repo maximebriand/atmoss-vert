@@ -53,11 +53,11 @@ $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
 /* line 4, sass/variables-site/_structure.scss */
 .container {
-  width: 1400px;
+  width: 1300px !important;
   margin: auto;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1401px) {
   /* line 10, sass/variables-site/_structure.scss */
   .container {
     width: 960px;
@@ -846,12 +846,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translateY(-50%);
 }
 
-/* line 16, sass/site/homepage/_portfolio.scss */
-#portfolio body {
-  background: #aaa;
-  font-family: "Open Sans", sans-serif;
-}
-/* line 21, sass/site/homepage/_portfolio.scss */
+/* line 20, sass/site/homepage/_portfolio.scss */
 #portfolio .slider {
   position: relative;
   height: 100vh;
@@ -859,7 +854,7 @@ body.page-template-template-homepage #hpVideo .video video {
   background: #777;
   overflow: hidden;
 }
-/* line 28, sass/site/homepage/_portfolio.scss */
+/* line 27, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__wrap {
   position: absolute;
   width: 100vw;
@@ -874,11 +869,11 @@ body.page-template-template-homepage #hpVideo .video video {
   transition-delay: 450ms;
   opacity: 0;
 }
-/* line 41, sass/site/homepage/_portfolio.scss */
+/* line 40, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__wrap--hacked {
   opacity: 1;
 }
-/* line 46, sass/site/homepage/_portfolio.scss */
+/* line 45, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__back {
   position: absolute;
   width: 100%;
@@ -888,7 +883,7 @@ body.page-template-template-homepage #hpVideo .video video {
   background-repeat: none;
   transition: filter 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 56, sass/site/homepage/_portfolio.scss */
+/* line 55, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__inner {
   width: 100%;
   height: 100%;
@@ -905,7 +900,7 @@ body.page-template-template-homepage #hpVideo .video video {
   padding: 15vh;
   box-sizing: border-box;
 }
-/* line 73, sass/site/homepage/_portfolio.scss */
+/* line 72, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__content {
   position: absolute;
   bottom: 0;
@@ -916,7 +911,7 @@ body.page-template-template-homepage #hpVideo .video video {
   opacity: 0;
   transition: opacity 450ms;
 }
-/* line 82, sass/site/homepage/_portfolio.scss */
+/* line 81, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__content h3 {
   font-weight: 900;
   font-size: 9vh;
@@ -927,7 +922,7 @@ body.page-template-template-homepage #hpVideo .video video {
   padding: 15px;
   display: inline-block;
 }
-/* line 95, sass/site/homepage/_portfolio.scss */
+/* line 94, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide {
   position: absolute;
   left: 0;
@@ -938,25 +933,25 @@ body.page-template-template-homepage #hpVideo .video video {
   pointer-events: none;
   z-index: 0;
 }
-/* line 105, sass/site/homepage/_portfolio.scss */
+/* line 104, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active {
   transform: translatex(0%);
   z-index: 2;
 }
-/* line 108, sass/site/homepage/_portfolio.scss */
+/* line 107, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__wrap {
   transform: translateX(0);
   transform-origin: 100% 50%;
   opacity: 1;
   animation: none;
 }
-/* line 114, sass/site/homepage/_portfolio.scss */
+/* line 113, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__back {
   filter: blur(1.5vh);
   transition: filter 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition-delay: 900ms !important;
 }
-/* line 119, sass/site/homepage/_portfolio.scss */
+/* line 118, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__inner {
   transform: scale(0.8);
   box-shadow: 0 1vh 6vh rgba(0, 0, 0, 0.2);
@@ -965,12 +960,12 @@ body.page-template-template-homepage #hpVideo .video video {
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), box-shadow 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 1ms step-end;
   transition-delay: 900ms;
 }
-/* line 127, sass/site/homepage/_portfolio.scss */
+/* line 126, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__content {
   opacity: 1;
   transition-delay: 1350ms;
 }
-/* line 133, sass/site/homepage/_portfolio.scss */
+/* line 132, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide:not(.slider__slide--active) .slider__wrap {
   animation-name: hack;
   animation-duration: 900ms;
@@ -999,7 +994,7 @@ body.page-template-template-homepage #hpVideo .video video {
     opacity: 1;
   }
 }
-/* line 165, sass/site/homepage/_portfolio.scss */
+/* line 164, sass/site/homepage/_portfolio.scss */
 #portfolio .sig {
   position: fixed;
   bottom: 8px;
@@ -1012,7 +1007,7 @@ body.page-template-template-homepage #hpVideo .video video {
   letter-spacing: 2px;
   z-index: 9999;
 }
-/* line 177, sass/site/homepage/_portfolio.scss */
+/* line 176, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation {
   position: absolute;
   top: 50%;
@@ -1022,7 +1017,7 @@ body.page-template-template-homepage #hpVideo .video video {
   display: flex;
   justify-content: space-between;
 }
-/* line 186, sass/site/homepage/_portfolio.scss */
+/* line 185, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a {
   padding: 20px 20px 30px 20px;
   color: #a98f56;
@@ -1035,7 +1030,7 @@ body.page-template-template-homepage #hpVideo .video video {
   min-width: 165px;
   text-align: center;
 }
-/* line 197, sass/site/homepage/_portfolio.scss */
+/* line 196, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a:after {
   content: '';
   display: block;
@@ -1048,7 +1043,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform-origin: 0% 50%;
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 209, sass/site/homepage/_portfolio.scss */
+/* line 208, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a:before {
   content: '';
   display: block;
@@ -1061,43 +1056,43 @@ body.page-template-template-homepage #hpVideo .video video {
   bottom: 10px;
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 222, sass/site/homepage/_portfolio.scss */
+/* line 221, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:after {
   left: 23px;
 }
-/* line 225, sass/site/homepage/_portfolio.scss */
+/* line 224, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:before {
   border-top: 1px solid #a98f56;
   border-right: 1px solid #a98f56;
   left: 85px;
 }
-/* line 231, sass/site/homepage/_portfolio.scss */
+/* line 230, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:hover:before {
   transform: translateX(6vh) translateY(-50%) rotate(45deg);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 235, sass/site/homepage/_portfolio.scss */
+/* line 234, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:hover:after {
   transform: scaleX(1.5);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 242, sass/site/homepage/_portfolio.scss */
+/* line 241, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:after {
   right: 23px;
   transform-origin: right;
 }
-/* line 246, sass/site/homepage/_portfolio.scss */
+/* line 245, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:before {
   border-left: 1px solid #a98f56;
   border-bottom: 1px solid #a98f56;
   right: 85px;
 }
-/* line 252, sass/site/homepage/_portfolio.scss */
+/* line 251, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:hover:before {
   transform: translateX(-6vh) translateY(-50%) rotate(45deg);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 256, sass/site/homepage/_portfolio.scss */
+/* line 255, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:hover:after {
   transform: scaleX(1.5);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);

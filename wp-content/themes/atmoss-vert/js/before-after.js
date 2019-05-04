@@ -1,5 +1,26 @@
 jQuery(document).ready(function($){
-    var dragging = false,
+
+    function trackLocation(e) {
+        var rect = videoContainer.getBoundingClientRect(),
+            position = ((e.pageX - rect.left) / videoContainer.offsetWidth)*100;
+        if (position <= 100) {
+            videoClipper.style.width = position+"%";
+            clippedVideo.style.width = ((100/position)*100)+"%";
+            clippedVideo.style.zIndex = 3;
+        }
+    }
+    var videoContainer = $('.beforeAfter')[0],
+        videoClipper = $('.cd-resize-img')[0],
+        clippedVideo = videoClipper.getElementsByTagName("img")[0];
+    videoContainer.addEventListener( "mousemove", trackLocation, false);
+    videoContainer.addEventListener("touchstart",trackLocation,false);
+    videoContainer.addEventListener("touchmove",trackLocation,false);
+
+
+
+
+
+    /*var dragging = false,
         scrolling = false,
         resizing = false;
     //cache jQuery objects
@@ -113,5 +134,5 @@ jQuery(document).ready(function($){
         } else {
             ( label.offset().left > resizeElement.offset().left + resizeElement.outerWidth() ) ? label.removeClass('is-hidden') : label.addClass('is-hidden') ;
         }
-    }
+    }*/
 });
