@@ -130,10 +130,8 @@ function atmoss_vert_scripts() {
     //todo: rooting js files and css
 	wp_enqueue_style( 'atmoss-vert-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/DiagonalSlider.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'atmoss-vert-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'atmoss-vert-before-after', get_template_directory_uri() . '/js/before-after.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'atmoss-vert-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'atmoss-vert-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'atmoss-vert-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'atmoss-vert-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

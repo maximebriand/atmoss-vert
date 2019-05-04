@@ -869,113 +869,261 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translateY(-50%);
 }
 
-/* line 1, sass/site/homepage/_portfolio.scss */
-#portfolio {
+/* line 16, sass/site/homepage/_portfolio.scss */
+#portfolio body {
+  background: #aaa;
+  font-family: "Open Sans", sans-serif;
+}
+/* line 21, sass/site/homepage/_portfolio.scss */
+#portfolio .slider {
+  position: relative;
   height: 100vh;
-}
-/* line 3, sass/site/homepage/_portfolio.scss */
-#portfolio img {
-  display: block;
-  margin: 0px;
-  max-width: none;
-}
-/* line 10, sass/site/homepage/_portfolio.scss */
-#portfolio .content_title {
-  position: absolute;
-  padding: 50px 40px 50px 80px;
-  background-color: #FFF;
-  z-index: 10;
-  font-size: 22px;
-  margin-left: -60px;
-  -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-}
-/* line 24, sass/site/homepage/_portfolio.scss */
-#portfolio .content_title .text {
-  -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-}
-/* line 32, sass/site/homepage/_portfolio.scss */
-#portfolio .content_slider {
-  width: 100%;
-  overflow-x: scroll;
-  height: 100vh;
-}
-/* line 39, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_content {
+  width: 100vw;
+  background: #777;
   overflow: hidden;
-  margin-left: -170px;
-  cursor: pointer;
-  background-position: right;
-  background-size: contain;
+}
+/* line 28, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__wrap {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(100vw);
+  top: 0%;
+  left: 0;
+  right: auto;
+  overflow: hidden;
+  transition: transform 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform-origin: 0% 50%;
+  transition-delay: 450ms;
+  opacity: 0;
+}
+/* line 41, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__wrap--hacked {
+  opacity: 1;
 }
 /* line 46, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_content a {
+#portfolio .slider__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: none;
+  transition: filter 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 56, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__inner {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 0%;
+  background-size: auto 133.3333%;
+  background-position: center;
+  background-repeat: none;
+  transform: scale(0.75);
+  transition: transform 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86), box-shadow 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 450ms step-end;
+  opacity: 0;
+  box-shadow: 0 3vh 3vh transparent;
+  padding: 15vh;
+  box-sizing: border-box;
+}
+/* line 73, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__content {
+  position: absolute;
   bottom: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 50vh;
-  text-decoration: none;
-}
-/* line 60, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_item {
-  cursor: pointer;
-  float: left;
-  overflow: hidden;
-  vertical-align: top;
-  margin-left: -2px;
-  -webkit-transition: width 1000ms;
-  -moz-transition: width 1000ms;
-  -o-transition: width 1000ms;
-  transition: width 1000ms;
-  -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  position: relative;
-}
-/* line 77, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_item:last-child img {
+  width: auto;
+  transform: translateY(-50%);
+  color: white;
+  font-family: "Heebo", sans-serif;
   opacity: 0;
+  transition: opacity 450ms;
 }
-/* line 80, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_item img {
-  position: relative;
-  -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  height: 100%;
-  z-index: -1;
+/* line 82, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__content h3 {
+  font-weight: 900;
+  font-size: 9vh;
+  line-height: 0.85;
+  margin-bottom: 0.75vh;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  display: inline-block;
 }
-/* line 91, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_item h3 {
-  opacity: 0;
-  color: #000;
-  font-size: 14px;
-  font-weight: 200;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 10px 50px;
-  -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+/* line 95, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-delay: 600ms;
+  pointer-events: none;
+  z-index: 0;
 }
-/* line 104, sass/site/homepage/_portfolio.scss */
-#portfolio .gallery_item:hover h3 {
-  transition: all 0.9s;
-  color: #a98f56;
-  font-size: 50px;
+/* line 105, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide--active {
+  transform: translatex(0%);
+  z-index: 2;
+}
+/* line 108, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide--active .slider__wrap {
+  transform: translateX(0);
+  transform-origin: 100% 50%;
   opacity: 1;
+  animation: none;
+}
+/* line 114, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide--active .slider__back {
+  filter: blur(1.5vh);
+  transition: filter 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-delay: 900ms !important;
+}
+/* line 119, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide--active .slider__inner {
+  transform: scale(0.8);
+  box-shadow: 0 1vh 6vh rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  opacity: 1;
+  transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), box-shadow 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 1ms step-end;
+  transition-delay: 900ms;
+}
+/* line 127, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide--active .slider__content {
+  opacity: 1;
+  transition-delay: 1350ms;
+}
+/* line 133, sass/site/homepage/_portfolio.scss */
+#portfolio .slider__slide:not(.slider__slide--active) .slider__wrap {
+  animation-name: hack;
+  animation-duration: 900ms;
+  animation-delay: 450ms;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+@keyframes hack {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-100vw);
+    opacity: 1;
+  }
+  51% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  52% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+}
+/* line 165, sass/site/homepage/_portfolio.scss */
+#portfolio .sig {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 100;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  z-index: 9999;
+}
+/* line 177, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 186, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a {
+  padding: 20px 20px 30px 20px;
+  color: #a98f56;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 2.4vh;
+  letter-spacing: 0.3vh;
+  font-weight: 100;
+  position: relative;
+  min-width: 165px;
+  text-align: center;
+}
+/* line 197, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a:after {
+  content: '';
+  display: block;
+  width: 9vh;
+  background: #a98f56;
+  height: 1px;
+  position: absolute;
+  bottom: 16px;
+  transform: translateY(-50%);
+  transform-origin: 0% 50%;
+  transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 209, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a:before {
+  content: '';
+  display: block;
+  width: 1vh;
+  height: 1vh;
+  transform: translateX(0) translateY(-50%) rotate(45deg);
+  position: absolute;
+  font-family: "Heebo", sans-serif;
+  font-weight: 100;
+  bottom: 10px;
+  transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 222, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-next:after {
+  left: 23px;
+}
+/* line 225, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-next:before {
+  border-top: 1px solid #a98f56;
+  border-right: 1px solid #a98f56;
+  left: 85px;
+}
+/* line 231, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-next:hover:before {
+  transform: translateX(6vh) translateY(-50%) rotate(45deg);
+  transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 235, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-next:hover:after {
+  transform: scaleX(1.5);
+  transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 242, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-previous:after {
+  right: 23px;
+  transform-origin: right;
+}
+/* line 246, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-previous:before {
+  border-left: 1px solid #a98f56;
+  border-bottom: 1px solid #a98f56;
+  right: 85px;
+}
+/* line 252, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-previous:hover:before {
+  transform: translateX(-6vh) translateY(-50%) rotate(45deg);
+  transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+/* line 256, sass/site/homepage/_portfolio.scss */
+#portfolio .slider_navigation a.go-to-previous:hover:after {
+  transform: scaleX(1.5);
+  transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 /*--------------------------------------------------------------
@@ -1251,7 +1399,7 @@ body.page .entry-content {
 
 /*--------------------------------------------------------------
 # Media
---------------------------------------------------------------*/
+------------------------------------------- -------------------*/
 /* line 1, sass/media/_media.scss */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
