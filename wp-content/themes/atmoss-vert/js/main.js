@@ -8,6 +8,7 @@ jQuery(document).ready(function( $ ) {
         $('body').toggleClass('open');
     });
 
+    //todo: create a specific file
     $(document).ready(function(){
         for (var i=1; i <= $('.slider__slide').length; i++){
             $('.slider__indicators').append('<div class="slider__indicator" data-slide="'+i+'"></div>')
