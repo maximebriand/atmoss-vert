@@ -145,6 +145,11 @@ big {
   src: url("fonts/kiona-regular-webfont.woff2") format("woff2"), url("fonts/kiona-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'anodinabold';
+  src: url("fonts/anodina-bold-webfont.woff2") format("woff2"), url("fonts/anodina-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -391,10 +396,19 @@ nav {
     .open nav:before {
       animation: menu-animation 0.8s ease-out forwards; }
 
+.custom-logo-link {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  left: 25%; }
+  .open .custom-logo-link {
+    animation: menu-animation 0.8s ease-out forwards; }
+
 ul#primary-menu {
   position: absolute;
   top: 50%;
-  left: 50%;
+  width: 550px;
+  right: -5%;
   backface-visibility: hidden;
   transform: translate3d(-50%, -50%, 0);
   color: white; }
@@ -614,33 +628,47 @@ body.page-template-template-homepage #hpVideo {
   position: relative; }
   body.page-template-template-homepage #hpVideo header {
     position: relative;
-    width: 35vw;
-    max-width: 420px;
-    text-align: center;
-    padding-top: 20px;
-    align-items: flex-start; }
+    width: 0; }
     body.page-template-template-homepage #hpVideo header hgroup {
       font-weight: 900;
       position: absolute;
       top: 20%;
       left: 5%;
       bottom: 0;
-      z-index: 10; }
+      z-index: 10;
+      width: 100vw;
+      text-align: center; }
       body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
-        color: #f9f9f9; }
+        font-family: 'anodinabold';
+        text-transform: uppercase;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        background: none; }
       body.page-template-template-homepage #hpVideo header hgroup h1 {
         font-size: 10rem;
-        text-align: left;
         line-height: 10rem;
-        background: none; }
+        -webkit-text-stroke: 3px #a98f56; }
       body.page-template-template-homepage #hpVideo header hgroup h2 {
         font-size: 2.5rem;
-        text-align: left; }
-  body.page-template-template-homepage #hpVideo .video {
-    min-width: 65%;
-    width: 100%;
+        -webkit-text-stroke: 1px #a98f56; }
+  body.page-template-template-homepage #hpVideo #bgvid {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    min-width: 100vw;
+    min-height: 100vh; }
+  body.page-template-template-homepage #hpVideo .video-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 8; }
+  body.page-template-template-homepage #hpVideo .video_container {
+    width: 100vw;
     overflow: hidden; }
-    body.page-template-template-homepage #hpVideo .video video {
+    body.page-template-template-homepage #hpVideo .video_container video {
       width: 100%;
       min-height: 100vh;
       position: relative !important;
@@ -698,7 +726,6 @@ body.page-template-template-homepage #hpVideo {
     width: auto;
     transform: translateY(-50%);
     color: white;
-    font-family: "Heebo", sans-serif;
     opacity: 0;
     transition: opacity 450ms; }
     #portfolio .slider__content h3 {
@@ -762,17 +789,6 @@ body.page-template-template-homepage #hpVideo {
   100% {
     transform: translateX(100vw);
     opacity: 1; } }
-#portfolio .sig {
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 100;
-  font-family: sans-serif;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 2px;
-  z-index: 9999; }
 #portfolio .slider_navigation {
   position: absolute;
   top: 50%;
@@ -784,6 +800,7 @@ body.page-template-template-homepage #hpVideo {
   #portfolio .slider_navigation a {
     padding: 20px 20px 30px 20px;
     color: #a98f56;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
     cursor: pointer;
     font-size: 2.4vh;
@@ -810,7 +827,6 @@ body.page-template-template-homepage #hpVideo {
       height: 1vh;
       transform: translateX(0) translateY(-50%) rotate(45deg);
       position: absolute;
-      font-family: "Heebo", sans-serif;
       font-weight: 100;
       bottom: 10px;
       transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }

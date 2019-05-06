@@ -120,11 +120,23 @@ nav {
 		}
 	}
 }
-
-ul#primary-menu {
+.custom-logo-link {
 	position: absolute;
+	//opacity: 0;
 	top: 50%;
-	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	left: 25%;
+
+	.open & {
+		animation: menu-animation 0.8s ease-out forwards;
+	}
+
+}
+ul#primary-menu {
+	position: absolute; //todo: change for display flex
+	top: 50%;
+	width: 550px;
+	right: -5%;
 	backface-visibility: hidden;
 	transform: translate3d(-50%,-50%,0);
 	color: white;

@@ -181,6 +181,12 @@ big {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'anodinabold';
+  src: url("fonts/anodina-bold-webfont.woff2") format("woff2"), url("fonts/anodina-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -509,22 +515,35 @@ nav:before {
   animation: menu-animation 0.8s ease-out forwards;
 }
 
-/* line 124, sass/navigation/_menus.scss */
+/* line 123, sass/navigation/_menus.scss */
+.custom-logo-link {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  left: 25%;
+}
+/* line 130, sass/navigation/_menus.scss */
+.open .custom-logo-link {
+  animation: menu-animation 0.8s ease-out forwards;
+}
+
+/* line 135, sass/navigation/_menus.scss */
 ul#primary-menu {
   position: absolute;
   top: 50%;
-  left: 50%;
+  width: 550px;
+  right: -5%;
   backface-visibility: hidden;
   transform: translate3d(-50%, -50%, 0);
   color: white;
 }
-/* line 131, sass/navigation/_menus.scss */
+/* line 143, sass/navigation/_menus.scss */
 ul#primary-menu li {
   opacity: 0;
   text-align: center;
   transform: translate3d(0, 36px, 0);
 }
-/* line 136, sass/navigation/_menus.scss */
+/* line 148, sass/navigation/_menus.scss */
 ul#primary-menu li:hover a, ul#primary-menu li:hover a:focus {
   color: #a98f56;
   background: #FFF;
@@ -532,53 +551,53 @@ ul#primary-menu li:hover a, ul#primary-menu li:hover a:focus {
   transition: background-color 1s;
   transition: color 1s;
 }
-/* line 144, sass/navigation/_menus.scss */
+/* line 156, sass/navigation/_menus.scss */
 ul#primary-menu li a {
   text-decoration: none;
 }
-/* line 147, sass/navigation/_menus.scss */
+/* line 159, sass/navigation/_menus.scss */
 ul#primary-menu li a:focus {
   color: #fff;
 }
-/* line 150, sass/navigation/_menus.scss */
+/* line 162, sass/navigation/_menus.scss */
 .open ul#primary-menu li {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(1) {
   transition-delay: 0.75s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(2) {
   transition-delay: 0.85s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(3) {
   transition-delay: 0.95s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(4) {
   transition-delay: 1.05s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(5) {
   transition-delay: 1.15s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(6) {
   transition-delay: 1.25s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(7) {
   transition-delay: 1.35s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(8) {
   transition-delay: 1.45s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 168, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(9) {
   transition-delay: 1.55s;
 }
@@ -799,13 +818,9 @@ body.page-template-template-homepage #hpVideo {
 /* line 13, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header {
   position: relative;
-  width: 35vw;
-  max-width: 420px;
-  text-align: center;
-  padding-top: 20px;
-  align-items: flex-start;
+  width: 0;
 }
-/* line 21, sass/site/homepage/_homepage-video.scss */
+/* line 17, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup {
   font-weight: 900;
   position: absolute;
@@ -813,31 +828,53 @@ body.page-template-template-homepage #hpVideo header hgroup {
   left: 5%;
   bottom: 0;
   z-index: 10;
+  width: 100vw;
+  text-align: center;
 }
-/* line 29, sass/site/homepage/_homepage-video.scss */
+/* line 27, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
-  color: #f9f9f9;
-}
-/* line 32, sass/site/homepage/_homepage-video.scss */
-body.page-template-template-homepage #hpVideo header hgroup h1 {
-  font-size: 10rem;
-  text-align: left;
-  line-height: 10rem;
+  font-family: 'anodinabold';
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
   background: none;
 }
-/* line 39, sass/site/homepage/_homepage-video.scss */
+/* line 35, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo header hgroup h1 {
+  font-size: 10rem;
+  line-height: 10rem;
+  -webkit-text-stroke: 3px #a98f56;
+}
+/* line 40, sass/site/homepage/_homepage-video.scss */
 body.page-template-template-homepage #hpVideo header hgroup h2 {
   font-size: 2.5rem;
-  text-align: left;
+  -webkit-text-stroke: 1px #a98f56;
 }
-/* line 46, sass/site/homepage/_homepage-video.scss */
-body.page-template-template-homepage #hpVideo .video {
-  min-width: 65%;
-  width: 100%;
+/* line 47, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo #bgvid {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+/* line 55, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo .video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 8;
+}
+/* line 64, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo .video_container {
+  width: 100vw;
   overflow: hidden;
 }
-/* line 51, sass/site/homepage/_homepage-video.scss */
-body.page-template-template-homepage #hpVideo .video video {
+/* line 68, sass/site/homepage/_homepage-video.scss */
+body.page-template-template-homepage #hpVideo .video_container video {
   width: 100%;
   min-height: 100vh;
   position: relative !important;
@@ -846,7 +883,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform: translateY(-50%);
 }
 
-/* line 20, sass/site/homepage/_portfolio.scss */
+/* line 17, sass/site/homepage/_portfolio.scss */
 #portfolio .slider {
   position: relative;
   height: 100vh;
@@ -854,7 +891,7 @@ body.page-template-template-homepage #hpVideo .video video {
   background: #777;
   overflow: hidden;
 }
-/* line 27, sass/site/homepage/_portfolio.scss */
+/* line 24, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__wrap {
   position: absolute;
   width: 100vw;
@@ -869,11 +906,11 @@ body.page-template-template-homepage #hpVideo .video video {
   transition-delay: 450ms;
   opacity: 0;
 }
-/* line 40, sass/site/homepage/_portfolio.scss */
+/* line 37, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__wrap--hacked {
   opacity: 1;
 }
-/* line 45, sass/site/homepage/_portfolio.scss */
+/* line 42, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__back {
   position: absolute;
   width: 100%;
@@ -883,7 +920,7 @@ body.page-template-template-homepage #hpVideo .video video {
   background-repeat: none;
   transition: filter 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 55, sass/site/homepage/_portfolio.scss */
+/* line 52, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__inner {
   width: 100%;
   height: 100%;
@@ -900,18 +937,17 @@ body.page-template-template-homepage #hpVideo .video video {
   padding: 15vh;
   box-sizing: border-box;
 }
-/* line 72, sass/site/homepage/_portfolio.scss */
+/* line 69, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__content {
   position: absolute;
   bottom: 0;
   width: auto;
   transform: translateY(-50%);
   color: white;
-  font-family: "Heebo", sans-serif;
   opacity: 0;
   transition: opacity 450ms;
 }
-/* line 81, sass/site/homepage/_portfolio.scss */
+/* line 77, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__content h3 {
   font-weight: 900;
   font-size: 9vh;
@@ -922,7 +958,7 @@ body.page-template-template-homepage #hpVideo .video video {
   padding: 15px;
   display: inline-block;
 }
-/* line 94, sass/site/homepage/_portfolio.scss */
+/* line 90, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide {
   position: absolute;
   left: 0;
@@ -933,25 +969,25 @@ body.page-template-template-homepage #hpVideo .video video {
   pointer-events: none;
   z-index: 0;
 }
-/* line 104, sass/site/homepage/_portfolio.scss */
+/* line 100, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active {
   transform: translatex(0%);
   z-index: 2;
 }
-/* line 107, sass/site/homepage/_portfolio.scss */
+/* line 103, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__wrap {
   transform: translateX(0);
   transform-origin: 100% 50%;
   opacity: 1;
   animation: none;
 }
-/* line 113, sass/site/homepage/_portfolio.scss */
+/* line 109, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__back {
   filter: blur(1.5vh);
   transition: filter 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition-delay: 900ms !important;
 }
-/* line 118, sass/site/homepage/_portfolio.scss */
+/* line 114, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__inner {
   transform: scale(0.8);
   box-shadow: 0 1vh 6vh rgba(0, 0, 0, 0.2);
@@ -960,12 +996,12 @@ body.page-template-template-homepage #hpVideo .video video {
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), box-shadow 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 1ms step-end;
   transition-delay: 900ms;
 }
-/* line 126, sass/site/homepage/_portfolio.scss */
+/* line 122, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide--active .slider__content {
   opacity: 1;
   transition-delay: 1350ms;
 }
-/* line 132, sass/site/homepage/_portfolio.scss */
+/* line 128, sass/site/homepage/_portfolio.scss */
 #portfolio .slider__slide:not(.slider__slide--active) .slider__wrap {
   animation-name: hack;
   animation-duration: 900ms;
@@ -994,20 +1030,7 @@ body.page-template-template-homepage #hpVideo .video video {
     opacity: 1;
   }
 }
-/* line 164, sass/site/homepage/_portfolio.scss */
-#portfolio .sig {
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 100;
-  font-family: sans-serif;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 2px;
-  z-index: 9999;
-}
-/* line 176, sass/site/homepage/_portfolio.scss */
+/* line 160, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation {
   position: absolute;
   top: 50%;
@@ -1017,10 +1040,11 @@ body.page-template-template-homepage #hpVideo .video video {
   display: flex;
   justify-content: space-between;
 }
-/* line 185, sass/site/homepage/_portfolio.scss */
+/* line 169, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a {
   padding: 20px 20px 30px 20px;
   color: #a98f56;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
   cursor: pointer;
   font-size: 2.4vh;
@@ -1030,7 +1054,7 @@ body.page-template-template-homepage #hpVideo .video video {
   min-width: 165px;
   text-align: center;
 }
-/* line 196, sass/site/homepage/_portfolio.scss */
+/* line 181, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a:after {
   content: '';
   display: block;
@@ -1043,7 +1067,7 @@ body.page-template-template-homepage #hpVideo .video video {
   transform-origin: 0% 50%;
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 208, sass/site/homepage/_portfolio.scss */
+/* line 193, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a:before {
   content: '';
   display: block;
@@ -1051,48 +1075,47 @@ body.page-template-template-homepage #hpVideo .video video {
   height: 1vh;
   transform: translateX(0) translateY(-50%) rotate(45deg);
   position: absolute;
-  font-family: "Heebo", sans-serif;
   font-weight: 100;
   bottom: 10px;
   transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 221, sass/site/homepage/_portfolio.scss */
+/* line 205, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:after {
   left: 23px;
 }
-/* line 224, sass/site/homepage/_portfolio.scss */
+/* line 208, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:before {
   border-top: 1px solid #a98f56;
   border-right: 1px solid #a98f56;
   left: 85px;
 }
-/* line 230, sass/site/homepage/_portfolio.scss */
+/* line 214, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:hover:before {
   transform: translateX(6vh) translateY(-50%) rotate(45deg);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 234, sass/site/homepage/_portfolio.scss */
+/* line 218, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-next:hover:after {
   transform: scaleX(1.5);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 241, sass/site/homepage/_portfolio.scss */
+/* line 225, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:after {
   right: 23px;
   transform-origin: right;
 }
-/* line 245, sass/site/homepage/_portfolio.scss */
+/* line 229, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:before {
   border-left: 1px solid #a98f56;
   border-bottom: 1px solid #a98f56;
   right: 85px;
 }
-/* line 251, sass/site/homepage/_portfolio.scss */
+/* line 235, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:hover:before {
   transform: translateX(-6vh) translateY(-50%) rotate(45deg);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-/* line 255, sass/site/homepage/_portfolio.scss */
+/* line 239, sass/site/homepage/_portfolio.scss */
 #portfolio .slider_navigation a.go-to-previous:hover:after {
   transform: scaleX(1.5);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);

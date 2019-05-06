@@ -3,9 +3,6 @@
   $back: #aaa;
   $accent: hsl(220, 50%, 40%);
 
-  $sans: 'Open Sans', sans-serif;
-  $heebo: 'Heebo', sans-serif;
-
   $base: 3vh;
 
   $time: 1800ms;
@@ -75,7 +72,6 @@
       width: auto;
       transform: translateY(-50%);
       color: white;
-      font-family: $heebo;
       opacity: 0;
       transition: opacity $time/4;
       h3 {
@@ -161,18 +157,6 @@
 
   }
 
-  .sig {
-    position: fixed;
-    bottom: 8px;
-    right: 8px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 100;
-    font-family: sans-serif;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 2px;
-    z-index: 9999;
-  }
   .slider_navigation {
     position: absolute;
     top: 50%;
@@ -185,6 +169,7 @@
     a {
       padding: 20px 20px 30px 20px;
       color: $primary-color;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
       text-transform: uppercase;
       cursor: pointer;
       font-size: $base*0.8;
@@ -212,7 +197,6 @@
         height: $base/3;
         transform: translateX(0) translateY(-50%) rotate(45deg);
         position: absolute;
-        font-family: $heebo;
         font-weight: 100;
         bottom: 10px;
         transition: transform $time/2 $ease-in-out;

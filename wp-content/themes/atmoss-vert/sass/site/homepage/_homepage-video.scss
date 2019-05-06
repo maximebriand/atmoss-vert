@@ -12,11 +12,7 @@ body.page-template-template-homepage {
 
     header{
       position: relative;
-      width: 35vw;
-      max-width: 420px;
-      text-align: center;
-      padding-top: 20px;
-      align-items: flex-start;
+      width: 0;
 
       hgroup{
         font-weight:900;
@@ -25,27 +21,48 @@ body.page-template-template-homepage {
         left:5%;
         bottom:0;
         z-index: 10;
+        width: 100vw;
+        text-align: center;
 
         h1, h2{
-          color: $color__text-screen;
+          font-family: 'anodinabold';
+          text-transform: uppercase;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+          background: none;
         }
+
         h1 {
           font-size: 10rem;
-          text-align: left;
           line-height: 10rem ;
-          background: none;
-
+          -webkit-text-stroke:3px $primary-color;
         }
         h2 {
           font-size: 2.5rem;
-          text-align: left;
+          -webkit-text-stroke:1px $primary-color;
         }
       }
     }
 
-    .video {
-      min-width: 65%;
-      width: 100%;
+    #bgvid
+    {
+      position: absolute;
+      top:-40px; //todo: check on different device.
+      right:0;
+      min-width:100vw;
+      min-height:100vh;
+    }
+    .video-overlay {
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+      background: rgba(0,0,0,0.35);
+      z-index: 8;
+    }
+    .video_container {
+      width: 100vw;
       overflow: hidden;
 
       video {

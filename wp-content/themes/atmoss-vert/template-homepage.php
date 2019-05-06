@@ -14,6 +14,7 @@ get_header();
 
                     $video = carbon_get_the_post_meta( 'video_presentation' );
                     $posterImg = carbon_get_the_post_meta( 'poster_presentation' );
+                    $posterImg = 'https://images.unsplash.com/photo-1499463217683-ee3c9ce038f1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjI0MX0';
                     if (carbon_get_the_post_meta( 'is_muted' ))
                     {
                         $isMuted = 'muted';
@@ -33,7 +34,8 @@ get_header();
                             </hgroup>
                         </header>
                         <div class="video">
-                            <video preload="preload" autoplay loop poster="<?= $posterImg;?>" id="bgvid" <?= $isMuted;?>>
+                            <div class="video-overlay"></div>
+                            <video preload="auto" autoplay loop muted id="bgvid">
                                 <source src="<?= $video; ?>" type="video/mp4">
                             </video>
                         </div>
