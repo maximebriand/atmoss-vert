@@ -7,27 +7,17 @@ get_header();
 ?>
 
     <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+        <main id="main" class="site-main homepage onepage-wrapper">
 
             <?php
             if ( have_posts() ) :
 
                     $video = carbon_get_the_post_meta( 'video_presentation' );
-                    $posterImg = carbon_get_the_post_meta( 'poster_presentation' );
-                    $posterImg = 'https://images.unsplash.com/photo-1499463217683-ee3c9ce038f1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjI0MX0';
-                    if (carbon_get_the_post_meta( 'is_muted' ))
-                    {
-                        $isMuted = 'muted';
-                    } else
-                    {
-                        $isMuted = NULL;
-                    }
                     ?>
 
 
-                    <section id="hpVideo">
+                    <section id="hpVideo" >
                         <header>
-                            <?= get_custom_logo(); ?>
                             <hgroup>
                                 <h1 class="page-title"><?php single_post_title(); ?></h1>
                                 <h2><?= get_bloginfo('description');?> </h2>
@@ -40,35 +30,43 @@ get_header();
                             </video>
                         </div>
                     </section>
-                    <section id="portfolio">
-                        <div class="slider">
+
+
+                <section id="portfolio">
+                    <div class="content_slider">
+
+                        <?php $background = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 1, 'order_by' => 'ID', 'order' => 'ASC', 'paged' => $paged) ); ?>
+                        <?php while ( $background->have_posts() ) :   $background->the_post(); ?>
+                        <div class="gallery_content" style="background-image: url(<?= the_post_thumbnail_url(); ?>)">
+                        <?php endwhile ; ?>
+                            <a class="go-to-previous nav">Précédent</a>
+                            <a class="go-to-next nav">Suivant</a>
+
                             <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
-
                             <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
-
-                            <div class="slider__slide">
-                                <div class="slider__wrap">
-                                    <div class="slider__back"style="background-image:url(<?= get_the_post_thumbnail_url();?>)"></div>
+                                <div class="gallery_item">
+                                    <img src="<?= the_post_thumbnail_url();?>">
+                                    <a href="<?= get_permalink(); ?>">
+                                        <h3>
+                                            <?= get_the_title();?>
+                                        </h3>
+                                    </a>
                                 </div>
-                                <a href="<?= get_post_permalink(); ?>">
-                                    <div class="slider__inner" style="background-image:url(<?= get_the_post_thumbnail_url();?>)">
-                                        <div class="slider__content">
-                                            <h3>
-                                                <?= get_the_title();?>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
                             <?php endwhile ; ?>
-
-                            <div class="slider__indicators"></div>
-                            <div class="slider_navigation">
-                                <a class="go-to-previous">Précédent</a>
-                                <a class="go-to-next">Suivant</a>
-                            </div>
+                            <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
+                            <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
+                                <div class="gallery_item">
+                                    <img src="<?= the_post_thumbnail_url();?>">
+                                    <a href="<?= get_permalink(); ?>">
+                                        <h3>
+                                            <?= get_the_title();?>
+                                        </h3>
+                                    </a>
+                                </div>
+                            <?php endwhile ; ?>
                         </div>
-                    </section>
+                    </div>
+                </section>
                 <?php
 
                 /* Start the Loop */

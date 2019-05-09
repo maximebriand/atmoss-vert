@@ -8,45 +8,31 @@ jQuery(document).ready(function( $ ) {
         $('body').toggleClass('open');
     });
 
-    //todo: create a specific file
-    $(document).ready(function(){
-        for (var i=1; i <= $('.slider__slide').length; i++){
-            $('.slider__indicators').append('<div class="slider__indicator" data-slide="'+i+'"></div>')
-        }
+    //slider
+    $('.gallery_content').createDiagonalSlider();
 
-        setTimeout(function(){
-            $('.slider__wrap').addClass('slider__wrap--hacked');
-        }, 1000);
-
-        var i = 1;
-        $('.slider').find('.slider__slide').each(function(){
-            $(this).attr('data-slide', i);
-            i++;
+    $(document).ready(function() {
+        $('.go-to-next').click(function(event) {
+            horizontalNavigation("+=300px", event);
         });
-        $('.slider div:first').addClass('slider__slide--active');
+        $('.go-to-previous').click(function(event) {
+            horizontalNavigation("-=300px", event);
+        });
+    });
 
-        function goToSlide(number){
-            $('.slider__slide').removeClass('slider__slide--active');
-            $('.slider__slide[data-slide='+number+']').addClass('slider__slide--active');
+    function horizontalNavigation(position, event) {
+        $('html').animate({ scrollLeft: position }, 400);
+        event.preventDefault();
+
+    }
+
+    $(document).scroll(function() {
+        var y = $(document).scrollTop(), //get page y value
+            header = $(".nav");
+        if(y >= $(window).height())  {
+            header.css("display", "block");
+        } else {
+            header.css("display", "none" );
         }
-
-        $('.go-to-next').on('click', function(){
-            var currentSlide = Number($('.slider__slide--active').data('slide'));
-            var totalSlides = $('.slider__slide').length;
-            currentSlide++
-            if (currentSlide > totalSlides){
-                currentSlide = 1;
-            }
-            goToSlide(currentSlide);
-        })
-        $('.go-to-previous').on('click', function(){
-            var currentSlide = Number($('.slider__slide--active').data('slide'));
-            var totalSlides = $('.slider__slide').length;
-            currentSlide--
-            if (currentSlide <= 0){
-                currentSlide = totalSlides;
-            }
-            goToSlide(currentSlide);
-        })
-    })
+    });
 });
