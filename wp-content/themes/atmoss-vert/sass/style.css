@@ -620,8 +620,6 @@ header {
 body.page-template-template-homepage.page {
   margin: 0; }
 body.page-template-template-homepage #hpVideo {
-  /*    height: 100vh;
-      width: 100vw;*/
   background: #11100e;
   display: flex;
   position: relative;
@@ -636,9 +634,9 @@ body.page-template-template-homepage #hpVideo {
       position: fixed;
       top: 20%;
       left: 5%;
+      right: 5%;
       bottom: 0;
       z-index: 1;
-      width: 100vw;
       text-align: center; }
       body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
         font-family: 'anodinabold';
@@ -673,16 +671,13 @@ body.page-template-template-homepage #hpVideo {
     bottom: 0;
     background: rgba(0, 0, 0, 0.25);
     z-index: 8; }
-  body.page-template-template-homepage #hpVideo .video_container {
+  body.page-template-template-homepage #hpVideo video {
     width: 100vw;
-    overflow: hidden; }
-    body.page-template-template-homepage #hpVideo .video_container video {
-      width: 100%;
-      min-height: 100vh;
-      position: relative !important;
-      object-fit: cover;
-      top: 50%;
-      transform: translateY(-50%); }
+    min-height: 100vh;
+    position: relative !important;
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%); }
 
 #portfolio {
   position: relative;
@@ -733,7 +728,7 @@ body.page-template-template-homepage #hpVideo {
       transform: translateX(0) translateY(-50%) rotate(45deg);
       position: absolute;
       font-weight: 100;
-      bottom: 8px;
+      bottom: 10px;
       transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
     #portfolio a.go-to-next.go-to-next:after,
     #portfolio a.go-to-previous.go-to-next:after {
@@ -1124,8 +1119,5 @@ object {
 
 .gallery-caption {
   display: block; }
-
-footer {
-  display: none; }
 
 /*# sourceMappingURL=style.css.map */

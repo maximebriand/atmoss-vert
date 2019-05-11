@@ -21,8 +21,8 @@ jQuery(document).ready(function( $ ) {
     });
 
     function horizontalNavigation(position, event) {
-        $('html').animate({ scrollLeft: position }, 400);
         event.preventDefault();
+        $('html,body').animate({ scrollLeft: position }, 400);
 
     }
 

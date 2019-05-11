@@ -57,7 +57,7 @@ $ease-in-out: cubic-bezier(0.785, 0.135, 0.150, 0.860);
       transform: translateX(0) translateY(-50%) rotate(45deg);
       position: absolute;
       font-weight: 100;
-      bottom: 8px;
+      bottom: 10px;
       transition: transform $time/2 $ease-in-out;
     }
     &.go-to-next {

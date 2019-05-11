@@ -25,7 +25,7 @@ get_header();
                         </header>
                         <div class="video">
                             <div class="video-overlay"></div>
-                            <video preload="auto" autoplay loop muted id="bgvid">
+                            <video autoplay loop muted playsinline id="videoIntro">
                                 <source src="<?= $video; ?>" type="video/mp4">
                             </video>
                         </div>

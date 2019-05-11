@@ -163,8 +163,8 @@ jQuery(document).ready(function( $ ) {
     redimensionnement();
 
     // En cas de redimensionnement de la fenêtre
-/*    $(window).resize(function(){
+    $(window).resize(function(){
         redimensionnement();
-    });*/
+    });
 
 });
