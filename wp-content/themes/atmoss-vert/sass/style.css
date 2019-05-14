@@ -90,8 +90,20 @@ h1, h2, h3, h4, h5, h6 {
 .main-navigation a:visited {
   color: #f9f9f9; }
 
-#hpVideo hgroup {
-  color: white; }
+#cover header {
+  height: 100vh;
+  padding: 0;
+  align-items: center; }
+#cover hgroup {
+  padding-bottom: 10%; }
+#cover h1, #cover H2 {
+  text-shadow: rgba(0, 0, 0, 0.4) 2px 3Px;
+  background: none;
+  color: #f9f9f9; }
+#cover h1 {
+  font-size: 80px; }
+#cover h2 {
+  font-size: 35px; }
 
 p {
   margin-bottom: 1.5em; }
@@ -619,187 +631,34 @@ header {
 --------------------------------------------------------------*/
 body.page-template-template-homepage.page {
   margin: 0; }
-body.page-template-template-homepage #hpVideo {
-  background: #11100e;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw; }
-  body.page-template-template-homepage #hpVideo header {
-    position: relative;
-    width: 0; }
-    body.page-template-template-homepage #hpVideo header hgroup {
-      font-weight: 900;
-      position: fixed;
-      top: 20%;
-      left: 5%;
-      right: 5%;
-      bottom: 0;
-      z-index: 1;
-      text-align: center; }
-      body.page-template-template-homepage #hpVideo header hgroup h1, body.page-template-template-homepage #hpVideo header hgroup h2 {
-        font-family: 'anodinabold';
-        text-transform: uppercase;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-        background: none; }
-      body.page-template-template-homepage #hpVideo header hgroup h1 {
-        font-size: 10rem;
-        line-height: 10rem;
-        -webkit-text-stroke: 3px #f9f9f9; }
-      body.page-template-template-homepage #hpVideo header hgroup h2 {
-        font-size: 2.5rem;
-        -webkit-text-stroke: 1px #f9f9f9; }
-  body.page-template-template-homepage #hpVideo .video {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  body.page-template-template-homepage #hpVideo #bgvid {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    min-width: 100vw;
-    min-height: 100vh; }
-  body.page-template-template-homepage #hpVideo .video-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 8; }
-  body.page-template-template-homepage #hpVideo video {
-    width: 100vw;
-    min-height: 100vh;
-    position: relative !important;
-    object-fit: cover;
-    top: 50%;
-    transform: translateY(-50%); }
+body.page-template-template-homepage #cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh; }
 
 #portfolio {
-  position: relative;
-  overflow-x: scroll;
-  z-index: 2; }
-  #portfolio .nav {
-    display: none;
-    position: fixed;
-    top: 50%;
-    z-index: 1; }
-  #portfolio a.go-to-next {
-    right: 20px; }
-  #portfolio a.go-to-previous {
-    left: 20px; }
-  #portfolio a.go-to-next,
-  #portfolio a.go-to-previous {
-    padding: 20px 20px 30px 20px;
-    color: #f9f9f9;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: 2.4vh;
-    letter-spacing: 0.3vh;
-    font-weight: 100;
-    min-width: 165px;
-    display: none;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 100; }
-    #portfolio a.go-to-next:after,
-    #portfolio a.go-to-previous:after {
-      content: '';
-      display: block;
-      width: 9vh;
-      background: #a98f56;
-      height: 1px;
-      position: absolute;
-      bottom: 16px;
-      transform: translateY(-50%);
-      transform-origin: 0% 50%;
-      transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-    #portfolio a.go-to-next:before,
-    #portfolio a.go-to-previous:before {
-      content: '';
-      display: block;
-      width: 1vh;
-      height: 1vh;
-      transform: translateX(0) translateY(-50%) rotate(45deg);
-      position: absolute;
-      font-weight: 100;
-      bottom: 10px;
-      transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-    #portfolio a.go-to-next.go-to-next:after,
-    #portfolio a.go-to-previous.go-to-next:after {
-      left: 23px; }
-    #portfolio a.go-to-next.go-to-next:before,
-    #portfolio a.go-to-previous.go-to-next:before {
-      border-top: 1px solid #a98f56;
-      border-right: 1px solid #a98f56;
-      left: 100px; }
-    #portfolio a.go-to-next.go-to-next:hover:before,
-    #portfolio a.go-to-previous.go-to-next:hover:before {
-      transform: translateX(6vh) translateY(-50%) rotate(45deg);
-      transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-    #portfolio a.go-to-next.go-to-next:hover:after,
-    #portfolio a.go-to-previous.go-to-next:hover:after {
-      transform: scaleX(1.5);
-      transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-    #portfolio a.go-to-next.go-to-previous:after,
-    #portfolio a.go-to-previous.go-to-previous:after {
-      right: 23px;
-      transform-origin: right; }
-    #portfolio a.go-to-next.go-to-previous:before,
-    #portfolio a.go-to-previous.go-to-previous:before {
-      border-left: 1px solid #a98f56;
-      border-bottom: 1px solid #a98f56;
-      right: 96px; }
-    #portfolio a.go-to-next.go-to-previous:hover:before,
-    #portfolio a.go-to-previous.go-to-previous:hover:before {
-      transform: translateX(-6vh) translateY(-50%) rotate(45deg);
-      transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-    #portfolio a.go-to-next.go-to-previous:hover:after,
-    #portfolio a.go-to-previous.go-to-previous:hover:after {
-      transform: scaleX(1.5);
-      transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86); }
-  #portfolio img {
-    display: block;
-    margin: 0px;
-    max-width: none; }
-  #portfolio .content_title {
-    position: absolute;
-    padding: 50px 40px 50px 80px;
-    background-color: #FFF;
-    z-index: 10;
-    font-size: 22px;
-    margin-left: -60px;
-    -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(-20deg, 0deg); }
-  #portfolio .content_title .text {
-    -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(20deg, 0deg); }
-  #portfolio .content_slider {
-    width: 100%;
-    overflow-x: scroll;
-    height: 100vh; }
-  #portfolio .gallery_content {
-    overflow: scroll;
-    position: relative;
-    margin-left: -170px;
-    cursor: pointer;
-    background-position: right;
-    background-size: contain; }
-  #portfolio .gallery_item {
-    cursor: pointer;
-    float: left;
+  width: 120vw;
+  margin-left: -20vw;
+  height: 100vh;
+  overflow: hidden; }
+  #portfolio ul {
+    /* 4 images donc 4 x 100% */
+    width: 400%;
+    /* à faire en JS */
+    padding: 0;
+    margin: 0;
+    margin-left: -50vw;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; }
+  #portfolio li {
+    height: 100vh;
+    width: 80vw;
     overflow: hidden;
-    vertical-align: top;
-    margin-left: -2px;
+    position: relative;
+    background-position: center;
     -webkit-transition: width 1000ms;
     -moz-transition: width 1000ms;
     -o-transition: width 1000ms;
@@ -807,45 +666,40 @@ body.page-template-template-homepage #hpVideo {
     -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
     -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
     -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    position: relative; }
-    #portfolio .gallery_item a {
+    transform: translate3d(0, 0, 0) skew(-20deg, 0deg); }
+    #portfolio li a {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 50vh;
-      text-decoration: none; }
-    #portfolio .gallery_item:last-child img {
-      opacity: 0; }
-    #portfolio .gallery_item img {
-      position: relative;
-      -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      height: 100%;
-      z-index: -1; }
-    #portfolio .gallery_item h3 {
-      opacity: 0;
-      color: #000;
-      font-size: 14px;
-      font-weight: 200;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 10px 50px;
-      -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      transform: translate3d(0, 0, 0) skew(20deg, 0deg); }
-    #portfolio .gallery_item:hover h3 {
+      bottom: 30%;
+      width: 100%;
+      text-align: center; }
+      #portfolio li a h3 {
+        opacity: 0;
+        font-size: 14px;
+        font-weight: 200;
+        background: black;
+        padding: 10px 50px;
+        margin: 0;
+        color: #a98f56;
+        display: inline-block; }
+    #portfolio li.show h3 {
       transition: all 0.9s;
-      color: #a98f56;
+      -webkit-transition-delay: 1.5s;
+      -moz-transition-delay: 1.5s;
+      -o-transition-delay: 1.5s;
+      animation-delay: 1.5s;
       font-size: 50px;
       opacity: 1; }
+  #portfolio .background {
+    height: 100%;
+    width: 140%;
+    margin-left: -170px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    transform: translate3d(0, 0, 0) skew(20deg, 0deg); }
 
 /*--------------------------------------------------------------
 ## Pages
@@ -1119,5 +973,8 @@ object {
 
 .gallery-caption {
   display: block; }
+
+footer {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

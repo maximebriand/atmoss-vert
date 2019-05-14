@@ -1,161 +1,26 @@
-$base: 3vh;
-$time: 1800ms;
-$ease-out: cubic-bezier(0.260, 0.005, 0.135, 1.000);
-$ease-in-out: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-
-
-
-
 #portfolio {
-  position: relative;
-  overflow-x: scroll;
-  z-index:2;
-
-  .nav {
-    display: none;
-    position: fixed;
-    top:50%;
-    z-index:1;
-  }
-  a.go-to-next { right: 20px; }
-  a.go-to-previous { left:20px;  }
-
-
-  a.go-to-next,
-  a.go-to-previous {
-    padding: 20px 20px 30px 20px;
-    color: $color__link-menu;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    cursor: pointer;
-    font-size: $base*0.8;
-    letter-spacing: $base*0.1;
-    font-weight: 100;
-    min-width: 165px;
-    display: none;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    z-index:100;
-
-    &:after {
-      content: '';
-      display: block;
-      width: $base*3;
-      background: $primary-color;
-      height: 1px;
-      position: absolute;
-      bottom: 16px;
-      transform: translateY(-50%);
-      transform-origin: 0% 50%;
-      transition: transform $time/2 $ease-in-out;
-    }
-    &:before {
-      content: '';
-      display: block;
-      width: $base/3;
-      height: $base/3;
-      transform: translateX(0) translateY(-50%) rotate(45deg);
-      position: absolute;
-      font-weight: 100;
-      bottom: 10px;
-      transition: transform $time/2 $ease-in-out;
-    }
-    &.go-to-next {
-      &:after {
-        left: 23px;
-      }
-      &:before {
-        border-top: 1px solid $primary-color;
-        border-right: 1px solid $primary-color;
-        left: 100px;
-      }
-      &:hover {
-        &:before {
-          transform: translateX(#{$base*2}) translateY(-50%) rotate(45deg);
-          transition: transform $time*2/3 $ease-in-out;
-        }
-        &:after {
-          transform: scaleX(1.5);
-          transition: transform $time*2/3 $ease-in-out;
-        }
-      }
-    }
-    &.go-to-previous {
-      &:after {
-        right: 23px;
-        transform-origin: right;
-      }
-      &:before {
-        border-left: 1px solid $primary-color;
-        border-bottom: 1px solid $primary-color;
-        right: 96px;
-      }
-      &:hover {
-        &:before {
-          transform: translateX(#{$base*-2}) translateY(-50%) rotate(45deg);
-          transition: transform $time*2/3 $ease-in-out;
-        }
-        &:after {
-          transform: scaleX(1.5);
-          transition: transform $time*2/3 $ease-in-out;
-        }
-      }
-    }
-  }
-  img
-  {
-    display: block;
-    margin: 0px;
-    max-width:none;
-  }
-
-  .content_title
-  {
-    position: absolute;
-    padding: 50px 40px 50px 80px;
-    background-color: #FFF;
-    z-index: 10;
-    font-size: 22px;
-    margin-left: -60px;
-    -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-  }
-
-  .content_title .text
-  {
-    -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  }
-
-  .content_slider
-  {
-    width: 100%;
-    overflow-x: scroll;
+    width: 120vw;
+    margin-left: -20vw;
     height: 100vh;
-  }
-
-  .gallery_content
-  {
-    overflow: scroll;
-    position: relative;
-    margin-left: -170px;
-    cursor: pointer;
-    background-position: right;
-    background-size: contain;
-
-  }
-
-  .gallery_item
-  {
-    cursor: pointer;
-    float: left;
     overflow: hidden;
-    vertical-align: top;
-    margin-left: -2px;
+
+  ul {
+    /* 4 images donc 4 x 100% */
+    width: 400%; /* à faire en JS */
+    padding: 0;
+    margin: 0;
+    margin-left: -50vw;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  li {
+    height: 100vh;
+    width: 80vw;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
     -webkit-transition: width 1000ms;
     -moz-transition: width 1000ms;
     -o-transition: width 1000ms;
@@ -164,52 +29,46 @@ $ease-in-out: cubic-bezier(0.785, 0.135, 0.150, 0.860);
     -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
     -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
     transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    position: relative;
     a {
       position: absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top:50vh;
-      text-decoration: none;
-    }
-    &:last-child img{
-      opacity: 0;
-    }
-    img
-    {
-      position: relative;
-      -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      height:100%;
-      z-index: -1;
-    }
+      bottom: 30%;
+      width: 100%;
+      text-align: center;
 
-    h3
-    {
-      opacity:0;
-      color: #000;
-      font-size: 14px;
-      font-weight: 200;
-      background: rgba(#000, 0.9);
-      padding: 10px 50px;
-      -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-      transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+      h3
+      {
+        opacity:0;
+        font-size: 14px;
+        font-weight: 200;
+        background: rgba(0,0,0, 1.9);
+        padding: 10px 50px;
+        margin: 0;
+        color: $primary-color;
+        display: inline-block;
+      }
     }
-    &:hover h3
+    &.show h3
     {
       transition: all 0.9s;
-      color: $primary-color;;
+      -webkit-transition-delay: 1.5s;
+      -moz-transition-delay:  1.5s;
+      -o-transition-delay:  1.5s;
+      animation-delay: 1.5s;
       font-size: 50px;
       opacity: 1;
     }
+  }
+
+  .background {
+    height: 100%;
+    width: 140%;
+    margin-left: -170px;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    transform: translate3d(0, 0, 0) skew(20deg, 0deg);
   }
 }

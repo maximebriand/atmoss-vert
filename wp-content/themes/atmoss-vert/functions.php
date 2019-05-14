@@ -200,9 +200,7 @@ function template_hp_cf() {
     Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
         ->show_on_template('template-homepage.php')
         ->add_fields( array(
-            Field::make( 'file', 'video_presentation', 'Vidéo de Présentation MP4', 'test description' )->set_value_type( 'url' ),
-            Field::make( 'checkbox', 'is_muted', 'Son désactivé' )
-                ->set_option_value( 'yes' )
+            Field::make( 'image', 'image_cover', 'Image du site')->set_value_type( 'url' ),
         ) )
     ;
 }

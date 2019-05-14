@@ -10,8 +10,18 @@ h1, h2, h3, h4, h5, h6 {
 	color: $color__link-menu;
 }
 
-#hpVideo{
-	hgroup {
-		color: white;
+#cover{
+	header {
+		height:100vh;
+		padding: 0;
+		align-items: center;
 	}
+	hgroup {padding-bottom: 10%;}
+	h1, H2 {
+		text-shadow: rgba(0,0,0,0.4) 2px 3Px;
+		background: none;
+		color: $color__link-menu;
+	}
+	h1 {font-size: 80px;}
+	h2 {font-size:35px;}
 }

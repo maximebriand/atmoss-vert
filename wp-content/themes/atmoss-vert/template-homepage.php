@@ -12,61 +12,39 @@ get_header();
             <?php
             if ( have_posts() ) :
 
-                    $video = carbon_get_the_post_meta( 'video_presentation' );
+                    $imageCover = carbon_get_the_post_meta( 'image_cover' );
                     ?>
 
 
-                    <section id="hpVideo" >
+                    <section id="cover" style="background-image:url(<?= $imageCover; ?>">
                         <header>
                             <hgroup>
                                 <h1 class="page-title"><?php single_post_title(); ?></h1>
                                 <h2><?= get_bloginfo('description');?> </h2>
                             </hgroup>
                         </header>
-                        <div class="video">
-                            <div class="video-overlay"></div>
-                            <video autoplay loop muted playsinline id="videoIntro">
-                                <source src="<?= $video; ?>" type="video/mp4">
-                            </video>
-                        </div>
+
                     </section>
+            <section id="portfolio" class="slideshow">
+                <ul>
+                    <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
+                    <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
+                        <li>
+                            <div class="background" style="background-image: url(<?= the_post_thumbnail_url(); ?>)">
+                                <a href="<?= get_permalink(); ?>">
+                                    <h3>
+                                        <?= get_the_title();?>
+                                    </h3>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endwhile ; ?>
+
+                </ul>
+            </section>
 
 
-                <section id="portfolio">
-                    <div class="content_slider">
 
-                        <?php $background = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 1, 'order_by' => 'ID', 'order' => 'ASC', 'paged' => $paged) ); ?>
-                        <?php while ( $background->have_posts() ) :   $background->the_post(); ?>
-                        <div class="gallery_content" style="background-image: url(<?= the_post_thumbnail_url(); ?>)">
-                        <?php endwhile ; ?>
-                            <a class="go-to-previous nav">Précédent</a>
-                            <a class="go-to-next nav">Suivant</a>
-
-                            <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
-                            <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
-                                <div class="gallery_item">
-                                    <img src="<?= the_post_thumbnail_url();?>">
-                                    <a href="<?= get_permalink(); ?>">
-                                        <h3>
-                                            <?= get_the_title();?>
-                                        </h3>
-                                    </a>
-                                </div>
-                            <?php endwhile ; ?>
-                            <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
-                            <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
-                                <div class="gallery_item">
-                                    <img src="<?= the_post_thumbnail_url();?>">
-                                    <a href="<?= get_permalink(); ?>">
-                                        <h3>
-                                            <?= get_the_title();?>
-                                        </h3>
-                                    </a>
-                                </div>
-                            <?php endwhile ; ?>
-                        </div>
-                    </div>
-                </section>
                 <?php
 
                 /* Start the Loop */
