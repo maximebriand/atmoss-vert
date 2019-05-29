@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
     });
 
     $(".slideshow ul li:nth-child(2)").addClass('show');
-    startSlider();
+    //startSlider();
     $(window).resize(function() {
         resizeWindow();
     });

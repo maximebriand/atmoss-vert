@@ -1044,10 +1044,11 @@ body.page-template-template-homepage #cover {
 #portfolio li a {
   position: absolute;
   bottom: 30%;
-  width: 100vw;
+  left: 0;
+  right: 0;
   text-align: center;
 }
-/* line 42, sass/site/homepage/_portfolio.scss */
+/* line 43, sass/site/homepage/_portfolio.scss */
 #portfolio li a h3 {
   opacity: 0;
   font-size: 14px;
@@ -1058,7 +1059,7 @@ body.page-template-template-homepage #cover {
   color: #a98f56;
   display: inline-block;
 }
-/* line 53, sass/site/homepage/_portfolio.scss */
+/* line 54, sass/site/homepage/_portfolio.scss */
 #portfolio li.show h3 {
   transition: all 0.9s;
   -webkit-transition-delay: 1.5s;
@@ -1068,7 +1069,7 @@ body.page-template-template-homepage #cover {
   font-size: 50px;
   opacity: 1;
 }
-/* line 63, sass/site/homepage/_portfolio.scss */
+/* line 64, sass/site/homepage/_portfolio.scss */
 #portfolio .background {
   height: 100%;
   width: 140%;
@@ -1083,30 +1084,32 @@ body.page-template-template-homepage #cover {
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 79, sass/site/homepage/_portfolio.scss */
+  /* line 80, sass/site/homepage/_portfolio.scss */
   #portfolio .background {
     width: 190%;
   }
 }
 @media screen and (max-width: 720px) {
-  /* line 87, sass/site/homepage/_portfolio.scss */
+  /* line 88, sass/site/homepage/_portfolio.scss */
   #portfolio ul {
     margin-left: -90vw;
   }
-  /* line 90, sass/site/homepage/_portfolio.scss */
+  /* line 91, sass/site/homepage/_portfolio.scss */
   #portfolio ul li .sliderContent {
     width: 110vw;
   }
-  /* line 93, sass/site/homepage/_portfolio.scss */
+  /* line 94, sass/site/homepage/_portfolio.scss */
   #portfolio ul li a {
     bottom: 0%;
     height: 40vh;
+    right: auto;
+    width: 100vw;
   }
-  /* line 97, sass/site/homepage/_portfolio.scss */
+  /* line 100, sass/site/homepage/_portfolio.scss */
   #portfolio ul li h3 {
     font-size: 10px;
   }
-  /* line 100, sass/site/homepage/_portfolio.scss */
+  /* line 103, sass/site/homepage/_portfolio.scss */
   #portfolio ul li.show h3 {
     word-break: break-all;
     width: 80vw;

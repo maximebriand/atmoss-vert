@@ -37,7 +37,8 @@
         a {
             position: absolute;
             bottom: 30%;
-            width: 100vw;
+            left: 0;
+            right: 0;
             text-align: center;
             h3 {
                 opacity: 0;
@@ -93,6 +94,8 @@
                 a {
                     bottom: 0%;
                     height: 40vh;
+                    right: auto;
+                    width: 100vw;
                 }
                 h3 {
                     font-size: 10px;
