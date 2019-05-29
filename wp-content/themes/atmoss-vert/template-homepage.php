@@ -29,13 +29,15 @@ get_header();
                 <ul>
                     <?php $loop = new WP_Query( array( 'post_type' => 'chantiers', 'posts_per_page' => 5, 'paged' => $paged) ); ?>
                     <?php while ( $loop->have_posts() ) :   $loop->the_post(); ?>
-                        <li>
-                            <div class="background" style="background-image: url(<?= the_post_thumbnail_url(); ?>)">
-                                <a href="<?= get_permalink(); ?>">
-                                    <h3>
-                                        <?= get_the_title();?>
-                                    </h3>
-                                </a>
+                        <li> 
+                            <a href="<?= get_permalink(); ?>">
+                                <h3>
+                                    <?= get_the_title();?>
+                                </h3>
+                            </a>
+                            <div class="sliderContent">
+                                <div class="background" style="background-image: url(<?= the_post_thumbnail_url(); ?>)">
+                                </div>
                             </div>
                         </li>
                     <?php endwhile ; ?>

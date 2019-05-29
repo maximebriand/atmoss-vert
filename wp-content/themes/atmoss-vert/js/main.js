@@ -24,7 +24,7 @@ jQuery(document).ready(function( $ ) {
             $(".slideshow ul li").removeClass('show');
 
             $(".slideshow ul li:nth-child(3)").addClass('show');
-        }, 4000);
+        }, 400000);
     }
 
     title.mouseover(function() {

@@ -51,21 +51,21 @@ $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;*/
-/* line 4, sass/variables-site/_structure.scss */
+/* line 8, sass/variables-site/_structure.scss */
 .container {
   width: 1300px !important;
   margin: auto;
 }
 
 @media screen and (max-width: 1401px) {
-  /* line 10, sass/variables-site/_structure.scss */
+  /* line 14, sass/variables-site/_structure.scss */
   .container {
     width: 960px;
     margin: auto;
   }
 }
 @media screen and (max-width: 960px) {
-  /* line 17, sass/variables-site/_structure.scss */
+  /* line 21, sass/variables-site/_structure.scss */
   .container {
     width: 720px;
     margin: auto;
@@ -407,7 +407,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-/* line 15, sass/navigation/_menus.scss */
+/* line 17, sass/navigation/_menus.scss */
 html, body {
   margin: 0;
   padding: 0;
@@ -415,20 +415,20 @@ html, body {
   width: 100%;
 }
 
-/* line 22, sass/navigation/_menus.scss */
+/* line 24, sass/navigation/_menus.scss */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 26, sass/navigation/_menus.scss */
+/* line 28, sass/navigation/_menus.scss */
 ul li {
   cursor: pointer;
   padding: 6px 20px;
   font-size: 48px;
 }
 
-/* line 33, sass/navigation/_menus.scss */
+/* line 35, sass/navigation/_menus.scss */
 button {
   opacity: 0.6;
   background-color: transparent;
@@ -442,7 +442,7 @@ button {
   outline: none;
   transition: opacity 0.2s ease-out;
 }
-/* line 45, sass/navigation/_menus.scss */
+/* line 47, sass/navigation/_menus.scss */
 button:before {
   content: "";
   position: absolute;
@@ -456,7 +456,7 @@ button:before {
   background: linear-gradient(to bottom, #a98f56, #a98f56 20%, transparent 20%, transparent 40%, #a98f56 40%, #a98f56 60%, transparent 60%, transparent 80%, #a98f56 80%, #a98f56 100%);
   transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
 }
-/* line 61, sass/navigation/_menus.scss */
+/* line 63, sass/navigation/_menus.scss */
 button:after {
   opacity: 0;
   content: '×';
@@ -469,35 +469,35 @@ button:after {
   line-height: 0;
   transition: opacity 0.4s ease-out;
 }
-/* line 73, sass/navigation/_menus.scss */
+/* line 75, sass/navigation/_menus.scss */
 button:active {
   transform: translateY(2px);
 }
-/* line 76, sass/navigation/_menus.scss */
+/* line 78, sass/navigation/_menus.scss */
 button:focus {
   background-color: transparent;
 }
-/* line 79, sass/navigation/_menus.scss */
+/* line 81, sass/navigation/_menus.scss */
 button:hover {
   opacity: 1;
 }
-/* line 82, sass/navigation/_menus.scss */
+/* line 84, sass/navigation/_menus.scss */
 .open button {
   opacity: 1;
 }
-/* line 84, sass/navigation/_menus.scss */
+/* line 86, sass/navigation/_menus.scss */
 .open button:before {
   opacity: 0;
   width: 0;
 }
-/* line 88, sass/navigation/_menus.scss */
+/* line 90, sass/navigation/_menus.scss */
 .open button:after {
   opacity: 1;
   transform: translate3d(0, 0, 0) rotate(360deg);
   transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
 }
 
-/* line 98, sass/navigation/_menus.scss */
+/* line 100, sass/navigation/_menus.scss */
 nav {
   z-index: 110;
   position: fixed;
@@ -511,7 +511,7 @@ nav {
   backface-visibility: hidden;
   overflow: hidden;
 }
-/* line 107, sass/navigation/_menus.scss */
+/* line 109, sass/navigation/_menus.scss */
 nav:before {
   content: '';
   position: absolute;
@@ -526,28 +526,43 @@ nav:before {
   transform: scale(0.04), translateY(9999px);
   overflow: hidden;
 }
-/* line 116, sass/navigation/_menus.scss */
+/* line 118, sass/navigation/_menus.scss */
 .open nav {
   top: 0;
 }
-/* line 118, sass/navigation/_menus.scss */
+/* line 120, sass/navigation/_menus.scss */
 .open nav:before {
   animation: menu-animation 0.8s ease-out forwards;
 }
 
-/* line 123, sass/navigation/_menus.scss */
+/* line 125, sass/navigation/_menus.scss */
+.nav_content {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+}
+
+/* line 133, sass/navigation/_menus.scss */
 .custom-logo-link {
   position: absolute;
-  top: 50%;
+  top: 87%;
   transform: translate3d(-50%, -50%, 0);
   left: 25%;
 }
-/* line 130, sass/navigation/_menus.scss */
+/* line 139, sass/navigation/_menus.scss */
+.custom-logo-link img {
+  width: 150px;
+  margin: auto;
+}
+/* line 143, sass/navigation/_menus.scss */
 .open .custom-logo-link {
-  animation: menu-animation 0.8s ease-out forwards;
+  animation: menu-animation-logo 0.8s ease-out forwards;
 }
 
-/* line 135, sass/navigation/_menus.scss */
+/* line 148, sass/navigation/_menus.scss */
 ul#primary-menu {
   position: absolute;
   top: 50%;
@@ -557,13 +572,13 @@ ul#primary-menu {
   transform: translate3d(-50%, -50%, 0);
   color: white;
 }
-/* line 143, sass/navigation/_menus.scss */
+/* line 156, sass/navigation/_menus.scss */
 ul#primary-menu li {
   opacity: 0;
   text-align: center;
   transform: translate3d(0, 36px, 0);
 }
-/* line 148, sass/navigation/_menus.scss */
+/* line 161, sass/navigation/_menus.scss */
 ul#primary-menu li:hover a, ul#primary-menu li:hover a:focus {
   color: #a98f56;
   background: #FFF;
@@ -571,53 +586,53 @@ ul#primary-menu li:hover a, ul#primary-menu li:hover a:focus {
   transition: background-color 1s;
   transition: color 1s;
 }
-/* line 156, sass/navigation/_menus.scss */
+/* line 169, sass/navigation/_menus.scss */
 ul#primary-menu li a {
   text-decoration: none;
 }
-/* line 159, sass/navigation/_menus.scss */
+/* line 172, sass/navigation/_menus.scss */
 ul#primary-menu li a:focus {
   color: #fff;
 }
-/* line 162, sass/navigation/_menus.scss */
+/* line 175, sass/navigation/_menus.scss */
 .open ul#primary-menu li {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(1) {
   transition-delay: 0.75s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(2) {
   transition-delay: 0.85s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(3) {
   transition-delay: 0.95s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(4) {
   transition-delay: 1.05s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(5) {
   transition-delay: 1.15s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(6) {
   transition-delay: 1.25s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(7) {
   transition-delay: 1.35s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(8) {
   transition-delay: 1.45s;
 }
-/* line 168, sass/navigation/_menus.scss */
+/* line 181, sass/navigation/_menus.scss */
 .open ul#primary-menu li:nth-child(9) {
   transition-delay: 1.55s;
 }
@@ -651,6 +666,106 @@ ul#primary-menu li a:focus {
     height: 100%;
     padding-bottom: 0;
     border-radius: 0;
+  }
+}
+@keyframes menu-animation-logo {
+  0% {
+    opacity: 0;
+    transform: scale(0.04) translateY(300%);
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+    transition: ease-out;
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.02) translateY(0px);
+  }
+  61% {
+    transform: scale(0.04);
+  }
+  99.9% {
+    height: 0;
+    padding-bottom: 50%;
+    border-radius: 100%;
+  }
+  100% {
+    transform: scale(2);
+    height: 100%;
+    padding-bottom: 0;
+    border-radius: 0;
+  }
+}
+@keyframes menu-animation-logo-mobile {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(0);
+    transition: ease-out;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5, 1.5);
+    top: 20%;
+    padding-bottom: 0;
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 1401px) {
+  /* line 288, sass/navigation/_menus.scss */
+  ul#primary-menu {
+    transform: translate3d(-30%, -50%, 0);
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* line 294, sass/navigation/_menus.scss */
+  ul#primary-menu {
+    transform: translate3d(-20%, -50%, 0);
+  }
+
+  /* line 297, sass/navigation/_menus.scss */
+  .custom-logo-link {
+    left: 15%;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* line 301, sass/navigation/_menus.scss */
+  ul#primary-menu {
+    transform: translate3d(-50%, -30%, 0);
+    right: auto;
+    left: 50%;
+  }
+
+  /* line 306, sass/navigation/_menus.scss */
+  .custom-logo-link {
+    transform: translate3d(0, 0, 0);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    padding-top: 40px;
+  }
+  /* line 314, sass/navigation/_menus.scss */
+  .open .custom-logo-link {
+    animation: menu-animation-logo-mobile 0.8s ease-out forwards;
+  }
+  /* line 318, sass/navigation/_menus.scss */
+  .custom-logo-link img {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 720px) {
+  /* line 326, sass/navigation/_menus.scss */
+  ul#primary-menu li {
+    font-size: 28px;
+    line-height: 58px;
   }
 }
 /*--------------------------------------------------------------
@@ -835,7 +950,25 @@ body.page-template-template-homepage #cover {
   height: 100vh;
 }
 
-/* line 1, sass/site/homepage/_portfolio.scss */
+@media screen and (max-width: 720px) {
+  /* line 16, sass/site/homepage/_homepage-video.scss */
+  body.page-template-template-homepage #cover {
+    background-attachment: scroll;
+  }
+  /* line 18, sass/site/homepage/_homepage-video.scss */
+  body.page-template-template-homepage #cover h1 {
+    font-size: 35px;
+  }
+  /* line 19, sass/site/homepage/_homepage-video.scss */
+  body.page-template-template-homepage #cover h2 {
+    font-size: 20px;
+  }
+  /* line 20, sass/site/homepage/_homepage-video.scss */
+  body.page-template-template-homepage #cover header {
+    height: inherit;
+  }
+}
+/* line 2, sass/site/homepage/_portfolio.scss */
 #portfolio {
   width: 120vw;
   margin-left: -20vw;
@@ -856,9 +989,14 @@ body.page-template-template-homepage #cover {
 }
 /* line 18, sass/site/homepage/_portfolio.scss */
 #portfolio li {
+  position: relative;
+  padding: 0;
+}
+/* line 21, sass/site/homepage/_portfolio.scss */
+#portfolio li .sliderContent {
+  overflow: hidden;
   height: 100vh;
   width: 80vw;
-  overflow: hidden;
   position: relative;
   background-position: center;
   -webkit-transition: width 1000ms;
@@ -869,15 +1007,16 @@ body.page-template-template-homepage #cover {
   -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
+  z-index: -1;
 }
-/* line 32, sass/site/homepage/_portfolio.scss */
+/* line 37, sass/site/homepage/_portfolio.scss */
 #portfolio li a {
   position: absolute;
   bottom: 30%;
   width: 100%;
   text-align: center;
 }
-/* line 38, sass/site/homepage/_portfolio.scss */
+/* line 42, sass/site/homepage/_portfolio.scss */
 #portfolio li a h3 {
   opacity: 0;
   font-size: 14px;
@@ -888,7 +1027,7 @@ body.page-template-template-homepage #cover {
   color: #a98f56;
   display: inline-block;
 }
-/* line 50, sass/site/homepage/_portfolio.scss */
+/* line 53, sass/site/homepage/_portfolio.scss */
 #portfolio li.show h3 {
   transition: all 0.9s;
   -webkit-transition-delay: 1.5s;
@@ -898,7 +1037,7 @@ body.page-template-template-homepage #cover {
   font-size: 50px;
   opacity: 1;
 }
-/* line 62, sass/site/homepage/_portfolio.scss */
+/* line 63, sass/site/homepage/_portfolio.scss */
 #portfolio .background {
   height: 100%;
   width: 140%;
@@ -912,6 +1051,37 @@ body.page-template-template-homepage #cover {
   transform: translate3d(0, 0, 0) skew(20deg, 0deg);
 }
 
+@media screen and (max-width: 1200px) {
+  /* line 79, sass/site/homepage/_portfolio.scss */
+  #portfolio .background {
+    width: 190%;
+  }
+}
+@media screen and (max-width: 720px) {
+  /* line 87, sass/site/homepage/_portfolio.scss */
+  #portfolio ul {
+    margin-left: -90vw;
+  }
+  /* line 90, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li .sliderContent {
+    width: 110vw;
+  }
+  /* line 93, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li a {
+    bottom: 0%;
+    height: 40vh;
+  }
+  /* line 97, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li h3 {
+    font-size: 10px;
+  }
+  /* line 100, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li.show h3 {
+    word-break: break-all;
+    width: 80vw;
+    font-size: 20px;
+  }
+}
 /*--------------------------------------------------------------
 ## Pages
 --------------------------------------------------------------*/

@@ -1,3 +1,5 @@
+@import "../variables-site/variables-site";
+ 
 $bp-small: 500px;
 $bp-arrow: 700px;
 $font-primary: 'arial', sans-serif;
@@ -120,15 +122,26 @@ nav {
 		}
 	}
 }
+.nav_content {
+	position: relative;
+	top:0;
+	left: 0;
+	bottom:0;
+	right: 0;
+	height: 100vh;
+}
 .custom-logo-link {
 	position: absolute;
 	//opacity: 0;
-	top: 50%;
+	top: 87%;
 	transform: translate3d(-50%,-50%,0);
 	left: 25%;
-
+	img {
+		width: 150px;
+		margin: auto
+	}
 	.open & {
-		animation: menu-animation 0.8s ease-out forwards;
+		animation: menu-animation-logo 0.8s ease-out forwards;
 	}
 
 }
@@ -205,5 +218,113 @@ ul#primary-menu {
 		height: 100%;
 		padding-bottom: 0;
 		border-radius: 0;
+	}
+}
+
+
+@keyframes menu-animation-logo {
+	0% {
+		opacity: 0;
+		transform: scale(0.04)
+		translateY(300%);
+	}
+	40% {
+		transform: scale(0.04)
+		translateY(0);
+		transition: ease-out;
+	}
+	40% {
+		transform: scale(0.04)
+		translateY(0);
+	}
+	60% {
+		opacity: 1;
+		transform: scale(0.02)
+		translateY(0px);
+	}
+	61% {
+		transform: scale(0.04);
+	}
+	99.9% {
+		height: 0;
+		padding-bottom: 50%;
+		border-radius: 100%;
+	}
+	100% {
+		transform: scale(2);
+		height: 100%;
+		padding-bottom: 0;
+		border-radius: 0;
+	}
+}
+
+@keyframes menu-animation-logo-mobile {
+	0% {
+		opacity: 0;
+		//transform: translateY(50%);
+	}
+	40% {
+		transform: translateY(0);
+		transition: ease-out;
+	}
+	
+	60% {
+		opacity: 1;
+	}
+	61% {
+	}
+	99.9% {
+	}
+	100% {
+		transform: scale(1.5, 1.5);
+
+		top: 20%;
+		padding-bottom: 0;
+		border-radius: 0;
+	}
+}
+
+@media screen and (max-width:$xxl){
+	ul#primary-menu {
+		transform: translate3d(-30%,-50%,0);
+	}
+}
+
+@media screen and (max-width:$xl){
+	ul#primary-menu {
+		transform: translate3d(-20%,-50%,0);
+	}
+	.custom-logo-link {left: 15%;}
+}
+
+@media screen and (max-width:$lg){
+	ul#primary-menu {
+		transform: translate3d(-50%,-30%,0);
+		right: auto;
+		left: 50%;
+	}
+	.custom-logo-link {
+		transform: translate3d(-0,0,0);
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		text-align: center;
+		padding-top: 40px;
+		.open & {
+			animation: menu-animation-logo-mobile 0.8s ease-out forwards;
+		}
+		
+		img {
+			margin: auto;
+		}
+	}
+
+}
+
+@media screen and (max-width:$md){
+	ul#primary-menu li {
+		font-size: 28px;
+		line-height: 58px;
 	}
 }

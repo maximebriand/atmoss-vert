@@ -1,74 +1,108 @@
+@import "../../variables-site/variables-site";
 #portfolio {
     width: 120vw;
     margin-left: -20vw;
     height: 100vh;
     overflow: hidden;
-
-  ul {
-    /* 4 images donc 4 x 100% */
-    width: 400%; /* à faire en JS */
-    padding: 0;
-    margin: 0;
-    margin-left: -50vw;
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  li {
-    height: 100vh;
-    width: 80vw;
-    overflow: hidden;
-    position: relative;
-    background-position: center;
-    -webkit-transition: width 1000ms;
-    -moz-transition: width 1000ms;
-    -o-transition: width 1000ms;
-    transition: width 1000ms;
-    -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
-    a {
-      position: absolute;
-      bottom: 30%;
-      width: 100%;
-      text-align: center;
-
-      h3
-      {
-        opacity:0;
-        font-size: 14px;
-        font-weight: 200;
-        background: rgba(0,0,0, 1.9);
-        padding: 10px 50px;
+    ul {
+        /* 4 images donc 4 x 100% */
+        width: 400%;
+        /* à faire en JS */
+        padding: 0;
         margin: 0;
-        color: $primary-color;
-        display: inline-block;
-      }
+        margin-left: -50vw;
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
     }
-    &.show h3
-    {
-      transition: all 0.9s;
-      -webkit-transition-delay: 1.5s;
-      -moz-transition-delay:  1.5s;
-      -o-transition-delay:  1.5s;
-      animation-delay: 1.5s;
-      font-size: 50px;
-      opacity: 1;
+    li {
+        position: relative;
+        padding: 0;
+        .sliderContent {
+            overflow: hidden;
+            height: 100vh;
+            width: 80vw;
+            position: relative;
+            background-position: center;
+            -webkit-transition: width 1000ms;
+            -moz-transition: width 1000ms;
+            -o-transition: width 1000ms;
+            transition: width 1000ms;
+            -webkit-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
+            -moz-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
+            -ms-transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
+            transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
+            z-index: -1;
+        }
+        a {
+            position: absolute;
+            bottom: 30%;
+            width: 100%;
+            text-align: center;
+            h3 {
+                opacity: 0;
+                font-size: 14px;
+                font-weight: 200;
+                background: rgba(0, 0, 0, 1.9);
+                padding: 10px 50px;
+                margin: 0;
+                color: $primary-color;
+                display: inline-block;
+            }
+        }
+        &.show h3 {
+            transition: all 0.9s;
+            -webkit-transition-delay: 1.5s;
+            -moz-transition-delay: 1.5s;
+            -o-transition-delay: 1.5s;
+            animation-delay: 1.5s;
+            font-size: 50px;
+            opacity: 1;
+        }
     }
-  }
+    .background {
+        height: 100%;
+        width: 140%;
+        margin-left: -170px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+        -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+        -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+        transform: translate3d(0, 0, 0) skew(20deg, 0deg);
+    }
+}
 
-  .background {
-    height: 100%;
-    width: 140%;
-    margin-left: -170px;
-    background-size: cover;
-    background-position: center;
-    background-repeat:no-repeat;
-    -webkit-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -moz-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    -ms-transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-    transform: translate3d(0, 0, 0) skew(20deg, 0deg);
-  }
+@media screen and (max-width: $xl) {
+    #portfolio {
+        .background {
+            width: 190%;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    #portfolio {
+        ul {
+            margin-left: -90vw;
+            li {
+                .sliderContent {
+                    width: 110vw;
+                }
+                a {
+                    bottom: 0%;
+                    height: 40vh;
+                }
+                h3 {
+                    font-size: 10px;
+                }
+                &.show h3 {
+                    word-break: break-all;
+                    width: 80vw;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 }

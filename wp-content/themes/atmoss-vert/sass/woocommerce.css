@@ -22,7 +22,7 @@ $link-color: color("light-blue", "darken-1") !default;*/
   width: 1300px !important;
   margin: auto; }
 
-@media screen and (max-width: 1401px) {
+@media screen and (max-width: 1200px) {
   .container {
     width: 960px;
     margin: auto; } }

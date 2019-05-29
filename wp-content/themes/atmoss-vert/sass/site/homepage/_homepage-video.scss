@@ -11,3 +11,14 @@ body.page-template-template-homepage {
   }
 }
 
+@media screen and (max-width: $md){
+  body.page-template-template-homepage {
+    #cover {
+      background-attachment: scroll;
+      h1 {font-size: 35px;}
+      h2{ font-size: 20px;}
+      header{height: inherit;}
+    }
+  }
+}
+

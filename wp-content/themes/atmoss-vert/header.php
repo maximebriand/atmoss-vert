@@ -27,7 +27,6 @@
 <div id="page" class="site">
     <button class="menu-toggle"></button>
     <nav id="site-navigation" class="main-navigation">
-
         <?php
         echo get_custom_logo();
         wp_nav_menu( array(

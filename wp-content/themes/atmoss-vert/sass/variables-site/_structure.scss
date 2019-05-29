@@ -1,21 +1,25 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-
+$xxl: 1401px;
+$xl: 1200px;
+$lg: 960px;
+$md: 720px;
+$sm: 480px;
 .container {
-  width: 1300px !important;
-  margin: auto;
+    width: 1300px !important;
+    margin: auto;
 }
 
-@media screen and (max-width:1401px){
-  .container {
-    width: 960px;
-    margin: auto;
-  }
+@media screen and (max-width: $xxl) {
+    .container {
+        width: 960px;
+        margin: auto;
+    }
 }
 
-@media screen and (max-width:960px){
-  .container {
-    width: 720px;
-    margin: auto;
-  }
+@media screen and (max-width: $lg) {
+    .container {
+        width: 720px;
+        margin: auto;
+    }
 }
