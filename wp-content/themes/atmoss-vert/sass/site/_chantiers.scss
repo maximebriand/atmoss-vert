@@ -1,14 +1,21 @@
 @import "before-after";
-
 body.single-chantiers {
-  background: $color__background-body;
-  .content {
-    column-count: 2;
-    column-gap: 40px;
-    color: $color__text-screen;
-
-    p:first-child{
-      margin-top: 0;
+    background: $color__background-body;
+    .content {
+        column-count: 2;
+        column-gap: 40px;
+        color: $color__text-screen;
+        padding: 0 20px;
+        p:first-child {
+            margin-top: 0;
+        }
     }
-  }
+}
+
+@media screen and (max-width: $md) {
+    body.single-chantiers {
+        .content {
+            column-count: 1;
+        }
+    }
 }

@@ -28,6 +28,8 @@ get_header();
                             the_content();
                             ?>
                         </div>
+                        <?php if(carbon_get_the_post_meta( 'img_after' ) && carbon_get_the_post_meta( 'img_before' )) { ?>
+
                         <section class="beforeAfter">
                             <figure class="cd-image-container">
                                 <img src="<?= carbon_get_the_post_meta( 'img_after' );?>" alt="Original Image">
@@ -42,6 +44,7 @@ get_header();
                             </figure> <!-- cd-image-container -->
 
                         </section>
+                        <?php  } ?>
                 </div><!-- .entry-content -->
 
                 <?php

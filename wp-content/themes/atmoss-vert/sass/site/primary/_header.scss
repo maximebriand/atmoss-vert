@@ -19,26 +19,34 @@ header#masthead {
 }
 */
 
-header{
-  width: 100vw;
-  height:65vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-  padding-bottom: 15vh;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-attachment: fixed;
+header {
+    width: 100vw;
+    height: 65vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 15vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-attachment: fixed;
+    h1 {
+        margin: 0;
+        background: rgba(#000, 0.9);
+        padding: 10px 50px;
+        color: $primary-color;
+        ;
+        font-size: 50px;
+        display: inline-block;
+    }
+}
 
-  h1{
-    margin: 0;
-    background: rgba(#000, 0.9);
-    padding: 10px 50px;
-    color: $primary-color;;
-    font-size: 50px;
-    display: inline-block;
-
-  }
+@media screen and (max-width: $md) {
+    header {
+        background-attachment: local;
+        h1 {
+            font-size: 25px;
+        }
+    }
 }
