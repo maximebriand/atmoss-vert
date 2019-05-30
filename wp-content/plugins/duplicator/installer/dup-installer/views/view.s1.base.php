@@ -1,5 +1,5 @@
 <?php
-defined("ABSPATH") or die("");
+defined('ABSPATH') || defined('DUPXABSPATH') || exit;
 /** IDE HELPERS */
 /* @var $GLOBALS['DUPX_AC'] DUPX_ArchiveConfig */
 /* @var $archive_config DUPX_ArchiveConfig */
@@ -38,8 +38,8 @@ $openbase	= ini_get("open_basedir");
 $datetime1	= $GLOBALS['DUPX_AC']->created;
 $datetime2	= date("Y-m-d H:i:s");
 $fulldays	= round(abs(strtotime($datetime1) - strtotime($datetime2))/86400);
-$root_path	= SnapLibIOU::safePath($GLOBALS['DUPX_ROOT'], true);
-$archive_path	= SnapLibIOU::safePath($GLOBALS['FW_PACKAGE_PATH'], true);
+$root_path	= DupLiteSnapLibIOU::safePath($GLOBALS['DUPX_ROOT'], true);
+$archive_path	= DupLiteSnapLibIOU::safePath($GLOBALS['FW_PACKAGE_PATH'], true);
 $wpconf_path	= "{$root_path}/wp-config.php";
 $max_time_zero	= ($GLOBALS['DUPX_ENFORCE_PHP_INI']) ? false : @set_time_limit(0);
 $max_time_size	= 314572800;  //300MB
@@ -119,7 +119,7 @@ SETUP TYPE: @todo implement
 	<!-- STANDARD INSTALL -->
 	<input type="radio" id="setup-type-fresh" name="setup_type" value="1" checked="true" onclick="DUPX.toggleSetupType()" />
 	<label for="setup-type-fresh"><b>Standard Install</b></label>
-	<i class="fa fa-question-circle"
+	<i class="fas fa-question-circle fa-sm"
 		data-tooltip-title="Standard Install"
 		data-tooltip="A standard install is the default way Duplicator has always worked.  Setup your package in an empty directory and run the installer."></i>
 	<br/>
@@ -133,7 +133,7 @@ SETUP TYPE: @todo implement
 	<!-- OVERWRITE INSTALL -->
 	<input type="radio" id="setup-type-overwrite" name="setup_type" value="2" onclick="DUPX.toggleSetupType()" />
 	<label for="setup-type-overwrite"><b>Overwrite Install</b></label>
-	<i class="fa fa-question-circle"
+	<i class="fas fa-question-circle fa-sm"
 		data-tooltip-title="Overwrite Install"
 		data-tooltip="An Overwrite Install allows Duplicator to overwrite an existing WordPress Site."></i><br/>
 	<div class="s1-setup-type-sub" id="s1-setup-type-sub-2">
@@ -148,7 +148,7 @@ SETUP TYPE: @todo implement
 	<!-- DB-ONLY INSTALL -->
 	<input type="radio" id="setup-type-db" name="setup_type" value="3" onclick="DUPX.toggleSetupType()" />
 	<label for="setup-type-db"><b>Database Only Install</b></label>
-	<i class="fa fa-question-circle"
+	<i class="fas fa-question-circle fa-sm"
 		data-tooltip-title="Database Only"
 		data-tooltip="A database only install allows Duplicator to connect to a database and install only the database."></i><br/>
 	<div class="s1-setup-type-sub" id="s1-setup-type-sub-3">
@@ -169,7 +169,7 @@ ARCHIVE
 		<?php echo ($arcCheck == 'Pass') ? 'Pass' : 'Fail'; ?>
 	</div>
 </div>
-<div id="s1-area-archive-file" style="display:none">
+<div id="s1-area-archive-file" style="display:none" class="hdr-sub1-area">
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Server</a></li>
@@ -210,7 +210,7 @@ ARCHIVE
 						<div class="s1-archive-failed-msg">
 						<b class="dupx-fail">Archive File Not Found!</b><br/>
 							The installer file and the archive are bound together as a package when the archive is built.  They must be downloaded together and used
-							together at install time.  The archive file name should <u>not</u> be changed when it is downloaded because the file name is strongly bound
+							together at install time.  The archive file name should <u>NOT</u> be changed when it is downloaded because the file name is strongly bound
 							to the installer. When downloading the package files make sure both files are from the same package line in the packages view within the
 							Duplicator WordPress admin.
 							<br/><br/>
@@ -252,7 +252,7 @@ VALIDATION
 		<?php echo ( $req_success) ? 'Pass' : 'Fail'; ?>
 	</div>
 </div>
-<div id="s1-area-sys-setup" style="display:none">
+<div id="s1-area-sys-setup" style="display:none" class="hdr-sub1-area">
 	<div class='info-top'>The system validation checks help to make sure the system is ready for install.</div>
 
 	<!-- REQUIREMENTS -->
@@ -558,41 +558,44 @@ OPTIONS
 <div class="hdr-sub1 toggle-hdr" data-type="toggle" data-target="#s1-area-adv-opts">
 	<a href="javascript:void(0)"><i class="fa fa-plus-square"></i>Options</a>
 </div>
-<div id="s1-area-adv-opts" style="display:none">
+<div id="s1-area-adv-opts" class="hdr-sub1-area" style="display:none">
 	<div class="help-target">
-		<a href="<?php echo DUPX_U::esc_html($GLOBALS['_HELP_URL_PATH'].'#help-s1'); ?>" target="_blank"><i class="fa fa-question-circle"></i></a>
-	</div><br/>
-
+        <?php DUPX_View_Funcs::helpIconLink('step1'); ?>
+	</div>
 	<div class="hdr-sub3">General</div>
 	<table class="dupx-opts dupx-advopts">
         <tr>
             <td>Extraction:</td>
             <td>
-                <?php $num_selections = ($archive_config->isZipArchive() ? 3 : 2); ?>
+                <?php 
+                $options = array();
+                $options[] = '<option '.($is_wpconfarc_present ? '' : 'disabled').' value="manual">Manual Archive Extraction '.($is_wpconfarc_present ? '' : '*').'</option>';
+                if($archive_config->isZipArchive()){
+                        //ZIP-ARCHIVE
+                        if (!$zip_archive_enabled){
+                            $options[] = '<option value="ziparchive" disabled="true">PHP ZipArchive (not detected on server)</option>';
+                        } elseif ($zip_archive_enabled &&!$shell_exec_zip_enabled) {
+                            $options[] = '<option value="ziparchive" selected="true">PHP ZipArchive</option>';
+                        } else {
+                            $options[] = '<option value="ziparchive">PHP ZipArchive</option>';
+                        }
+                        //SHELL-EXEC UNZIP
+                        if (!$shell_exec_zip_enabled){
+                            $options[] = '<option value="shellexec_unzip" disabled="true">Shell Exec Unzip (not detected on server)</option>';
+                        } else {
+                            $options[] = '<option value="shellexec_unzip" selected="true">Shell Exec Unzip</option>';
+                        }
+                }
+                else {
+                    $options[] = '<option value="duparchive" selected="true">DupArchive</option>';
+                }
+                $num_selections = count($options);
+                ?>
                 <select id="archive_engine" name="archive_engine" size="<?php echo DUPX_U::esc_attr($num_selections); ?>">
-					<option <?php echo ($is_wpconfarc_present ? '' : 'disabled'); ?> value="manual">Manual Archive Extraction <?php echo ($is_wpconfarc_present ? '' : '*'); ?></option>
-                    <?php
-                        if($archive_config->isZipArchive()){
-
-                            //ZIP-ARCHIVE
-                            if (!$zip_archive_enabled){
-                                echo '<option value="ziparchive" disabled="true">PHP ZipArchive (not detected on server)</option>';
-                            } elseif ($zip_archive_enabled &&!$shell_exec_zip_enabled) {
-                                echo '<option value="ziparchive" selected="true">PHP ZipArchive</option>';
-                            } else {
-                                echo '<option value="ziparchive">PHP ZipArchive</option>';
-                            }
-
-                            //SHELL-EXEC UNZIP
-                            if (!$shell_exec_zip_enabled){
-                                echo '<option value="shellexec_unzip" disabled="true">Shell Exec Unzip (not detected on server)</option>';
-                            } else {
-                                echo '<option value="shellexec_unzip" selected="true">Shell Exec Unzip</option>';
-                            }
-                    }
-                    else {
-                        echo '<option value="duparchive" selected="true">DupArchive</option>';
-                    }
+					<?php
+                        foreach($options as $opt) {
+                            echo $opt;
+                        }
                     ?>
                 </select><br/>
 				<?php if(!$is_wpconfarc_present) :?>
@@ -607,9 +610,9 @@ OPTIONS
 			<td>Permissions:</td>
 			<td>
 				<input type="checkbox" name="set_file_perms" id="set_file_perms" value="1" onclick="jQuery('#file_perms_value').prop('disabled', !jQuery(this).is(':checked'));"/>
-				<label for="set_file_perms">All Files</label><input name="file_perms_value" id="file_perms_value" style="width:30px; margin-left:7px;" value="644" disabled> &nbsp;
+				<label for="set_file_perms">All Files</label><input name="file_perms_value" id="file_perms_value" style="width:45px; margin-left:7px;" value="644" disabled> &nbsp;
 				<input type="checkbox" name="set_dir_perms" id="set_dir_perms" value="1" onclick="jQuery('#dir_perms_value').prop('disabled', !jQuery(this).is(':checked'));"/>
-				<label for="set_dir_perms">All Directories</label><input name="dir_perms_value" id="dir_perms_value" style="width:30px; margin-left:7px;" value="755" disabled>
+				<label for="set_dir_perms">All Directories</label><input name="dir_perms_value" id="dir_perms_value" style="width:45px; margin-left:7px;" value="755" disabled>
 			</td>
 		</tr>
 	</table><br/><br/>
@@ -639,7 +642,7 @@ OPTIONS
 				<span class="sub-notes" style="font-weight: normal">
 					Controls how .htaccess, .user.ini and web.config are used.<br/>
 					These options are not applied until step 3 is ran.
-					<a href="<?php echo DUPX_U::esc_url($GLOBALS['_HELP_URL_PATH'] . '#help-s1'); ?>" target="help">[more info]</a>
+                    <?php DUPX_View_Funcs::helpLink('step1', '[more info]'); ?>
 				</span>
 			</td>
 		</tr>
@@ -726,7 +729,7 @@ Auto Posts to view.step2.php
 ========================================= -->
 <form id='s1-result-form' method="post" class="content-form" style="display:none">
 
-    <div class="dupx-logfile-link"><a href="./<?php echo DUPX_U::esc_attr($GLOBALS["LOG_FILE_NAME"]);?>" target="dup-installer">dup-installer-log.txt</a></div>
+    <div class="dupx-logfile-link"><?php DUPX_View_Funcs::installerLogLink(); ?></div>
     <div class="hdr-main">
         Step <span class="step">1</span> of 4: Extraction
     </div>
@@ -750,7 +753,7 @@ Auto Posts to view.step2.php
     <!--  PROGRESS BAR -->
     <div id="progress-area">
         <div style="width:500px; margin:auto">
-            <div style="font-size:1.7em; margin-bottom:20px"><i class="fa fa-circle-o-notch fa-spin"></i> Extracting Archive Files<span id="progress-pct"></span></div>
+            <div style="font-size:1.7em; margin-bottom:20px"><i class="fas fa-circle-notch fa-spin"></i> Extracting Archive Files<span id="progress-pct"></span></div>
             <div id="progress-bar"></div>
             <h3> Please Wait...</h3><br/><br/>
             <i>Keep this window open during the extraction process.</i><br/>
@@ -762,7 +765,7 @@ Auto Posts to view.step2.php
     <div id="ajaxerr-area" style="display:none">
         <p>Please try again an issue has occurred.</p>
         <div style="padding: 0px 10px 10px 0px;">
-            <div id="ajaxerr-data">An unknown issue has occurred with the file and database setup process.  Please see the dup-installer-log.txt file for more details.</div>
+            <div id="ajaxerr-data">An unknown issue has occurred with the file and database setup process.  Please see the <?php DUPX_View_Funcs::installerLogLink(); ?> file for more details.</div>
             <div style="text-align:center; margin:10px auto 0px auto">
                 <!-- <input type="button" class="default-btn" onclick="DUPX.hideErrorResult()" value="&laquo; Try Again" /> -->
 				<br/>
@@ -799,7 +802,7 @@ DUPX.getManaualArchiveOpt = function ()
 DUPX.startExtraction = function()
 {
 	var isManualExtraction = ($("#archive_engine").val() == "manual");
-	var zipEnabled = <?php echo SnapLibStringU::boolToString($archive_config->isZipArchive()); ?>;
+	var zipEnabled = <?php echo DupLiteSnapLibStringU::boolToString($archive_config->isZipArchive()); ?>;
 
 	$("#operation-text").text("Extracting Archive Files");
 

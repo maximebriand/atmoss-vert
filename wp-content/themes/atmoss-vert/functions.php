@@ -131,7 +131,6 @@ function atmoss_vert_scripts() {
 	wp_enqueue_style( 'atmoss-vert-style', get_stylesheet_uri() );
 
     wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/DiagonalSlider.js', array('jquery'), '20151215', true );
-    wp_enqueue_script( 'atmoss-vert-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'atmoss-vert-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
     if ( is_front_page() || (is_front_page() && is_home()) ) {
@@ -139,11 +138,14 @@ function atmoss_vert_scripts() {
 
 	if (is_singular( 'chantiers' )) {
         wp_enqueue_script( 'atmoss-vert-before-after', get_template_directory_uri() . '/js/before-after.js', array('jquery'), '20151215', true );
+		wp_enqueue_script( 'atmoss-vert-slider-chantier', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '20151215', true );
 
     }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'atmoss-vert-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151215', true );
 }
 add_action( 'wp_enqueue_scripts', 'atmoss_vert_scripts' );
 
@@ -208,12 +210,18 @@ function template_hp_cf() {
 //add fields cpt chantiers
 add_action( 'carbon_fields_register_fields', 'cpt_chantiers_cf' );
 function cpt_chantiers_cf() {
-    Container::make( 'post_meta', __( 'Post Options', 'crb' ) )
+    Container::make( 'post_meta', __( 'Configuration du Projet', 'crb' ) )
         ->show_on_post_type('chantiers')
         ->add_fields( array(
+			Field::make( 'text', 'youtube_iframe', 'Lien YouTube' ),
             Field::make( 'image', 'img_before', 'Image avant' )->set_value_type( 'url' ),
-            Field::make( 'image', 'img_after', 'Image avant' )->set_value_type( 'url' ),
-        ) )
+			Field::make( 'image', 'img_after', 'Image avant' )->set_value_type( 'url' ),
+			Field::make( 'media_gallery', 'crb_media_gallery' )
+				->set_type( array( 'image' ) )
+				->set_duplicates_allowed( false ),
+			Field::make( 'text', 'category_products', 'Catégorie des produits')
+		) )
+		
     ;
 }
 
