@@ -1276,39 +1276,8 @@ body.page-template-template-homepage #cover {
   transition: transform 0.3s 0.7s, opacity 0s 0.7s;
 }
 
-/* line 2, sass/site/_chantiers.scss */
-body.single-chantiers {
-  background: #11100e;
-  /* Auto Height */
-  /* 3D Effects */
-  /* IE10 Windows Phone 8 Fixes */
-  /* Common Styles */
-  /* Bullets */
-  /* Progress */
-  /* Scrollbar */
-  /* Preloader */
-  /* a11y */
-}
-/* line 4, sass/site/_chantiers.scss */
-body.single-chantiers .presentation {
-  display: flex;
-}
-/* line 7, sass/site/_chantiers.scss */
-body.single-chantiers .content {
-  flex: 2;
-  color: #f9f9f9;
-  padding: 0 20px;
-}
-/* line 11, sass/site/_chantiers.scss */
-body.single-chantiers .content p:first-child {
-  margin-top: 0;
-}
-/* line 15, sass/site/_chantiers.scss */
-body.single-chantiers .youtubeVideo {
-  text-align: center;
-}
-/* line 18, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container {
+/* line 1, sass/site/secondary/_swipper.scss */
+.swiper-container {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -1318,20 +1287,23 @@ body.single-chantiers .swiper-container {
   z-index: 1;
   height: 80vh;
 }
-/* line 28, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-no-flexbox .swiper-slide {
+
+/* line 12, sass/site/secondary/_swipper.scss */
+.swiper-container-no-flexbox .swiper-slide {
   float: left;
 }
-/* line 31, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-wrapper {
+
+/* line 16, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-wrapper {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
-/* line 38, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-wrapper {
+
+/* line 24, sass/site/secondary/_swipper.scss */
+.swiper-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -1348,27 +1320,31 @@ body.single-chantiers .swiper-wrapper {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* line 55, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-android .swiper-slide,
-body.single-chantiers .swiper-wrapper {
+
+/* line 42, sass/site/secondary/_swipper.scss */
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
   -webkit-transform: translate3d(0px, 0, 0);
   transform: translate3d(0px, 0, 0);
 }
-/* line 60, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-multirow > .swiper-wrapper {
+
+/* line 48, sass/site/secondary/_swipper.scss */
+.swiper-container-multirow > .swiper-wrapper {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 65, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-free-mode > .swiper-wrapper {
+
+/* line 54, sass/site/secondary/_swipper.scss */
+.swiper-container-free-mode > .swiper-wrapper {
   -webkit-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   margin: 0 auto;
 }
-/* line 71, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-slide {
+
+/* line 61, sass/site/secondary/_swipper.scss */
+.swiper-slide {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1382,18 +1358,23 @@ body.single-chantiers .swiper-slide {
   transition-property: transform, -webkit-transform;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
-/* line 86, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-slide-invisible-blank {
+
+/* line 78, sass/site/secondary/_swipper.scss */
+.swiper-slide-invisible-blank {
   visibility: hidden;
 }
-/* line 90, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-autoheight,
-body.single-chantiers .swiper-container-autoheight .swiper-slide {
+
+/* Auto Height */
+/* line 85, sass/site/secondary/_swipper.scss */
+.swiper-container-autoheight,
+.swiper-container-autoheight .swiper-slide {
   height: auto;
 }
-/* line 94, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-autoheight .swiper-wrapper {
+
+/* line 90, sass/site/secondary/_swipper.scss */
+.swiper-container-autoheight .swiper-wrapper {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
@@ -1404,27 +1385,31 @@ body.single-chantiers .swiper-container-autoheight .swiper-wrapper {
   transition-property: transform, height;
   transition-property: transform, height, -webkit-transform;
 }
-/* line 106, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d {
+
+/* 3D Effects */
+/* line 105, sass/site/secondary/_swipper.scss */
+.swiper-container-3d {
   -webkit-perspective: 1200px;
   perspective: 1200px;
 }
-/* line 110, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-wrapper,
-body.single-chantiers .swiper-container-3d .swiper-slide,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-left,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-right,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-top,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-bottom,
-body.single-chantiers .swiper-container-3d .swiper-cube-shadow {
+
+/* line 110, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-wrapper,
+.swiper-container-3d .swiper-slide,
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom,
+.swiper-container-3d .swiper-cube-shadow {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 120, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-left,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-right,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-top,
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-bottom {
+
+/* line 121, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom {
   position: absolute;
   left: 0;
   top: 0;
@@ -1433,49 +1418,57 @@ body.single-chantiers .swiper-container-3d .swiper-slide-shadow-bottom {
   pointer-events: none;
   z-index: 10;
 }
-/* line 132, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-left {
+
+/* line 134, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
 }
-/* line 138, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-right {
+
+/* line 141, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 }
-/* line 144, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-top {
+
+/* line 148, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
 }
-/* line 150, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-3d .swiper-slide-shadow-bottom {
+
+/* line 155, sass/site/secondary/_swipper.scss */
+.swiper-container-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
 }
-/* line 157, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-wp8-horizontal,
-body.single-chantiers .swiper-container-wp8-horizontal > .swiper-wrapper {
+
+/* IE10 Windows Phone 8 Fixes */
+/* line 165, sass/site/secondary/_swipper.scss */
+.swiper-container-wp8-horizontal,
+.swiper-container-wp8-horizontal > .swiper-wrapper {
   -ms-touch-action: pan-y;
   touch-action: pan-y;
 }
-/* line 162, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-wp8-vertical,
-body.single-chantiers .swiper-container-wp8-vertical > .swiper-wrapper {
+
+/* line 171, sass/site/secondary/_swipper.scss */
+.swiper-container-wp8-vertical,
+.swiper-container-wp8-vertical > .swiper-wrapper {
   -ms-touch-action: pan-x;
   touch-action: pan-x;
 }
-/* line 167, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-prev,
-body.single-chantiers .swiper-button-next {
+
+/* line 177, sass/site/secondary/_swipper.scss */
+.swiper-button-prev,
+.swiper-button-next {
   position: absolute;
   top: 50%;
   width: 27px;
@@ -1487,53 +1480,62 @@ body.single-chantiers .swiper-button-next {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 180, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-prev.swiper-button-disabled,
-body.single-chantiers .swiper-button-next.swiper-button-disabled {
+
+/* line 191, sass/site/secondary/_swipper.scss */
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
   opacity: 0.35;
   cursor: auto;
   pointer-events: none;
 }
-/* line 186, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-prev,
-body.single-chantiers .swiper-container-rtl .swiper-button-next {
+
+/* line 198, sass/site/secondary/_swipper.scss */
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
   left: 10px;
   right: auto;
 }
-/* line 192, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-next,
-body.single-chantiers .swiper-container-rtl .swiper-button-prev {
+
+/* line 205, sass/site/secondary/_swipper.scss */
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
   right: 10px;
   left: auto;
 }
-/* line 198, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-prev.swiper-button-white,
-body.single-chantiers .swiper-container-rtl .swiper-button-next.swiper-button-white {
+
+/* line 212, sass/site/secondary/_swipper.scss */
+.swiper-button-prev.swiper-button-white,
+.swiper-container-rtl .swiper-button-next.swiper-button-white {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
-/* line 202, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-next.swiper-button-white,
-body.single-chantiers .swiper-container-rtl .swiper-button-prev.swiper-button-white {
+
+/* line 217, sass/site/secondary/_swipper.scss */
+.swiper-button-next.swiper-button-white,
+.swiper-container-rtl .swiper-button-prev.swiper-button-white {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
-/* line 206, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-prev.swiper-button-black,
-body.single-chantiers .swiper-container-rtl .swiper-button-next.swiper-button-black {
+
+/* line 222, sass/site/secondary/_swipper.scss */
+.swiper-button-prev.swiper-button-black,
+.swiper-container-rtl .swiper-button-next.swiper-button-black {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
 }
-/* line 210, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-next.swiper-button-black,
-body.single-chantiers .swiper-container-rtl .swiper-button-prev.swiper-button-black {
+
+/* line 227, sass/site/secondary/_swipper.scss */
+.swiper-button-next.swiper-button-black,
+.swiper-container-rtl .swiper-button-prev.swiper-button-black {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
 }
-/* line 214, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-button-lock {
+
+/* line 232, sass/site/secondary/_swipper.scss */
+.swiper-button-lock {
   display: none;
 }
-/* line 217, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination {
+
+/* line 236, sass/site/secondary/_swipper.scss */
+.swiper-pagination {
   position: absolute;
   text-align: center;
   -webkit-transition: 300ms opacity;
@@ -1543,68 +1545,81 @@ body.single-chantiers .swiper-pagination {
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
-/* line 227, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination.swiper-pagination-hidden {
+
+/* line 247, sass/site/secondary/_swipper.scss */
+.swiper-pagination.swiper-pagination-hidden {
   opacity: 0;
 }
-/* line 231, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-fraction,
-body.single-chantiers .swiper-pagination-custom,
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-bullets {
+
+/* Common Styles */
+/* line 254, sass/site/secondary/_swipper.scss */
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 10px;
   left: 0;
   width: 100%;
 }
-/* line 239, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic {
+
+/* Bullets */
+/* line 265, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic {
   overflow: hidden;
   font-size: 0;
 }
-/* line 243, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+
+/* line 270, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transform: scale(0.33);
   -ms-transform: scale(0.33);
   transform: scale(0.33);
   position: relative;
 }
-/* line 249, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+
+/* line 277, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
-/* line 254, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+
+/* line 283, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
-/* line 259, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+
+/* line 289, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
   -webkit-transform: scale(0.66);
   -ms-transform: scale(0.66);
   transform: scale(0.66);
 }
-/* line 264, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+
+/* line 295, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
   -webkit-transform: scale(0.33);
   -ms-transform: scale(0.33);
   transform: scale(0.33);
 }
-/* line 269, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+
+/* line 301, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
   -webkit-transform: scale(0.66);
   -ms-transform: scale(0.66);
   transform: scale(0.66);
 }
-/* line 274, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+
+/* line 307, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
   -webkit-transform: scale(0.33);
   -ms-transform: scale(0.33);
   transform: scale(0.33);
 }
-/* line 279, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullet {
+
+/* line 313, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   display: inline-block;
@@ -1612,8 +1627,9 @@ body.single-chantiers .swiper-pagination-bullet {
   background: #000;
   opacity: 0.2;
 }
-/* line 287, sass/site/_chantiers.scss */
-body.single-chantiers button.swiper-pagination-bullet {
+
+/* line 322, sass/site/secondary/_swipper.scss */
+button.swiper-pagination-bullet {
   border: none;
   margin: 0;
   padding: 0;
@@ -1623,37 +1639,43 @@ body.single-chantiers button.swiper-pagination-bullet {
   -moz-appearance: none;
   appearance: none;
 }
-/* line 297, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-clickable .swiper-pagination-bullet {
+
+/* line 333, sass/site/secondary/_swipper.scss */
+.swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
-/* line 300, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-bullet-active {
+
+/* line 337, sass/site/secondary/_swipper.scss */
+.swiper-pagination-bullet-active {
   opacity: 1;
   background: #007aff;
 }
-/* line 304, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-bullets {
+
+/* line 342, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-pagination-bullets {
   right: 10px;
   top: 50%;
   -webkit-transform: translate3d(0px, -50%, 0);
   transform: translate3d(0px, -50%, 0);
 }
-/* line 310, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+
+/* line 349, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 6px 0;
   display: block;
 }
-/* line 314, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+
+/* line 354, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   width: 8px;
 }
-/* line 321, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+
+/* line 362, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   display: inline-block;
   -webkit-transition: 200ms top, 200ms -webkit-transform;
   transition: 200ms top, 200ms -webkit-transform;
@@ -1661,41 +1683,48 @@ body.single-chantiers .swiper-container-vertical > .swiper-pagination-bullets.sw
   transition: 200ms transform, 200ms top;
   transition: 200ms transform, 200ms top, 200ms -webkit-transform;
 }
-/* line 329, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+
+/* line 371, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 4px;
 }
-/* line 332, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+
+/* line 375, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   white-space: nowrap;
 }
-/* line 339, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+
+/* line 383, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transition: 200ms left, 200ms -webkit-transform;
   transition: 200ms left, 200ms -webkit-transform;
   -o-transition: 200ms transform, 200ms left;
   transition: 200ms transform, 200ms left;
   transition: 200ms transform, 200ms left, 200ms -webkit-transform;
 }
-/* line 346, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+
+/* line 391, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transition: 200ms right, 200ms -webkit-transform;
   transition: 200ms right, 200ms -webkit-transform;
   -o-transition: 200ms transform, 200ms right;
   transition: 200ms transform, 200ms right;
   transition: 200ms transform, 200ms right, 200ms -webkit-transform;
 }
-/* line 354, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar {
+
+/* Progress */
+/* line 402, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar {
   background: rgba(0, 0, 0, 0.25);
   position: absolute;
 }
-/* line 358, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+
+/* line 407, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: #007aff;
   position: absolute;
   left: 0;
@@ -1709,65 +1738,78 @@ body.single-chantiers .swiper-pagination-progressbar .swiper-pagination-progress
   -ms-transform-origin: left top;
   transform-origin: left top;
 }
-/* line 372, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+
+/* line 422, sass/site/secondary/_swipper.scss */
+.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   -webkit-transform-origin: right top;
   -ms-transform-origin: right top;
   transform-origin: right top;
 }
-/* line 377, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-progressbar,
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+
+/* line 428, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal > .swiper-pagination-progressbar,
+.swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   width: 100%;
   height: 4px;
   left: 0;
   top: 0;
 }
-/* line 384, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-pagination-progressbar,
-body.single-chantiers .swiper-container-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+
+/* line 436, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-pagination-progressbar,
+.swiper-container-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   width: 4px;
   height: 100%;
   left: 0;
   top: 0;
 }
-/* line 391, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-white .swiper-pagination-bullet-active {
+
+/* line 444, sass/site/secondary/_swipper.scss */
+.swiper-pagination-white .swiper-pagination-bullet-active {
   background: #ffffff;
 }
-/* line 394, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar.swiper-pagination-white {
+
+/* line 448, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar.swiper-pagination-white {
   background: rgba(255, 255, 255, 0.25);
 }
-/* line 397, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
+
+/* line 452, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
   background: #ffffff;
 }
-/* line 400, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-black .swiper-pagination-bullet-active {
+
+/* line 456, sass/site/secondary/_swipper.scss */
+.swiper-pagination-black .swiper-pagination-bullet-active {
   background: #000000;
 }
-/* line 403, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar.swiper-pagination-black {
+
+/* line 460, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar.swiper-pagination-black {
   background: rgba(0, 0, 0, 0.25);
 }
-/* line 406, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill {
+
+/* line 464, sass/site/secondary/_swipper.scss */
+.swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill {
   background: #000000;
 }
-/* line 409, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-pagination-lock {
+
+/* line 468, sass/site/secondary/_swipper.scss */
+.swiper-pagination-lock {
   display: none;
 }
-/* line 413, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-scrollbar {
+
+/* Scrollbar */
+/* line 475, sass/site/secondary/_swipper.scss */
+.swiper-scrollbar {
   border-radius: 10px;
   position: relative;
   -ms-touch-action: none;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 419, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-horizontal > .swiper-scrollbar {
+
+/* line 482, sass/site/secondary/_swipper.scss */
+.swiper-container-horizontal > .swiper-scrollbar {
   position: absolute;
   left: 1%;
   bottom: 3px;
@@ -1775,8 +1817,9 @@ body.single-chantiers .swiper-container-horizontal > .swiper-scrollbar {
   height: 5px;
   width: 98%;
 }
-/* line 427, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-vertical > .swiper-scrollbar {
+
+/* line 491, sass/site/secondary/_swipper.scss */
+.swiper-container-vertical > .swiper-scrollbar {
   position: absolute;
   right: 3px;
   top: 1%;
@@ -1784,8 +1827,9 @@ body.single-chantiers .swiper-container-vertical > .swiper-scrollbar {
   width: 5px;
   height: 98%;
 }
-/* line 435, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-scrollbar-drag {
+
+/* line 500, sass/site/secondary/_swipper.scss */
+.swiper-scrollbar-drag {
   height: 100%;
   width: 100%;
   position: relative;
@@ -1794,16 +1838,19 @@ body.single-chantiers .swiper-scrollbar-drag {
   left: 0;
   top: 0;
 }
-/* line 444, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-scrollbar-cursor-drag {
+
+/* line 510, sass/site/secondary/_swipper.scss */
+.swiper-scrollbar-cursor-drag {
   cursor: move;
 }
-/* line 447, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-scrollbar-lock {
+
+/* line 514, sass/site/secondary/_swipper.scss */
+.swiper-scrollbar-lock {
   display: none;
 }
-/* line 450, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-zoom-container {
+
+/* line 518, sass/site/secondary/_swipper.scss */
+.swiper-zoom-container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -1820,21 +1867,25 @@ body.single-chantiers .swiper-zoom-container {
   align-items: center;
   text-align: center;
 }
-/* line 467, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-zoom-container > img,
-body.single-chantiers .swiper-zoom-container > svg,
-body.single-chantiers .swiper-zoom-container > canvas {
+
+/* line 536, sass/site/secondary/_swipper.scss */
+.swiper-zoom-container > img,
+.swiper-zoom-container > svg,
+.swiper-zoom-container > canvas {
   max-width: 100%;
   max-height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
 }
-/* line 475, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-slide-zoomed {
+
+/* line 545, sass/site/secondary/_swipper.scss */
+.swiper-slide-zoomed {
   cursor: move;
 }
-/* line 479, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-lazy-preloader {
+
+/* Preloader */
+/* line 552, sass/site/secondary/_swipper.scss */
+.swiper-lazy-preloader {
   width: 42px;
   height: 42px;
   position: absolute;
@@ -1849,8 +1900,9 @@ body.single-chantiers .swiper-lazy-preloader {
   -webkit-animation: swiper-preloader-spin 1s steps(12, end) infinite;
   animation: swiper-preloader-spin 1s steps(12, end) infinite;
 }
-/* line 494, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-lazy-preloader:after {
+
+/* line 568, sass/site/secondary/_swipper.scss */
+.swiper-lazy-preloader:after {
   display: block;
   content: '';
   width: 100%;
@@ -1860,10 +1912,12 @@ body.single-chantiers .swiper-lazy-preloader:after {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-/* line 504, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-lazy-preloader-white:after {
+
+/* line 579, sass/site/secondary/_swipper.scss */
+.swiper-lazy-preloader-white:after {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%20120%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20xmlns%3Axlink%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink'%3E%3Cdefs%3E%3Cline%20id%3D'l'%20x1%3D'60'%20x2%3D'60'%20y1%3D'7'%20y2%3D'27'%20stroke%3D'%23fff'%20stroke-width%3D'11'%20stroke-linecap%3D'round'%2F%3E%3C%2Fdefs%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(30%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(60%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(90%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(120%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.27'%20transform%3D'rotate(150%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.37'%20transform%3D'rotate(180%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.46'%20transform%3D'rotate(210%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.56'%20transform%3D'rotate(240%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.66'%20transform%3D'rotate(270%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.75'%20transform%3D'rotate(300%2060%2C60)'%2F%3E%3Cuse%20xlink%3Ahref%3D'%23l'%20opacity%3D'.85'%20transform%3D'rotate(330%2060%2C60)'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
+
 @-webkit-keyframes swiper-preloader-spin {
   100% {
     -webkit-transform: rotate(360deg);
@@ -1876,8 +1930,9 @@ body.single-chantiers .swiper-lazy-preloader-white:after {
     transform: rotate(360deg);
   }
 }
-/* line 520, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container .swiper-notification {
+/* a11y */
+/* line 600, sass/site/secondary/_swipper.scss */
+.swiper-container .swiper-notification {
   position: absolute;
   left: 0;
   top: 0;
@@ -1885,34 +1940,40 @@ body.single-chantiers .swiper-container .swiper-notification {
   opacity: 0;
   z-index: -1000;
 }
-/* line 528, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-fade.swiper-container-free-mode .swiper-slide {
+
+/* line 609, sass/site/secondary/_swipper.scss */
+.swiper-container-fade.swiper-container-free-mode .swiper-slide {
   -webkit-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 533, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-fade .swiper-slide {
+
+/* line 615, sass/site/secondary/_swipper.scss */
+.swiper-container-fade .swiper-slide {
   pointer-events: none;
   -webkit-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
 }
-/* line 539, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-fade .swiper-slide .swiper-slide {
+
+/* line 622, sass/site/secondary/_swipper.scss */
+.swiper-container-fade .swiper-slide .swiper-slide {
   pointer-events: none;
 }
-/* line 542, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-fade .swiper-slide-active,
-body.single-chantiers .swiper-container-fade .swiper-slide-active .swiper-slide-active {
+
+/* line 626, sass/site/secondary/_swipper.scss */
+.swiper-container-fade .swiper-slide-active,
+.swiper-container-fade .swiper-slide-active .swiper-slide-active {
   pointer-events: auto;
 }
-/* line 546, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube {
+
+/* line 631, sass/site/secondary/_swipper.scss */
+.swiper-container-cube {
   overflow: visible;
 }
-/* line 549, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-slide {
+
+/* line 635, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-slide {
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -1924,40 +1985,46 @@ body.single-chantiers .swiper-container-cube .swiper-slide {
   width: 100%;
   height: 100%;
 }
-/* line 561, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-slide .swiper-slide {
+
+/* line 648, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-slide .swiper-slide {
   pointer-events: none;
 }
-/* line 564, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube.swiper-container-rtl .swiper-slide {
+
+/* line 652, sass/site/secondary/_swipper.scss */
+.swiper-container-cube.swiper-container-rtl .swiper-slide {
   -webkit-transform-origin: 100% 0;
   -ms-transform-origin: 100% 0;
   transform-origin: 100% 0;
 }
-/* line 569, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-slide-active,
-body.single-chantiers .swiper-container-cube .swiper-slide-active .swiper-slide-active {
+
+/* line 658, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-slide-active,
+.swiper-container-cube .swiper-slide-active .swiper-slide-active {
   pointer-events: auto;
 }
-/* line 573, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-slide-active,
-body.single-chantiers .swiper-container-cube .swiper-slide-next,
-body.single-chantiers .swiper-container-cube .swiper-slide-prev,
-body.single-chantiers .swiper-container-cube .swiper-slide-next + .swiper-slide {
+
+/* line 663, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-slide-active,
+.swiper-container-cube .swiper-slide-next,
+.swiper-container-cube .swiper-slide-prev,
+.swiper-container-cube .swiper-slide-next + .swiper-slide {
   pointer-events: auto;
   visibility: visible;
 }
-/* line 580, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-slide-shadow-top,
-body.single-chantiers .swiper-container-cube .swiper-slide-shadow-bottom,
-body.single-chantiers .swiper-container-cube .swiper-slide-shadow-left,
-body.single-chantiers .swiper-container-cube .swiper-slide-shadow-right {
+
+/* line 671, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-slide-shadow-top,
+.swiper-container-cube .swiper-slide-shadow-bottom,
+.swiper-container-cube .swiper-slide-shadow-left,
+.swiper-container-cube .swiper-slide-shadow-right {
   z-index: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 588, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-cube .swiper-cube-shadow {
+
+/* line 680, sass/site/secondary/_swipper.scss */
+.swiper-container-cube .swiper-cube-shadow {
   position: absolute;
   left: 0;
   bottom: 0px;
@@ -1969,55 +2036,125 @@ body.single-chantiers .swiper-container-cube .swiper-cube-shadow {
   filter: blur(50px);
   z-index: 0;
 }
-/* line 600, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-flip {
+
+/* line 693, sass/site/secondary/_swipper.scss */
+.swiper-container-flip {
   overflow: visible;
 }
-/* line 603, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-flip .swiper-slide {
+
+/* line 697, sass/site/secondary/_swipper.scss */
+.swiper-container-flip .swiper-slide {
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
 }
-/* line 609, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-flip .swiper-slide .swiper-slide {
+
+/* line 704, sass/site/secondary/_swipper.scss */
+.swiper-container-flip .swiper-slide .swiper-slide {
   pointer-events: none;
 }
-/* line 612, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-flip .swiper-slide-active,
-body.single-chantiers .swiper-container-flip .swiper-slide-active .swiper-slide-active {
+
+/* line 708, sass/site/secondary/_swipper.scss */
+.swiper-container-flip .swiper-slide-active,
+.swiper-container-flip .swiper-slide-active .swiper-slide-active {
   pointer-events: auto;
 }
-/* line 616, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-flip .swiper-slide-shadow-top,
-body.single-chantiers .swiper-container-flip .swiper-slide-shadow-bottom,
-body.single-chantiers .swiper-container-flip .swiper-slide-shadow-left,
-body.single-chantiers .swiper-container-flip .swiper-slide-shadow-right {
+
+/* line 713, sass/site/secondary/_swipper.scss */
+.swiper-container-flip .swiper-slide-shadow-top,
+.swiper-container-flip .swiper-slide-shadow-bottom,
+.swiper-container-flip .swiper-slide-shadow-left,
+.swiper-container-flip .swiper-slide-shadow-right {
   z-index: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 624, sass/site/_chantiers.scss */
-body.single-chantiers .swiper-container-coverflow .swiper-wrapper {
+
+/* line 722, sass/site/secondary/_swipper.scss */
+.swiper-container-coverflow .swiper-wrapper {
   /* Windows 8 IE 10 fix */
   -ms-perspective: 1200px;
 }
 
+/* line 3, sass/site/_chantiers.scss */
+body.single-chantiers {
+  background: #11100e;
+}
+/* line 5, sass/site/_chantiers.scss */
+body.single-chantiers .presentation {
+  display: flex;
+}
+/* line 8, sass/site/_chantiers.scss */
+body.single-chantiers .content {
+  flex: 2;
+  color: #f9f9f9;
+  padding: 0 20px;
+}
+/* line 12, sass/site/_chantiers.scss */
+body.single-chantiers .content p:first-child {
+  margin-top: 0;
+}
+/* line 16, sass/site/_chantiers.scss */
+body.single-chantiers .youtubeVideo {
+  text-align: center;
+}
+/* line 19, sass/site/_chantiers.scss */
+body.single-chantiers .swiper-container {
+  margin: 70px 0;
+}
+/* line 23, sass/site/_chantiers.scss */
+body.single-chantiers .productList ul.products li.product .button {
+  display: none;
+}
+/* line 26, sass/site/_chantiers.scss */
+body.single-chantiers .productList ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* line 30, sass/site/_chantiers.scss */
+body.single-chantiers .productList ul li {
+  width: 250px;
+}
+/* line 32, sass/site/_chantiers.scss */
+body.single-chantiers .productList ul li .woocommerce-loop-product__link {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1200px) {
-  /* line 632, sass/site/_chantiers.scss */
+  /* line 42, sass/site/_chantiers.scss */
   body.single-chantiers .content {
     flex: 3;
   }
-  /* line 635, sass/site/_chantiers.scss */
+  /* line 45, sass/site/_chantiers.scss */
   body.single-chantiers .youtubeVideo {
     flex: 2;
   }
 }
+@media screen and (max-width: 960px) {
+  /* line 53, sass/site/_chantiers.scss */
+  body.single-chantiers .presentation {
+    flex-direction: column;
+  }
+  /* line 56, sass/site/_chantiers.scss */
+  body.single-chantiers .content {
+    flex: 1;
+  }
+  /* line 59, sass/site/_chantiers.scss */
+  body.single-chantiers .youtubeVideo {
+    flex: 1;
+  }
+}
 @media screen and (max-width: 720px) {
-  /* line 643, sass/site/_chantiers.scss */
+  /* line 67, sass/site/_chantiers.scss */
   body.single-chantiers .content {
     column-count: 1;
+  }
+  /* line 72, sass/site/_chantiers.scss */
+  body.single-chantiers .productList ul li,
+  body.single-chantiers .productList ul li img {
+    width: 100%;
   }
 }
 /* line 2, sass/site/page/_page.scss */

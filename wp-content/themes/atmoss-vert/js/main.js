@@ -22,12 +22,12 @@ jQuery(document).ready(function($) {
         slider = setInterval(function() {
             onClickNavigation();
             animateSlider(width);
-        }, 4000);
+        }, 5000);
     }
 
     function animateSlider(width) {
         clearInterval(slider);
-        $(".slideshow ul li:first-child").animate({ "margin-left": width }, 1000, function() {
+        $(".slideshow ul li:first-child").animate({ "margin-left": width }, 1500, function() {
             $(this).css("margin-left", 0).appendTo(".slideshow ul");
         });
         $(".slideshow ul li").removeClass('show');

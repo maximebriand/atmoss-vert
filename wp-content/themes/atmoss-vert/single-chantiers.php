@@ -73,10 +73,12 @@ get_header();
 
                  </div> <!-- end Slider -->
 
-                 <div class="productList">
-                    <?php if( carbon_get_the_post_meta('category_products') ) { 
+                 <div class="productList container">
+                    <?php if( carbon_get_the_post_meta('category_products') ) { ?>
+                        <h2>Les produits utilisés pour réaliser ce projet: </h2>
+                        <?php
                         $catProducts = carbon_get_the_post_meta('category_products');
-                        $shortcode = 'product_category category=' . $catProducts . ' columns="1"'; 
+                        $shortcode = 'products tag=' . $catProducts . ' columns="1"'; 
                         echo do_shortcode("[$shortcode]");
                     } ?>
                 </div>
