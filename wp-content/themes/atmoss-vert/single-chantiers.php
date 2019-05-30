@@ -77,7 +77,7 @@ get_header();
                     <?php if( carbon_get_the_post_meta('category_products') ) { 
                         $catProducts = carbon_get_the_post_meta('category_products');
                         $shortcode = 'product_category category=' . $catProducts . ' columns="1"'; 
-                        var_dump($shortcode);
+                        echo do_shortcode("[$shortcode]");
                     } ?>
                 </div>
 
