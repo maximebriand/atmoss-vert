@@ -1007,27 +1007,32 @@ body.page-template-template-homepage #cover {
   overflow: hidden;
 }
 /* line 7, sass/site/homepage/_portfolio.scss */
+#portfolio .swiper-pagination {
+  position: fixed;
+  right: 0;
+}
+/* line 11, sass/site/homepage/_portfolio.scss */
+#portfolio .swiper-button-prev {
+  left: 20vw;
+}
+/* line 14, sass/site/homepage/_portfolio.scss */
 #portfolio ul {
-  /* 4 images donc 4 x 100% */
-  width: 400%;
-  /* à faire en JS */
   padding: 0;
   margin: 0;
-  margin-left: -50vw;
+  margin-left: 10vw;
   list-style: none;
   display: flex;
   justify-content: flex-start;
 }
-/* line 18, sass/site/homepage/_portfolio.scss */
+/* line 22, sass/site/homepage/_portfolio.scss */
 #portfolio li {
   position: relative;
   padding: 0;
 }
-/* line 21, sass/site/homepage/_portfolio.scss */
+/* line 25, sass/site/homepage/_portfolio.scss */
 #portfolio li .sliderContent {
   overflow: hidden;
   height: 100vh;
-  width: 80vw;
   position: relative;
   background-position: center;
   -webkit-transition: width 1000ms;
@@ -1040,15 +1045,21 @@ body.page-template-template-homepage #cover {
   transform: translate3d(0, 0, 0) skew(-20deg, 0deg);
   z-index: -1;
 }
-/* line 37, sass/site/homepage/_portfolio.scss */
+/* line 41, sass/site/homepage/_portfolio.scss */
 #portfolio li a {
   position: absolute;
-  bottom: 30%;
+  bottom: 0;
   left: 0;
   right: 0;
+  top: 0;
   text-align: center;
+  padding-bottom: 10%;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  justify-content: center;
 }
-/* line 43, sass/site/homepage/_portfolio.scss */
+/* line 53, sass/site/homepage/_portfolio.scss */
 #portfolio li a h3 {
   opacity: 0;
   font-size: 14px;
@@ -1059,17 +1070,17 @@ body.page-template-template-homepage #cover {
   color: #a98f56;
   display: inline-block;
 }
-/* line 54, sass/site/homepage/_portfolio.scss */
-#portfolio li.show h3 {
+/* line 64, sass/site/homepage/_portfolio.scss */
+#portfolio li.swiper-slide-active h3 {
   transition: all 0.9s;
-  -webkit-transition-delay: 1.5s;
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  animation-delay: 1.5s;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  animation-delay: 0.5s;
   font-size: 50px;
   opacity: 1;
 }
-/* line 64, sass/site/homepage/_portfolio.scss */
+/* line 74, sass/site/homepage/_portfolio.scss */
 #portfolio .background {
   height: 100%;
   width: 140%;
@@ -1084,35 +1095,24 @@ body.page-template-template-homepage #cover {
 }
 
 @media screen and (max-width: 1200px) {
-  /* line 80, sass/site/homepage/_portfolio.scss */
+  /* line 90, sass/site/homepage/_portfolio.scss */
   #portfolio .background {
     width: 190%;
   }
+  /* line 93, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li a {
+    padding-bottom: 30%;
+  }
 }
 @media screen and (max-width: 720px) {
-  /* line 88, sass/site/homepage/_portfolio.scss */
-  #portfolio ul {
-    margin-left: -90vw;
-  }
-  /* line 91, sass/site/homepage/_portfolio.scss */
-  #portfolio ul li .sliderContent {
-    width: 110vw;
-  }
-  /* line 94, sass/site/homepage/_portfolio.scss */
-  #portfolio ul li a {
-    bottom: 0%;
-    height: 40vh;
-    right: auto;
-    width: 100vw;
-  }
-  /* line 100, sass/site/homepage/_portfolio.scss */
-  #portfolio ul li h3 {
+  /* line 102, sass/site/homepage/_portfolio.scss */
+  #portfolio ul h3 {
     font-size: 10px;
   }
-  /* line 103, sass/site/homepage/_portfolio.scss */
-  #portfolio ul li.show h3 {
+  /* line 105, sass/site/homepage/_portfolio.scss */
+  #portfolio ul li.swiper-slide-active h3 {
     word-break: break-all;
-    width: 80vw;
+    max-width: 80vw;
     font-size: 20px;
   }
 }
@@ -1492,7 +1492,7 @@ body.page-template-template-homepage #cover {
 /* line 198, sass/site/secondary/_swipper.scss */
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23a98f56'%2F%3E%3C%2Fsvg%3E");
   left: 10px;
   right: auto;
 }
@@ -1500,7 +1500,7 @@ body.page-template-template-homepage #cover {
 /* line 205, sass/site/secondary/_swipper.scss */
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23a98f56'%2F%3E%3C%2Fsvg%3E");
   right: 10px;
   left: auto;
 }
@@ -1648,7 +1648,7 @@ button.swiper-pagination-bullet {
 /* line 337, sass/site/secondary/_swipper.scss */
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff;
+  background: #a98f56;
 }
 
 /* line 342, sass/site/secondary/_swipper.scss */
@@ -1725,7 +1725,7 @@ button.swiper-pagination-bullet {
 
 /* line 407, sass/site/secondary/_swipper.scss */
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: #007aff;
+  background: #a98f56;
   position: absolute;
   left: 0;
   top: 0;

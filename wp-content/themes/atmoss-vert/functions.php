@@ -129,16 +129,17 @@ add_action( 'widgets_init', 'atmoss_vert_widgets_init' );
 function atmoss_vert_scripts() {
     //todo: rooting js files and css
 	wp_enqueue_style( 'atmoss-vert-style', get_stylesheet_uri() );
-
-    wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/DiagonalSlider.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'atmoss-vert-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
     if ( is_front_page() || (is_front_page() && is_home()) ) {
+		wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '20151215', true );
+		wp_enqueue_script( 'atmoss-vert-slider-homepage', get_template_directory_uri() . '/js/homepage.js', array('jquery'), '20151215', true );
     }
 
 	if (is_singular( 'chantiers' )) {
+		wp_enqueue_script( 'atmoss-vert-slider', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '20151215', true );
         wp_enqueue_script( 'atmoss-vert-before-after', get_template_directory_uri() . '/js/before-after.js', array('jquery'), '20151215', true );
-		wp_enqueue_script( 'atmoss-vert-slider-chantier', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '20151215', true );
+		wp_enqueue_script( 'atmoss-vert-slider-chantier', get_template_directory_uri() . '/js/project.js', array('jquery'), '20151215', true );
 
     }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

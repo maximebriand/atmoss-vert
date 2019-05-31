@@ -55,21 +55,21 @@ get_header();
                     } ?>
                     </div>
                 </div><!-- .entry-content -->
+                <?php if (carbon_get_the_post_meta('crb_media_gallery')) { ?>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <?php if (carbon_get_the_post_meta('crb_media_gallery')) {
                             foreach (carbon_get_the_post_meta('crb_media_gallery') as $media) {
                                 $image = wp_get_attachment_image_src($media, 'large');
                                 ?>
                                 <div class="swiper-slide" style="background-image: url(<?php echo $image[0]; ?>)"></div>
                             <?php
-                        }
-                    }
-                    ?>
+                        }?>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
+                }
+                ?>
 
                  </div> <!-- end Slider -->
 
